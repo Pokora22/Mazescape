@@ -6,8 +6,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class scr_PortGate : MonoBehaviour
 {
     public bool active;
-    
-    public scr_KeyData keyData;
+
+    private scr_KeyData keyData;
     private Transform destination;
     private Transform spawn;
     private Camera camera;
@@ -15,27 +15,6 @@ public class scr_PortGate : MonoBehaviour
 
     void Start()
     {
-        List<GameObject> allSpawns = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>().keySpawns;
-        List<GameObject> validSpawns = new List<GameObject>();
-        
-        keyData = Instantiate(keyData);
-        keyData.destinationGateObject = gameObject;
-        
-        Debug.Log(keyData.keyPickUpPrefab);
-        Debug.Log(keyData.keyStaticPrefab);
-        Debug.Log(keyData.destinationGateObject);
-        
-        foreach (GameObject spawn in allSpawns)
-            if (!spawn.transform.parent.CompareTag(transform.tag))
-                validSpawns.Add(spawn);
-        
-        if (validSpawns.Count > 0)
-        {
-            GameObject keySpawnLocation = validSpawns[Random.Range(0, validSpawns.Count)]; 
-            Instantiate(keyData.keyPickUpPrefab, keySpawnLocation.transform);
-            allSpawns.Remove(keySpawnLocation);
-        }
-
         active = false;
         spawn = transform.GetChild(0); //this gates spawn pt (used for calculating rotation)
         camera = transform.GetChild(1).GetComponent<Camera>(); //this gates camera (?)
@@ -69,7 +48,10 @@ public class scr_PortGate : MonoBehaviour
     public void setDestination(scr_PortGate gateScript)
     {
         destination = gateScript.spawn; //set this gates destination transform
-        GetComponent<Renderer>().material.mainTexture = gateScript.gateOutlook; //set this gates texture
+        Material material = GetComponent<Renderer>().material; 
+        material.mainTexture = gateScript.gateOutlook; //set this gates texture
+        material.mainTextureOffset.Set(1, 0); //flip the texture along x axis (mirrored otherwise)
+        material.mainTextureScale.Set(-1, 1);
         active = true;
     }
 }

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 7fc034953ece6134b806e1c16d47b412
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - keyPickUpPrefab: {fileID: 4899214784977584134, guid: 3f2ce28cbeb585a41ad9033b41e6f617,
+      type: 3}
+  - keyStaticPrefab: {fileID: 4899214784977584134, guid: 2727471670e15614a86d9b1fecf4c5d9,
+      type: 3}
+  - destinationGateObject: {instanceID: 0}
+  - keyMaterial: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
