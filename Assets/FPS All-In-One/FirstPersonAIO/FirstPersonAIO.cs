@@ -38,7 +38,7 @@ using UnityEngine.UI;
 using UnityEditor;
 using System.Collections.Generic;
 using System.Collections;
-using System.Net.Mail;
+using UnityEditor.Animations;
 
 [AddComponentMenu("First Person AIO")]
 [RequireComponent(typeof(Rigidbody))]
@@ -46,16 +46,21 @@ using System.Net.Mail;
 
 public class FirstPersonAIO : MonoBehaviour {
 
-    Vector2 rotation = new Vector2 (0, 0);
-	//public float speed = 3;
-
     #region Script Header and Cosmetics
-    [Header("            Aedan Graves' First Person All-in-One v19.3.19cu", order = 0)]
-    [Space(30, order = 1)]
+
+    [Header("            Aedan Graves' First Person All-in-One v19.3.19cu", order = 0)] [Space(30, order = 1)]
+
     #endregion
 
     #region Variables
 
+    #region Personal settings
+    [Header("Personal Settings", order = 2)]
+
+    public Animator animator;
+
+        #endregion
+    
     #region Input Settings
 
     #endregion
@@ -266,7 +271,7 @@ public class BETA_SETTINGS{
 #endregion
 
     }
-
+    
     public void rotate(float angle)
     {
         targetAngles.y += angle;
@@ -312,17 +317,14 @@ public class BETA_SETTINGS{
         #region BETA_SETTINGS - Start
         fOVKick.fovStart = playerCamera.GetComponent<Camera>().fieldOfView;
         #endregion
+
+
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
         #region Look Settings - Update
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            rotate(90);
-        }
-        if(Input.GetKeyDown(KeyCode.X)) rotate(-90);
 
             if(enableCameraMovement)
         {
@@ -664,6 +666,17 @@ public class BETA_SETTINGS{
             }
 
         
+        #endregion
+
+
+
+        #region Animator Updates
+
+        animator.SetBool("Grounded", IsGrounded);
+        if(!IsGrounded) animator.SetFloat("Vertical", yv);
+        animator.SetFloat("Forward", dMove.magnitude);
+        //yv - jump velocity
+
         #endregion
 
     }

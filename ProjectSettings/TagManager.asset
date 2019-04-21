@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
-  - PlayerContainer
+  - KeySpawnPoint
+  - Zone1
+  - Zone2
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - MazeWalls
+  - PlayerModel
+  - 
   - 
   - 
   - 
