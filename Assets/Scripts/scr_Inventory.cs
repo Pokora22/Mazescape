@@ -38,6 +38,7 @@ public class scr_Inventory : MonoBehaviour
     public scr_KeyData removeKey(scr_KeyData key)
     {
         if(debug) Debug.Log("Removed from inventory: " + key.ToString());
+        activeKey = null;
         keys.Remove(key);
         return key;
     }

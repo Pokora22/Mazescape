@@ -11,24 +11,38 @@ public class scr_KeyData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scr_GameManager GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>();
         destinationGateObject = transform.parent.gameObject;
         if(debug) Debug.Log("On start: " + destinationGateObject);
-        List<GameObject> allSpawns = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>().keySpawns;
-        List<GameObject> validSpawns = new List<GameObject>();
-        
-        if(debug) Debug.Log("All spawns count: " + allSpawns.Count);
-        if(debug) Debug.Log("Valid spawns count: " + validSpawns.Count);
-        
-        foreach (GameObject spawn in allSpawns)
-            if (!spawn.transform.parent.CompareTag(transform.parent.tag))
-                validSpawns.Add(spawn);
-        
-        if (validSpawns.Count > 0)
+
+        if (GameManager.randomKeyPlacement)
         {
-            GameObject keySpawnLocation = validSpawns[Random.Range(0, validSpawns.Count)]; 
-            GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform, true);
+            List<GameObject> allSpawns = GameManager.keySpawns;
+            List<GameObject> validSpawns = new List<GameObject>();
+
+            if (debug) Debug.Log("All spawns count: " + allSpawns.Count);
+            if (debug) Debug.Log("Valid spawns count: " + validSpawns.Count);
+
+            foreach (GameObject spawn in allSpawns)
+                if (!spawn.transform.parent.CompareTag(transform.parent.tag))
+                    validSpawns.Add(spawn);
+
+            if (validSpawns.Count > 0)
+            {
+                GameObject keySpawnLocation = validSpawns[Random.Range(0, validSpawns.Count)];
+                GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position,
+                    keySpawnLocation.transform.rotation, keySpawnLocation.transform);
+                keyPickup.GetComponent<scr_PortalKeyPickUp>().setData(this); //set link back to this data
+                allSpawns.Remove(keySpawnLocation);
+            }
+        }
+
+        else
+        {
+            Transform keySpawnLocation = transform.parent.GetComponent<scr_PortGate>().keyLocation;
+            GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position,
+                keySpawnLocation.transform.rotation, keySpawnLocation.transform);
             keyPickup.GetComponent<scr_PortalKeyPickUp>().setData(this); //set link back to this data
-            allSpawns.Remove(keySpawnLocation);
         }
     }
 

@@ -6,6 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class scr_PortGate : MonoBehaviour
 {
     public bool active;
+    public Transform keyLocation;
     
     private scr_KeyData keyData;
     private Transform destination;
@@ -13,6 +14,7 @@ public class scr_PortGate : MonoBehaviour
     private Camera camera;
     private RenderTexture gateOutlook;
     private Texture inactiveTexture;
+    
 
     void Start()
     {
@@ -29,10 +31,17 @@ public class scr_PortGate : MonoBehaviour
         GameObject collider = other.gameObject;
         if (active && collider.CompareTag("Player"))
         {
-            Debug.Log("Teleporting to: " + destination);
             Transform pcContainer = collider.transform.GetChild(0);
+            
             collider.transform.position = new Vector3(destination.position.x, collider.transform.position.y, destination.position.z);
-            pcContainer.Rotate(0, (spawn.rotation.eulerAngles.y - destination.rotation.eulerAngles.y), 0); //TODO: Test for same rotation - might not rotate at all
+
+            float angleBetweenPortals = spawn.rotation.eulerAngles.y - destination.rotation.eulerAngles.y;
+            float angleToRotate = angleBetweenPortals == 0 ? 180 : angleBetweenPortals % 180; 
+            pcContainer.Rotate(0, angleToRotate, 0); //TODO: Test for same rotation - might not rotate at all
+            
+
+            Debug.Log("Quaternion angle: " + Quaternion.Angle(spawn.rotation, destination.rotation));
+            Debug.Log("Old y - y angle: " + (spawn.rotation.eulerAngles.y - destination.rotation.eulerAngles.y));
         }
     }
 

@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class scr_GameManager : MonoBehaviour
 {
-    public List<GameObject> keySpawns; 
+    public List<GameObject> keySpawns;
+
+    public bool randomKeyPlacement;
     // Start is called before the first frame update
     void Awake()
     {
-        keySpawns = GameObject.FindGameObjectsWithTag("KeySpawnPoint").ToList();
+        GameObject[] findbytag = GameObject.FindGameObjectsWithTag("KeySpawnPoint");
+        Debug.Log("Key spawns array size: " + findbytag.Length);
+        keySpawns = findbytag.ToList();
         Debug.Log("Game manager: key spawns count: " + keySpawns.Count);
     }
 
