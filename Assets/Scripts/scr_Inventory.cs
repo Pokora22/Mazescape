@@ -5,6 +5,7 @@ using UnityEngine;
 public class scr_Inventory : MonoBehaviour
 {
     public scr_KeyData activeKey;
+    public bool debug = false;
 
     private List<scr_KeyData> keys;
     // Start is called before the first frame update
@@ -17,26 +18,26 @@ public class scr_Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log("Active key: " + activeKey);
+            if(debug) Debug.Log("Active key: " + activeKey);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             activeKey = keys[0];
-            Debug.Log("Changed active key to: " + activeKey);
+            if(debug) Debug.Log("Changed active key to: " + activeKey);
         }
     }
 
     public scr_KeyData addKey(scr_KeyData key)
     {
-        Debug.Log("Added to inventory: " + key);
+        if(debug) Debug.Log("Added to inventory: " + key);
         keys.Add(key);
         return key;
     }
 
     public scr_KeyData removeKey(scr_KeyData key)
     {
-        Debug.Log("Removed from inventory: " + key.ToString());
+        if(debug) Debug.Log("Removed from inventory: " + key.ToString());
         keys.Remove(key);
         return key;
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class scr_KeyData : MonoBehaviour
 {
+    public bool debug = false;
     public GameObject keyPickUpPrefab, keyStaticPrefab, destinationGateObject;
     public Material keyMaterial; //change the new key's material (not on prefab - on separate instance) //TODO: how?
     
@@ -11,12 +12,12 @@ public class scr_KeyData : MonoBehaviour
     void Start()
     {
         destinationGateObject = transform.parent.gameObject;
-        Debug.Log("On start: " + destinationGateObject);
+        if(debug) Debug.Log("On start: " + destinationGateObject);
         List<GameObject> allSpawns = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>().keySpawns;
         List<GameObject> validSpawns = new List<GameObject>();
         
-        Debug.Log("All spawns count: " + allSpawns.Count);
-        Debug.Log("Valid spawns count: " + validSpawns.Count);
+        if(debug) Debug.Log("All spawns count: " + allSpawns.Count);
+        if(debug) Debug.Log("Valid spawns count: " + validSpawns.Count);
         
         foreach (GameObject spawn in allSpawns)
             if (!spawn.transform.parent.CompareTag(transform.parent.tag))

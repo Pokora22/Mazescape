@@ -8,7 +8,6 @@ public class scr_PortalKeyPickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Key: " + gameObject);
         if (other.CompareTag("Player"))
         {
             other.GetComponent<scr_Inventory>().addKey(keyData); //Add key data to inventory

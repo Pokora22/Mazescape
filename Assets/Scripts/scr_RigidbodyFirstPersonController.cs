@@ -194,11 +194,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             animator.SetFloat("Forward", velocity * inputSign);
             animator.SetFloat("Vertical", m_RigidBody.velocity.y);
-
-            if (Input.GetKeyDown(KeyCode.E)) rotate(90);
-            if (Input.GetKeyDown(KeyCode.Q)) rotate(-90);
-            if (Input.GetKeyDown(KeyCode.Z)) rotate(-180);
-
         }
 
 
