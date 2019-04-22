@@ -25,9 +25,12 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
             if (!transform.parent.GetComponent<scr_PortGate>().active) //put key on portal recepticle
             {
                 scr_KeyData keyUsed = other.GetComponent<scr_Inventory>().useKey();
-                
-                transform.parent.GetComponent<scr_PortGate>().activatePortal(keyUsed);
-                Instantiate(keyUsed.keyStaticPrefab, transform);
+
+                if (keyUsed != null)
+                {
+                    transform.parent.GetComponent<scr_PortGate>().activatePortal(keyUsed);
+                    Instantiate(keyUsed.keyStaticPrefab, transform.position, transform.rotation, transform);
+                }
             }
             else //take key from portal recepticle
             {

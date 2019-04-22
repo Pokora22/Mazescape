@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="94f655fb-6727-4294-8ef6-202160427c33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,30 +152,31 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
+            <state relative-caret-position="476">
+              <caret line="31" column="108" lean-forward="true" selection-start-line="31" selection-start-column="108" selection-end-line="31" selection-end-column="108" />
               <folding>
-                <marker date="1555884853000" expanded="false" signature="6:91" ph="..." />
-                <marker date="1555884853000" expanded="true" signature="145:1258" ph="{...}" />
-                <marker date="1555884853000" expanded="true" signature="238:439" ph="{...}" />
-                <marker date="1555884853000" expanded="true" signature="487:623" ph="{...}" />
-                <marker date="1555884853000" expanded="true" signature="671:1256" ph="{...}" />
-                <marker date="1555884853000" expanded="true" signature="751:1250" ph="{...}" />
-                <marker date="1555884853000" expanded="true" signature="863:1144" ph="{...}" />
-                <marker date="1555884853000" expanded="true" signature="1195:1240" ph="{...}" />
+                <marker date="1555968574513" expanded="false" signature="6:91" ph="..." />
+                <marker date="1555968574513" expanded="true" signature="145:1363" ph="{...}" />
+                <marker date="1555968574513" expanded="true" signature="238:439" ph="{...}" />
+                <marker date="1555968574513" expanded="true" signature="487:623" ph="{...}" />
+                <marker date="1555968574513" expanded="true" signature="671:1361" ph="{...}" />
+                <marker date="1555968574513" expanded="true" signature="751:1355" ph="{...}" />
+                <marker date="1555968574513" expanded="true" signature="863:1249" ph="{...}" />
+                <marker date="1555968574513" expanded="true" signature="999:1235" ph="{...}" />
+                <marker date="1555968574513" expanded="true" signature="1300:1345" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_Inventory.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+            <state relative-caret-position="765">
+              <caret line="47" column="63" lean-forward="true" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
               <folding>
                 <marker date="1555966907025" expanded="false" signature="6:78" ph="..." />
                 <marker date="1555966907025" expanded="true" signature="122:1204" ph="{...}" />
@@ -253,7 +250,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_TextDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortalKey.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_ZoneData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_RigidbodyFirstPersonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortalCamera.cs" />
@@ -261,6 +257,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs" />
       </list>
     </option>
   </component>
@@ -348,7 +345,7 @@
       <workItem from="1555690715272" duration="18876000" />
       <workItem from="1555781842304" duration="36325000" />
       <workItem from="1555952232648" duration="172000" />
-      <workItem from="1555952486565" duration="11342000" />
+      <workItem from="1555952486565" duration="12487000" />
     </task>
     <task id="LOCAL-00001" summary="Instantiating with fields assigned in inspector is bullshit - results in null. Can't put the script on it's own as a field in other script either.&#10;&#10;Gonna try getting keyData from a child object of the portal.">
       <created>1555884103964</created>
@@ -357,11 +354,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555884103964</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Portals more etc. Random key placement. Bool for gm. Tired">
+      <created>1555966930878</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555966930879</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82751000" />
+    <option name="totallyTimeSpent" value="83896000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -374,6 +378,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1927663" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -413,7 +418,8 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Instantiating with fields assigned in inspector is bullshit - results in null. Can't put the script on it's own as a field in other script either.&#10;&#10;Gonna try getting keyData from a child object of the portal." />
-    <option name="LAST_COMMIT_MESSAGE" value="Instantiating with fields assigned in inspector is bullshit - results in null. Can't put the script on it's own as a field in other script either.&#10;&#10;Gonna try getting keyData from a child object of the portal." />
+    <MESSAGE value="Portals more etc. Random key placement. Bool for gm. Tired" />
+    <option name="LAST_COMMIT_MESSAGE" value="Portals more etc. Random key placement. Bool for gm. Tired" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -786,23 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
-          <folding>
-            <marker date="1555884853000" expanded="false" signature="6:91" ph="..." />
-            <marker date="1555884853000" expanded="true" signature="145:1258" ph="{...}" />
-            <marker date="1555884853000" expanded="true" signature="238:439" ph="{...}" />
-            <marker date="1555884853000" expanded="true" signature="487:623" ph="{...}" />
-            <marker date="1555884853000" expanded="true" signature="671:1256" ph="{...}" />
-            <marker date="1555884853000" expanded="true" signature="751:1250" ph="{...}" />
-            <marker date="1555884853000" expanded="true" signature="863:1144" ph="{...}" />
-            <marker date="1555884853000" expanded="true" signature="1195:1240" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/SimpleCameraController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -963,8 +952,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_Inventory.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        <state relative-caret-position="765">
+          <caret line="47" column="63" lean-forward="true" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
           <folding>
             <marker date="1555966907025" expanded="false" signature="6:78" ph="..." />
             <marker date="1555966907025" expanded="true" signature="122:1204" ph="{...}" />
@@ -975,6 +964,24 @@
             <marker date="1555966907025" expanded="true" signature="724:838" ph="{...}" />
             <marker date="1555966907025" expanded="true" signature="889:1047" ph="{...}" />
             <marker date="1555966907025" expanded="true" signature="1080:1202" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="31" column="108" lean-forward="true" selection-start-line="31" selection-start-column="108" selection-end-line="31" selection-end-column="108" />
+          <folding>
+            <marker date="1555968574513" expanded="false" signature="6:91" ph="..." />
+            <marker date="1555968574513" expanded="true" signature="145:1363" ph="{...}" />
+            <marker date="1555968574513" expanded="true" signature="238:439" ph="{...}" />
+            <marker date="1555968574513" expanded="true" signature="487:623" ph="{...}" />
+            <marker date="1555968574513" expanded="true" signature="671:1361" ph="{...}" />
+            <marker date="1555968574513" expanded="true" signature="751:1355" ph="{...}" />
+            <marker date="1555968574513" expanded="true" signature="863:1249" ph="{...}" />
+            <marker date="1555968574513" expanded="true" signature="999:1235" ph="{...}" />
+            <marker date="1555968574513" expanded="true" signature="1300:1345" ph="{...}" />
           </folding>
         </state>
       </provider>
