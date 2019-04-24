@@ -58,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
-              <caret line="83" column="133" lean-forward="true" selection-start-line="83" selection-start-column="133" selection-end-line="83" selection-end-column="133" />
+              <caret line="83" column="133" selection-start-line="83" selection-start-column="133" selection-end-line="83" selection-end-column="133" />
               <folding>
                 <marker date="1556129759227" expanded="false" signature="6:128" ph="..." />
                 <marker date="1556129759227" expanded="true" signature="171:4183" ph="{...}" />
@@ -418,7 +418,7 @@
       <workItem from="1555690715272" duration="18876000" />
       <workItem from="1555781842304" duration="36325000" />
       <workItem from="1555952232648" duration="172000" />
-      <workItem from="1555952486565" duration="39084000" />
+      <workItem from="1555952486565" duration="39683000" />
     </task>
     <task id="LOCAL-00001" summary="Instantiating with fields assigned in inspector is bullshit - results in null. Can't put the script on it's own as a field in other script either.&#10;&#10;Gonna try getting keyData from a child object of the portal.">
       <created>1555884103964</created>
@@ -438,7 +438,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110493000" />
+    <option name="totallyTimeSpent" value="111092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1065,7 +1065,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="83" column="133" lean-forward="true" selection-start-line="83" selection-start-column="133" selection-end-line="83" selection-end-column="133" />
+          <caret line="83" column="133" selection-start-line="83" selection-start-column="133" selection-end-line="83" selection-end-column="133" />
           <folding>
             <marker date="1556129759227" expanded="false" signature="6:128" ph="..." />
             <marker date="1556129759227" expanded="true" signature="171:4183" ph="{...}" />
