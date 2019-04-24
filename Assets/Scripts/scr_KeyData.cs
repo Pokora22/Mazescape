@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 
 public class scr_KeyData : MonoBehaviour
@@ -23,8 +24,6 @@ public class scr_KeyData : MonoBehaviour
     private void initializeKeyInWorld()
     {
         scr_GameManager GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>();
-        
-        if(debug) Debug.Log("On start: " + destinationGateObject);
 
         if (GameManager.randomKeyPlacement)
         {
@@ -43,12 +42,12 @@ public class scr_KeyData : MonoBehaviour
                 GameObject keySpawnLocation = validSpawns[Random.Range(0, validSpawns.Count)];
                 GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position,
                     keySpawnLocation.transform.rotation, keySpawnLocation.transform);
-                keyPickup.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this); //set link back to this data
+                keyPickup.GetComponent<scr_PortalKeyPickUp>().setupKey(this); //set link back to this data
                 allSpawns.Remove(keySpawnLocation);
             }
         }
 
-        else spawn(spawnLocation);
+        else spawn(spawnLocation, false);
         
         {
 //            keyPickUpPrefab.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this);
@@ -58,11 +57,20 @@ public class scr_KeyData : MonoBehaviour
         }
     }
 
-    public GameObject spawn(Transform spawnLocation)
+    public GameObject spawn(Transform spawnLocation, bool receptacleStatic)
     {
-        keyPickUpPrefab.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this);
-        return Instantiate(keyPickUpPrefab, spawnLocation.transform.position,
+        GameObject key = Instantiate(keyPickUpPrefab, spawnLocation.transform.position,
             spawnLocation.transform.rotation, spawnLocation.transform);
+        
+        key.GetComponent<scr_PortalKeyPickUp>().setupKey(this);
+
+        if (receptacleStatic)
+        {
+            key.GetComponent<Collider>().isTrigger = false;
+            key.GetComponent<AutoMoveAndRotate>().enabled = false;
+        }
+
+        return key;
     }
 
     public override string ToString()

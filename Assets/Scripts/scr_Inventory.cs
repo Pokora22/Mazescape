@@ -6,7 +6,6 @@ public class scr_Inventory : MonoBehaviour
 {
     public scr_KeyData activeKey;
     public Transform itemDisplayPos;
-    public bool debug = false;
 
     private GameObject itemDisplayed;
     public List<scr_KeyData> keys;
@@ -41,7 +40,6 @@ public class scr_Inventory : MonoBehaviour
 
     public scr_KeyData addKey(scr_KeyData key)
     {
-        if(debug) Debug.Log("Added to inventory: " + key);
         if (keys.Count == 0)
         {
             activeKey = key;
@@ -54,37 +52,18 @@ public class scr_Inventory : MonoBehaviour
 
     public scr_KeyData removeKey(scr_KeyData key)
     {
-        if(debug) Debug.Log("Removed from inventory: " + key.ToString());
-        
         keys.Remove(key);
         changeSelection(-1);
         return key;
     }
 
-    public scr_KeyData useKey()
-    {
-        if (activeKey == null)
-        {
-            Debug.Log("Active key is null!");
-            return null;
-        }
-        
-        return removeKey(activeKey);
-    }
-
     private IEnumerator changeItemDisplayed()
     {
-        Debug.Log("Changing item displayed...");
         if(itemDisplayed) Destroy(itemDisplayed);
-        Debug.Log("Current active key is: " + activeKey);
-        if (!activeKey)
+        
+        if (activeKey)
         {
-            Debug.Log("Active key: " + activeKey + "(should be null)");
-            
-        }
-        else
-        {
-            itemDisplayed = activeKey.spawn(itemDisplayPos);
+            itemDisplayed = activeKey.spawn(itemDisplayPos, false);
             itemDisplayed.layer = 9;
             itemDisplayed.transform.GetChild(0).gameObject.layer = 9;
         }

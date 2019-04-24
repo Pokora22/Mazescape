@@ -7,6 +7,10 @@ using UnityStandardAssets.Utility;
 public class scr_PortalKeyRecepticle : MonoBehaviour
 {
     public string putKeyText, takeKeyText;
+
+    private GameObject keyPlaced;
+    private bool mouseAxisInUse;
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player") && !transform.parent.GetComponent<scr_PortGate>().active)
@@ -21,37 +25,49 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) //TODO: Change to bindings 
+        if (other.CompareTag("Player"))
         {
-            if (!transform.parent.GetComponent<scr_PortGate>().active) //put key on portal recepticle
+            if (playerClick())
             {
-                scr_KeyData keyUsed = other.GetComponent<scr_Inventory>().useKey();
-
-                if (keyUsed != null)
+                scr_Inventory playerInventory = other.GetComponent<scr_Inventory>();
+                if (!transform.parent.GetComponent<scr_PortGate>().active) //put key on portal recepticle
                 {
-                    transform.parent.GetComponent<scr_PortGate>().activatePortal(keyUsed);
-                    placeStaticKey(keyUsed);
+                    scr_KeyData keyUsed = playerInventory.activeKey; //Get active (used) key data from player inventory
+
+                    if (keyUsed != null)
+                    {
+                        if (keyUsed.destinationGateObject.GetComponentInParent<scr_PortGate>().active)
+                        {
+                            Debug.Log("Other gate is in use!"); //TODO: Maybe display some msg to player
+                            return;
+                        }
+
+                        transform.parent.GetComponent<scr_PortGate>().activatePortal(keyUsed);
+                        keyPlaced = keyUsed.spawn(transform, true);
+                        keyPlaced.transform.GetChild(0).localPosition = new Vector3(.1f, 0, 0); //Change symbol position
+
+                        playerInventory.removeKey(keyUsed);
+                    }
                 }
-            }
-            else //take key from portal recepticle
-            {
-                
+                else //take key from portal recepticle //TODO: Check not if active, but also if there's a key placed !
+                {
+                    scr_KeyData keyData = keyPlaced.GetComponent<scr_PortalKeyPickUp>().keyData;
+                    playerInventory.addKey(keyData); //Add the data from the pickup back to player inventory
+                    transform.parent.GetComponent<scr_PortGate>().deactivatePortal(keyData);
+                    Destroy(keyPlaced);
+                }
             }
         }
     }
 
-    private void placeStaticKey(scr_KeyData keyUsed)
+    private bool playerClick()
     {
-        Vector3 position = transform.position;
-        Quaternion rotation = transform.rotation;
-        GameObject keyPlaced = Instantiate(keyUsed.keyPickUpPrefab, position, rotation,
-            transform); 
-                    
-        keyPlaced.GetComponent<Collider>().isTrigger = false;
-        keyPlaced.GetComponent<AutoMoveAndRotate>().enabled = false;
-
-        Transform symbolObject = keyPlaced.transform.GetChild(0);
-        keyPlaced.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(keyUsed);
-        symbolObject.localPosition = new Vector3(.1f, 0, 0); 
+        if (Input.GetAxisRaw("Fire1") != 0)
+            if (mouseAxisInUse == false)
+                return mouseAxisInUse = true;
+            else
+                return false;            
+        
+        return mouseAxisInUse = false;
     }
 }

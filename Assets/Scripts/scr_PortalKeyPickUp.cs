@@ -21,7 +21,7 @@ public class scr_PortalKeyPickUp : MonoBehaviour
         }
     }
 
-    public void setSymbolAndColor(scr_KeyData keyData)
+    public void setupKey(scr_KeyData keyData)
     {
         this.keyData = keyData;
 

@@ -36,11 +36,7 @@ public class scr_PortGate : MonoBehaviour
 
             float angleBetweenPortals = spawn.rotation.eulerAngles.y - destination.rotation.eulerAngles.y;
             float angleToRotate = angleBetweenPortals == 0 ? 180 : angleBetweenPortals % 180; 
-            pcContainer.Rotate(0, angleToRotate, 0); //TODO: Test for same rotation - might not rotate at all
-            
-
-            Debug.Log("Quaternion angle: " + Quaternion.Angle(spawn.rotation, destination.rotation));
-            Debug.Log("Old y - y angle: " + (spawn.rotation.eulerAngles.y - destination.rotation.eulerAngles.y));
+            pcContainer.Rotate(0, angleToRotate, 0);
         }
     }
 
@@ -60,6 +56,7 @@ public class scr_PortGate : MonoBehaviour
 
     public void activatePortal(scr_KeyData keyData)
     {
+        Debug.Log("Running activate...");
         scr_PortGate destGateScript = keyData.destinationGateObject.GetComponent<scr_PortGate>();
         
         //Change this gate's stuff
@@ -73,6 +70,7 @@ public class scr_PortGate : MonoBehaviour
 
     public void deactivatePortal(scr_KeyData keyData)
     {
+        Debug.Log("Running deactivate...");
         scr_PortGate destGateScript = destinationGateObject.GetComponent<scr_PortGate>();
         
         //Change this gate's stuff
