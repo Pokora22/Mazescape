@@ -6,15 +6,13 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class scr_PortGate : MonoBehaviour
 {
     public bool active;
-    public Transform keyLocation;
     
-    private scr_KeyData keyData;
     private Transform destination;
     private Transform spawn;
+    private GameObject destinationGateObject;
     private Camera camera;
     private RenderTexture gateOutlook;
     private Texture inactiveTexture;
-    
 
     void Start()
     {
@@ -24,6 +22,7 @@ public class scr_PortGate : MonoBehaviour
         camera = transform.GetChild(1).GetComponent<Camera>(); //this gates camera (?)
         gateOutlook = new RenderTexture(512, 512, 16);
         camera.targetTexture = gateOutlook;
+        camera.enabled = false;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -45,6 +44,20 @@ public class scr_PortGate : MonoBehaviour
         }
     }
 
+
+    private void OnBecameVisible()
+    {
+        if (active)
+            destinationGateObject.GetComponentInChildren<Camera>().enabled = true;
+        
+    }
+
+    private void OnBecameInvisible()
+    {
+        if(active)
+            destinationGateObject.GetComponentInChildren<Camera>().enabled = false;
+    }
+
     public void activatePortal(scr_KeyData keyData)
     {
         scr_PortGate destGateScript = keyData.destinationGateObject.GetComponent<scr_PortGate>();
@@ -54,17 +67,22 @@ public class scr_PortGate : MonoBehaviour
         
         //Change destination gate stuff
         destGateScript.setDestination(this);
+        
+        destinationGateObject.GetComponentInChildren<Camera>().enabled = true; //Enable camera on destination gate when activated
     }
 
     public void deactivatePortal(scr_KeyData keyData)
     {
-        scr_PortGate destGateScript = keyData.destinationGateObject.GetComponent<scr_PortGate>();
+        scr_PortGate destGateScript = destinationGateObject.GetComponent<scr_PortGate>();
         
         //Change this gate's stuff
         unsetDestination(destGateScript); 
         
         //Change destination gate stuff
         destGateScript.unsetDestination(this);
+        
+        destinationGateObject.GetComponentInChildren<Camera>().enabled = false; //Disable camera on destination gate when deactivated
+        destinationGateObject = null;
     }
 
     public void setDestination(scr_PortGate gateScript)
@@ -74,6 +92,8 @@ public class scr_PortGate : MonoBehaviour
         material.mainTexture = gateScript.gateOutlook;//set this gates texture
         material.SetTexture("_BumpMap", null);
         active = true;
+        
+        destinationGateObject = gateScript.transform.gameObject; //store dest gate for visible/invisible camera switching
     }
     
     public void unsetDestination(scr_PortGate gateScript)
@@ -82,5 +102,13 @@ public class scr_PortGate : MonoBehaviour
         Material material = GetComponent<Renderer>().material;
         material.mainTexture = inactiveTexture;//set this gates texture
         active = false;
+
+        destinationGateObject = null; //set dest gate for visible/invisible camera switching
+        camera.enabled = false; //just for safety in case there are two gates visible at once when disabling
+    }
+
+    public override string ToString()
+    {
+        return gameObject + " : " + transform.parent.parent;
     }
 }

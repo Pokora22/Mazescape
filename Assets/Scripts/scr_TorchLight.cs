@@ -3,23 +3,54 @@ using System.Collections;
  
 public class scr_TorchLight : MonoBehaviour
 {
+    #region Old ver
+    [Header("Old version")]
+
     public float maxReduction;
     public float maxIncrease;
     public float flickerDelay;
     public float strength;
- 
+
+    #endregion
+    
+
+    
+
+    #region Perlin 
+    [Header("Perlin (disables above)")]
+    
+    public bool perlin;
+    public float minIntensity = 0.25f;
+    public float maxIntensity = 0.5f;
+    public float frequency = 1f;
+    
+    #endregion
+    
     private Light lightSource;
-    private float baseIntensity;
-    private bool _flickering;
+    private float baseIntensity, random;
  
     public void Start()
     {
+        //Perlin
+        random = Random.Range(0.0f, 65535.0f);
+        //
+        
         lightSource = GetComponent<Light>();
         baseIntensity = lightSource.intensity;
         
-        StartCoroutine(doFlicker());
+        if(!perlin) StartCoroutine(doFlicker());
     }
- 
+
+    private void Update()
+    {
+
+        if (perlin)
+        {
+            float noise = Mathf.PerlinNoise(random, Time.time * frequency);
+            lightSource.intensity = Mathf.Lerp(minIntensity, maxIntensity, noise);
+        }
+    }
+
     private IEnumerator doFlicker()
     {
         while (true)

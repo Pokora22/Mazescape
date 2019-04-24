@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityStandardAssets.Utility;
 
 public class scr_PortalKeyRecepticle : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
                 if (keyUsed != null)
                 {
                     transform.parent.GetComponent<scr_PortGate>().activatePortal(keyUsed);
-                    Instantiate(keyUsed.keyStaticPrefab, transform.position, transform.rotation, transform);
+                    placeStaticKey(keyUsed);
                 }
             }
             else //take key from portal recepticle
@@ -37,5 +38,20 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
                 
             }
         }
+    }
+
+    private void placeStaticKey(scr_KeyData keyUsed)
+    {
+        Vector3 position = transform.position;
+        Quaternion rotation = transform.rotation;
+        GameObject keyPlaced = Instantiate(keyUsed.keyPickUpPrefab, position, rotation,
+            transform); 
+                    
+        keyPlaced.GetComponent<Collider>().isTrigger = false;
+        keyPlaced.GetComponent<AutoMoveAndRotate>().enabled = false;
+
+        Transform symbolObject = keyPlaced.transform.GetChild(0);
+        keyPlaced.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(keyUsed);
+        symbolObject.localPosition = new Vector3(.1f, 0, 0); 
     }
 }

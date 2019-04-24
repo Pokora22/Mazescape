@@ -1,18 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class scr_KeyData : MonoBehaviour
 {
     public bool debug = false;
-    public GameObject keyPickUpPrefab, keyStaticPrefab, destinationGateObject;
-    public Material keyMaterial; //change the new key's material (not on prefab - on separate instance) //TODO: how?
-    
-    // Start is called before the first frame update
-    void Start()
+    public String symbol;
+    public Color color;
+    public Transform spawnLocation;
+    public GameObject keyPickUpPrefab, destinationGateObject;
+
+    private void Start()
+    {
+        destinationGateObject = transform.parent.gameObject;
+        
+        initializeKeyInWorld();
+    }
+
+    private void initializeKeyInWorld()
     {
         scr_GameManager GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>();
-        destinationGateObject = transform.parent.gameObject;
+        
         if(debug) Debug.Log("On start: " + destinationGateObject);
 
         if (GameManager.randomKeyPlacement)
@@ -32,17 +43,17 @@ public class scr_KeyData : MonoBehaviour
                 GameObject keySpawnLocation = validSpawns[Random.Range(0, validSpawns.Count)];
                 GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position,
                     keySpawnLocation.transform.rotation, keySpawnLocation.transform);
-                keyPickup.GetComponent<scr_PortalKeyPickUp>().setData(this); //set link back to this data
+                keyPickup.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this); //set link back to this data
                 allSpawns.Remove(keySpawnLocation);
             }
         }
 
         else
         {
-            Transform keySpawnLocation = transform.parent.GetComponent<scr_PortGate>().keyLocation;
-            GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position,
-                keySpawnLocation.transform.rotation, keySpawnLocation.transform);
-            keyPickup.GetComponent<scr_PortalKeyPickUp>().setData(this); //set link back to this data
+            keyPickUpPrefab.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this);
+            GameObject keyPickup = Instantiate(keyPickUpPrefab, spawnLocation.transform.position,
+                spawnLocation.transform.rotation, spawnLocation.transform);
+//            keyPickup.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this); //set link back to this data
         }
     }
 

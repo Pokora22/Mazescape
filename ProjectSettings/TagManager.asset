@@ -8,6 +8,7 @@ TagManager:
   - Zone1
   - Zone2
   - GameManager
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - 
   - PlayerModel
-  - 
+  - Inventory
   - 
   - 
   - 

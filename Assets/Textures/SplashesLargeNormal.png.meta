@@ -16,10 +16,10 @@ TextureImporter:
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
-    convertToNormalMap: 0
+    convertToNormalMap: 1
     externalNormalMap: 0
-    heightScale: 0.1
-    normalMapFilter: 0
+    heightScale: 0.03
+    normalMapFilter: 1
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: aa382e9e913cd7f4fb27dbde34d01a63
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Daedra
+  fontNames:
+  - Daedra
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6a5f8753acd37364196e216361671c41, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
