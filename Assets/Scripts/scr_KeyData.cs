@@ -48,13 +48,21 @@ public class scr_KeyData : MonoBehaviour
             }
         }
 
-        else
+        else spawn(spawnLocation);
+        
         {
-            keyPickUpPrefab.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this);
-            GameObject keyPickup = Instantiate(keyPickUpPrefab, spawnLocation.transform.position,
-                spawnLocation.transform.rotation, spawnLocation.transform);
+//            keyPickUpPrefab.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this);
+//            GameObject keyPickup = Instantiate(keyPickUpPrefab, spawnLocation.transform.position,
+//                spawnLocation.transform.rotation, spawnLocation.transform);
 //            keyPickup.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this); //set link back to this data
         }
+    }
+
+    public GameObject spawn(Transform spawnLocation)
+    {
+        keyPickUpPrefab.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this);
+        return Instantiate(keyPickUpPrefab, spawnLocation.transform.position,
+            spawnLocation.transform.rotation, spawnLocation.transform);
     }
 
     public override string ToString()

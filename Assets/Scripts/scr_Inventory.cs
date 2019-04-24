@@ -9,7 +9,7 @@ public class scr_Inventory : MonoBehaviour
     public bool debug = false;
 
     private GameObject itemDisplayed;
-    private List<scr_KeyData> keys;
+    public List<scr_KeyData> keys;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,24 +19,34 @@ public class scr_Inventory : MonoBehaviour
     private void Update()
     {
         float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollWheel < 0 && keys.Count != 0)
+        if (scrollWheel != 0) changeSelection((int)(scrollWheel * 10));
+        
+    }
+
+    private void changeSelection(int direction)
+    {
+        if (keys.Count == 0)
         {
-            int newIndex = (keys.FindIndex(data => activeKey) - 1) % keys.Count;
-            if (newIndex < 0) newIndex = keys.Count - 1;
-            
-            activeKey = keys[newIndex];
+            activeKey = null;
+            StartCoroutine(changeItemDisplayed());
+            return;
         }
-        else if (scrollWheel > 0 && keys.Count != 0)
-        {
-            int newIndex = (keys.FindIndex(data => activeKey) + 1) % keys.Count;
-            activeKey = keys[newIndex];
-        }
+        
+        int newIndex = (keys.FindIndex(data => data.Equals(activeKey)) - 1) % keys.Count;
+        if (newIndex < 0) newIndex = keys.Count - 1;
+        activeKey = keys[newIndex];
+        
+        StartCoroutine(changeItemDisplayed());
     }
 
     public scr_KeyData addKey(scr_KeyData key)
     {
         if(debug) Debug.Log("Added to inventory: " + key);
-        if (keys.Count == 0) activeKey = key;
+        if (keys.Count == 0)
+        {
+            activeKey = key;
+            StartCoroutine(changeItemDisplayed());
+        }
         keys.Add(key);
         
         return key;
@@ -45,21 +55,40 @@ public class scr_Inventory : MonoBehaviour
     public scr_KeyData removeKey(scr_KeyData key)
     {
         if(debug) Debug.Log("Removed from inventory: " + key.ToString());
-        activeKey = null;
+        
         keys.Remove(key);
+        changeSelection(-1);
         return key;
     }
 
     public scr_KeyData useKey()
     {
-        if(activeKey == null) Debug.Log("Active key is null!");
+        if (activeKey == null)
+        {
+            Debug.Log("Active key is null!");
+            return null;
+        }
         
         return removeKey(activeKey);
     }
 
-    private void changeItemDisplayed()
+    private IEnumerator changeItemDisplayed()
     {
-        if(itemDisplayed != null) Destroy(itemDisplayed);
-        itemDisplayed = Instantiate(activeKey.keyPickUpPrefab);
+        Debug.Log("Changing item displayed...");
+        if(itemDisplayed) Destroy(itemDisplayed);
+        Debug.Log("Current active key is: " + activeKey);
+        if (!activeKey)
+        {
+            Debug.Log("Active key: " + activeKey + "(should be null)");
+            
+        }
+        else
+        {
+            itemDisplayed = activeKey.spawn(itemDisplayPos);
+            itemDisplayed.layer = 9;
+            itemDisplayed.transform.GetChild(0).gameObject.layer = 9;
+        }
+
+        yield return new WaitForSeconds(.5f);
     }
 }
