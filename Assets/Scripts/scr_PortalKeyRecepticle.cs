@@ -49,7 +49,7 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
                         playerInventory.removeKey(keyUsed);
                     }
                 }
-                else if (keyPlaced) //take key from portal recepticle //TODO: Check not if active, but also if there's a key placed !
+                else if (keyPlaced) //take key from portal recepticle 
                 {
                     scr_KeyData keyData = keyPlaced.GetComponent<scr_PortalKeyPickUp>().keyData;
                     playerInventory.addKey(keyData); //Add the data from the pickup back to player inventory
