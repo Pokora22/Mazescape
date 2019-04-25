@@ -79,7 +79,7 @@ public class scr_PortGate : MonoBehaviour
         //Change destination gate stuff
         destGateScript.unsetDestination(this);
         
-        destinationGateObject.GetComponentInChildren<Camera>().enabled = false; //Disable camera on destination gate when deactivated
+//        destinationGateObject.GetComponentInChildren<Camera>().enabled = false; //Disable camera on destination gate when deactivated //TODO: If gate linked to itself ?
         destinationGateObject = null;
     }
 
