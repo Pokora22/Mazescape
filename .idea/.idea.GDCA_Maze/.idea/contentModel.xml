@@ -335,11 +335,15 @@
             </e>
           </e>
         </e>
+        <e p="projections.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="scr_AI_Enemy.cs" t="Include" />
           <e p="scr_GameManager.cs" t="Include" />
           <e p="scr_Inventory.cs" t="Include" />
           <e p="scr_InventoryItemView.cs" t="Include" />
           <e p="scr_KeyData.cs" t="Include" />
+          <e p="scr_LineOfSight.cs" t="Include" />
+          <e p="scr_pHealth.cs" t="Include" />
           <e p="scr_PortalCamera.cs" t="Include" />
           <e p="scr_PortalKeyPickUp.cs" t="Include" />
           <e p="scr_PortalKeyRecepticle.cs" t="Include" />

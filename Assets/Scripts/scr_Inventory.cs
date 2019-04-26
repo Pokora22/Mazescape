@@ -8,6 +8,7 @@ public class scr_Inventory : MonoBehaviour
     public Transform itemDisplayPos;
 
     private GameObject itemDisplayed;
+    private float itemSwappedRecently;
     public List<scr_KeyData> keys;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class scr_Inventory : MonoBehaviour
         if (keys.Count == 0)
         {
             activeKey = null;
-            StartCoroutine(changeItemDisplayed());
+            changeItemDisplayed();
             return;
         }
         
@@ -35,7 +36,7 @@ public class scr_Inventory : MonoBehaviour
         if (newIndex < 0) newIndex = keys.Count - 1;
         activeKey = keys[newIndex];
         
-        StartCoroutine(changeItemDisplayed());
+        changeItemDisplayed();
     }
 
     public scr_KeyData addKey(scr_KeyData key)
@@ -43,7 +44,7 @@ public class scr_Inventory : MonoBehaviour
         if (keys.Count == 0)
         {
             activeKey = key;
-            StartCoroutine(changeItemDisplayed());
+            changeItemDisplayed();
         }
         keys.Add(key);
         
@@ -57,7 +58,7 @@ public class scr_Inventory : MonoBehaviour
         return key;
     }
 
-    private IEnumerator changeItemDisplayed()
+    private void changeItemDisplayed()
     {
         if(itemDisplayed) Destroy(itemDisplayed);
         
@@ -67,7 +68,5 @@ public class scr_Inventory : MonoBehaviour
             itemDisplayed.layer = 9;
             itemDisplayed.transform.GetChild(0).gameObject.layer = 9;
         }
-
-        yield return new WaitForSeconds(.5f);
     }
 }
