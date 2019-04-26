@@ -28,7 +28,7 @@ public class scr_PortGate : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         GameObject collider = other.gameObject;
-        if (active && collider.CompareTag("Player"))
+        if (active && (collider.CompareTag("Player") || collider.CompareTag("Minotaur")))
         {
             Transform pcContainer = collider.transform.GetChild(0);
             

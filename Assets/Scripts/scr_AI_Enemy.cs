@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 //------------------------------------------
 public class scr_AI_Enemy : MonoBehaviour
 {
+	private List<GameObject> Destinations;
+	
 	//------------------------------------------
 	public enum ENEMY_STATE {PATROL, CHASE, ATTACK};
 	//------------------------------------------
@@ -21,14 +25,17 @@ public class scr_AI_Enemy : MonoBehaviour
 			switch(currentstate)
 			{
 				case ENEMY_STATE.PATROL:
+					StopAllCoroutines(); //Prevent stacking ?
 					StartCoroutine(AIPatrol());
 				break;
 
 				case ENEMY_STATE.CHASE:
+					StopAllCoroutines();
 					StartCoroutine(AIChase());
 				break;
 
 				case ENEMY_STATE.ATTACK:
+					StopAllCoroutines();
 					StartCoroutine(AIAttack());
 				break;
 			}
@@ -72,12 +79,21 @@ public class scr_AI_Enemy : MonoBehaviour
 	void Start()
 	{
 		//Get random destination
-		GameObject[] Destinations = GameObject.FindGameObjectsWithTag("Dest");
-		PatrolDestination = Destinations[Random.Range(0, Destinations.Length)].GetComponent<Transform>();
+//		GameObject[] Destinations = GameObject.FindGameObjectsWithTag("Dest");
+//		PatrolDestination = Destinations[Random.Range(0, Destinations.Length)].GetComponent<Transform>();
 
 		//Configure starting state
+//		CurrentState = ENEMY_STATE.PATROL;
+	}
+
+	public void setDestinations(List<GameObject> localDest)
+	{
+		Destinations = localDest;
+		PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
+		
 		CurrentState = ENEMY_STATE.PATROL;
 	}
+	
 	//------------------------------------------
 	public IEnumerator AIPatrol()
 	{
@@ -105,12 +121,8 @@ public class scr_AI_Enemy : MonoBehaviour
 
             //Have we arrived at dest, get new dest
         	//  debug ->  if (Vector3.Distance(transform.position, PatrolDestination.position) <= ThisAgent.stoppingDistance*1.2f)
-			if (Vector3.Distance(transform.position, PatrolDestination.position) <= 3)
-				
-            {
-				GameObject[] Destinations = GameObject.FindGameObjectsWithTag("Dest");
-                PatrolDestination = Destinations[Random.Range(0, Destinations.Length)].GetComponent<Transform>();
-            }
+			if (Vector3.Distance(transform.position, PatrolDestination.position) <= ThisAgent.stoppingDistance * 1.2f)
+				PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
        
 			//Wait until next frame
 			yield return null;
@@ -197,7 +209,7 @@ public class scr_AI_Enemy : MonoBehaviour
 
 	private void Update()
 	{
-		Debug.Log("Velocity = " + ThisAgent.velocity.magnitude + " Desired = " + ThisAgent.desiredVelocity.magnitude);
+//		Debug.Log("Velocity = " + ThisAgent.velocity.magnitude + " Desired = " + ThisAgent.desiredVelocity.magnitude);
 	}
 
 	//------------------------------------------
