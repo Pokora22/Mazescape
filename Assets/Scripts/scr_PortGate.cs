@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class scr_PortGate : MonoBehaviour
@@ -28,15 +29,28 @@ public class scr_PortGate : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         GameObject collider = other.gameObject;
-        if (active && (collider.CompareTag("Player") || collider.CompareTag("Minotaur")))
+        if (active)
         {
-            Transform pcContainer = collider.transform.GetChild(0);
+            if (collider.CompareTag("Player"))
+            {
+                Transform pcContainer = collider.transform.GetChild(0);
             
-            collider.transform.position = new Vector3(destination.position.x, collider.transform.position.y, destination.position.z);
+                collider.transform.position = new Vector3(destination.position.x, collider.transform.position.y, destination.position.z);
 
-            float angleBetweenPortals = spawn.rotation.eulerAngles.y - destination.rotation.eulerAngles.y;
-            float angleToRotate = angleBetweenPortals == 0 ? 180 : angleBetweenPortals % 180; 
-            pcContainer.Rotate(0, angleToRotate, 0);
+                float angleBetweenPortals = spawn.rotation.eulerAngles.y - destination.rotation.eulerAngles.y;
+                float angleToRotate = angleBetweenPortals == 0 ? 180 : angleBetweenPortals % 180; 
+                pcContainer.Rotate(0, angleToRotate, 0);
+            }
+//            else if (collider.CompareTag("Minotaur"))
+//            {
+//                Vector3 minoDestination = new Vector3(destination.position.x, collider.transform.position.y,
+//                    destination.position.z);
+//                Debug.Log("Mino should land at: " + minoDestination);
+//                NavMesh.SamplePosition(minoDestination, out NavMeshHit hitpos, 2, NavMesh.AllAreas);
+//                Debug.Log("NavMesh hit: " + hitpos.position);
+//                collider.transform.position = hitpos.position;
+//                Debug.Log("Mino landed at: " + collider.transform.position);
+//            }
         }
     }
 
@@ -56,8 +70,7 @@ public class scr_PortGate : MonoBehaviour
 
     public void activatePortal(scr_KeyData keyData)
     {
-        Debug.Log("Running activate...");
-        scr_PortGate destGateScript = keyData.destinationGateObject.GetComponent<scr_PortGate>();
+        scr_PortGate destGateScript = keyData.transform.GetComponent<scr_PortGate>();
         
         //Change this gate's stuff
         setDestination(destGateScript); 
@@ -70,7 +83,6 @@ public class scr_PortGate : MonoBehaviour
 
     public void deactivatePortal(scr_KeyData keyData)
     {
-        Debug.Log("Running deactivate...");
         scr_PortGate destGateScript = destinationGateObject.GetComponent<scr_PortGate>();
         
         //Change this gate's stuff

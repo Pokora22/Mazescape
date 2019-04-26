@@ -36,7 +36,7 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
 
                     if (keyUsed != null)
                     {
-                        if (keyUsed.destinationGateObject.GetComponentInParent<scr_PortGate>().active)
+                        if (keyUsed.transform.GetComponentInParent<scr_PortGate>().active)
                         {
                             Debug.Log("Other gate is in use!"); //TODO: Maybe display some msg to player
                             return;

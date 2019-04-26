@@ -12,11 +12,11 @@ public class scr_KeyData : MonoBehaviour
     public String symbol;
     public Color color;
     public Transform spawnLocation;
-    public GameObject keyPickUpPrefab, destinationGateObject;
+    public GameObject keyPickUpPrefab;
 
     private void Start()
     {
-        destinationGateObject = transform.parent.gameObject;
+//        transform = ((Component) this).transform.parent.gameObject;
         
         initializeKeyInWorld();
     }
@@ -30,11 +30,8 @@ public class scr_KeyData : MonoBehaviour
             List<GameObject> allSpawns = GameManager.keySpawns;
             List<GameObject> validSpawns = new List<GameObject>();
 
-            if (debug) Debug.Log("All spawns count: " + allSpawns.Count);
-            if (debug) Debug.Log("Valid spawns count: " + validSpawns.Count);
-
             foreach (GameObject spawn in allSpawns)
-                if (!spawn.transform.parent.CompareTag(transform.parent.tag))
+                if (!spawn.transform.IsChildOf(((Component) this).transform.root))
                     validSpawns.Add(spawn);
 
             if (validSpawns.Count > 0)
@@ -45,6 +42,9 @@ public class scr_KeyData : MonoBehaviour
                 keyPickup.GetComponent<scr_PortalKeyPickUp>().setupKey(this); //set link back to this data
                 allSpawns.Remove(keySpawnLocation);
             }
+            
+            if (debug) Debug.Log("All spawns count: " + allSpawns.Count);
+            if (debug) Debug.Log("Valid spawns count: " + validSpawns.Count);
         }
 
         else spawn(spawnLocation, false);
@@ -75,6 +75,6 @@ public class scr_KeyData : MonoBehaviour
 
     public override string ToString()
     {
-        return "Key to: " + destinationGateObject;
+        return "Key to: " + transform;
     }
 }

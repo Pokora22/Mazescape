@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 
 //------------------------------------------
 public class scr_AI_Enemy : MonoBehaviour
@@ -97,6 +98,7 @@ public class scr_AI_Enemy : MonoBehaviour
 	//------------------------------------------
 	public IEnumerator AIPatrol()
 	{
+		int counter = 0;
         //Loop while patrolling
         while (currentstate == ENEMY_STATE.PATROL)
         {
@@ -106,6 +108,9 @@ public class scr_AI_Enemy : MonoBehaviour
             //Chase to patrol position
             ThisAgent.isStopped = false;
             ThisAgent.SetDestination(PatrolDestination.position);
+            
+            if(counter++ % 60 == 0)
+				Debug.Log("Patrol destination: " + PatrolDestination.position);
 
             //Wait until path is computed
             while (ThisAgent.pathPending)
@@ -121,18 +126,25 @@ public class scr_AI_Enemy : MonoBehaviour
 
             //Have we arrived at dest, get new dest
         	//  debug ->  if (Vector3.Distance(transform.position, PatrolDestination.position) <= ThisAgent.stoppingDistance*1.2f)
-			if (Vector3.Distance(transform.position, PatrolDestination.position) <= ThisAgent.stoppingDistance * 1.2f)
-				PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
-       
-			//Wait until next frame
+            if (Vector3.Distance(transform.position, PatrolDestination.position) <= 3.5f)
+            {
+	            GameObject destinationGate = null; //TODO: Finish!
+//	            teleport(PatrolDestination.);
+	            yield return  new WaitForSeconds(2);
+	            PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
+            }
+
+            //Wait until next frame
 			yield return null;
 		}
 	}
 	//------------------------------------------
 	public IEnumerator AIChase()
 	{
-		//TODO: Double speed when chasing (and set back on patrol)
+		//TODO: Add animation before chase?
 
+		int counter = 0;
+		
 		ThisAgent.speed = chaseSpeed;
 		
 		
@@ -150,6 +162,12 @@ public class scr_AI_Enemy : MonoBehaviour
 			while(ThisAgent.pathPending)
 				yield return null;
 
+			if (counter++ % 60 == 0)
+			{
+				Debug.Log("Patrol destination: " + PatrolDestination.position);
+				Debug.Log("Remaining distance: " + ThisAgent.remainingDistance);
+			}
+			
 			//Have we reached destination?
 			if(ThisAgent.remainingDistance <= ThisAgent.stoppingDistance)
 			{
@@ -159,8 +177,8 @@ public class scr_AI_Enemy : MonoBehaviour
 				//Reached destination but cannot see player
 				if (!m_ThisScrLineOfSight.CanSeeTarget)
 				{
-					CurrentState = ENEMY_STATE.PATROL;
 					ThisAgent.speed = patrolSpeed;
+					CurrentState = ENEMY_STATE.PATROL;
 				}
 					
 				else //Reached destination and can see player. Reached attacking distance
@@ -207,9 +225,15 @@ public class scr_AI_Enemy : MonoBehaviour
 		yield break;
 	}
 
-	private void Update()
+	private void teleport(Transform destination)
 	{
-//		Debug.Log("Velocity = " + ThisAgent.velocity.magnitude + " Desired = " + ThisAgent.desiredVelocity.magnitude);
+		Vector3 minoDestination = new Vector3(destination.position.x, transform.position.y,
+			destination.position.z);
+		Debug.Log("Mino should land at: " + minoDestination);
+		NavMesh.SamplePosition(minoDestination, out NavMeshHit hitpos, 2, NavMesh.AllAreas);
+		Debug.Log("NavMesh hit: " + hitpos.position);
+		transform.position = minoDestination; //TODO: Check destination, minodestination and navmesh hit to see which work
+		Debug.Log("Mino landed at: " + transform.position);
 	}
 
 	//------------------------------------------
