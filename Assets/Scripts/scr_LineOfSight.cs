@@ -15,6 +15,9 @@ public class scr_LineOfSight : MonoBehaviour
 
 	//FOV
 	public float FieldOfView = 45f;
+	
+	//Sight range
+	public float sightRange = 100;
 
 	//Reference to target
 	private Transform Target = null;
@@ -35,7 +38,7 @@ public class scr_LineOfSight : MonoBehaviour
 	// Awake is called only once during the lifetime of the script instance, before the start function
 	{
 		ThisTransform = GetComponent<Transform>();
-		ThisCollider = GetComponent<SphereCollider>();
+		ThisCollider = GetComponentInChildren<SphereCollider>();
 		LastKnowSighting = ThisTransform.position;
 		Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 	}
@@ -49,7 +52,7 @@ public class scr_LineOfSight : MonoBehaviour
 		float Angle = Vector3.Angle(EyePoint.forward, DirToTarget);
  
 		//Are we within field of view? //TODO: Different horizontal and vertical angles? (Vector maths are hard)
-		if(Angle <= FieldOfView)
+		if(Angle <= FieldOfView && DirToTarget.magnitude < sightRange)
 			return true;
  
 		//Not within view

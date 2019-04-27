@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine.AI;
 
 //------------------------------------------
 public class scr_AI_Enemy : MonoBehaviour
 {
 	private List<GameObject> Destinations;
+	private Animator animator;
+	private bool zoneDestinationReset, isAngry; //sentinel for onTrigger calls
 	
 	//------------------------------------------
 	public enum ENEMY_STATE {PATROL, CHASE, ATTACK};
@@ -23,20 +26,19 @@ public class scr_AI_Enemy : MonoBehaviour
 			//Stop all running coroutines
 			StopAllCoroutines();
 
+			zoneDestinationReset = false;
+
 			switch(currentstate)
 			{
 				case ENEMY_STATE.PATROL:
-					StopAllCoroutines(); //Prevent stacking ?
 					StartCoroutine(AIPatrol());
 				break;
 
 				case ENEMY_STATE.CHASE:
-					StopAllCoroutines();
 					StartCoroutine(AIChase());
 				break;
 
 				case ENEMY_STATE.ATTACK:
-					StopAllCoroutines();
 					StartCoroutine(AIAttack());
 				break;
 			}
@@ -75,6 +77,7 @@ public class scr_AI_Enemy : MonoBehaviour
 		ThisAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 //		m_PlayerScrPHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_pHealth>();
 		PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+		animator = GetComponent<Animator>();
 	}
 	//------------------------------------------
 	void Start()
@@ -85,20 +88,46 @@ public class scr_AI_Enemy : MonoBehaviour
 
 		//Configure starting state
 //		CurrentState = ENEMY_STATE.PATROL;
+
+		acquireDestinations();
 	}
 
-	public void setDestinations(List<GameObject> localDest)
+	private void acquireDestinations()
 	{
-		Destinations = localDest;
-		PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
+		Debug.Log("Mino etting new destinations...");
+		//Stop and reinitialize
+		ThisAgent.isStopped = true;
+		Destinations = new List<GameObject>();
 		
+		//Find where we are
+		Vector3 origin = new Vector3(transform.position.x, transform.position.y + .1f, transform.position.z);
+		Physics.Raycast(origin, Vector3.down, out RaycastHit hit);
+		
+		//Build up local destinations
+		foreach (GameObject dest in GameObject.FindGameObjectsWithTag("Dest"))
+				if (dest.transform.IsChildOf(hit.transform))
+					Destinations.Add(dest);
+		
+		PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
+		Debug.Log("New destination is: " + PatrolDestination.position);
 		CurrentState = ENEMY_STATE.PATROL;
 	}
-	
+
+	private void OnCollisionEnter(Collision other)
+	{
+		if (other.transform.CompareTag("Player"))
+		{
+			CurrentState = ENEMY_STATE.CHASE;
+			m_ThisScrLineOfSight.LastKnowSighting = other.transform.position;
+		}
+	}
+
 	//------------------------------------------
 	public IEnumerator AIPatrol()
 	{
-		int counter = 0;
+		float timeToWait = isAngry ? .1f : 1f;
+		yield return new WaitForSeconds(timeToWait);
+		
         //Loop while patrolling
         while (currentstate == ENEMY_STATE.PATROL)
         {
@@ -108,9 +137,6 @@ public class scr_AI_Enemy : MonoBehaviour
             //Chase to patrol position
             ThisAgent.isStopped = false;
             ThisAgent.SetDestination(PatrolDestination.position);
-            
-            if(counter++ % 60 == 0)
-				Debug.Log("Patrol destination: " + PatrolDestination.position);
 
             //Wait until path is computed
             while (ThisAgent.pathPending)
@@ -128,10 +154,9 @@ public class scr_AI_Enemy : MonoBehaviour
         	//  debug ->  if (Vector3.Distance(transform.position, PatrolDestination.position) <= ThisAgent.stoppingDistance*1.2f)
             if (Vector3.Distance(transform.position, PatrolDestination.position) <= 3.5f)
             {
-	            GameObject destinationGate = null; //TODO: Finish!
-//	            teleport(PatrolDestination.);
-	            yield return  new WaitForSeconds(2);
+	            ThisAgent.isStopped = true;
 	            PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
+	            isAngry = false;
             }
 
             //Wait until next frame
@@ -141,12 +166,18 @@ public class scr_AI_Enemy : MonoBehaviour
 	//------------------------------------------
 	public IEnumerator AIChase()
 	{
-		//TODO: Add animation before chase?
+		if (!isAngry)
+		{
+			isAngry = true;
+			animator.SetTrigger("Shout");
+			ThisAgent.isStopped = true;
+			yield return
+				new WaitForSeconds(.5f); //Offset time for animation to start (isInTransition returns false somehow) 
+			while (animator.GetCurrentAnimatorStateInfo(0).IsTag("Angry"))
+				yield return null;
+		}
 
-		int counter = 0;
-		
 		ThisAgent.speed = chaseSpeed;
-		
 		
 		//Loop while chasing
 		while(currentstate == ENEMY_STATE.CHASE)
@@ -161,12 +192,6 @@ public class scr_AI_Enemy : MonoBehaviour
 			//Wait until path is computed
 			while(ThisAgent.pathPending)
 				yield return null;
-
-			if (counter++ % 60 == 0)
-			{
-				Debug.Log("Patrol destination: " + PatrolDestination.position);
-				Debug.Log("Remaining distance: " + ThisAgent.remainingDistance);
-			}
 			
 			//Have we reached destination?
 			if(ThisAgent.remainingDistance <= ThisAgent.stoppingDistance)
@@ -177,6 +202,16 @@ public class scr_AI_Enemy : MonoBehaviour
 				//Reached destination but cannot see player
 				if (!m_ThisScrLineOfSight.CanSeeTarget)
 				{
+					GameObject nearestDest = Destinations[0];
+					foreach (GameObject dest in Destinations)
+					{
+						if (Vector3.Distance(transform.position, dest.transform.position) <
+						    Vector3.Distance(transform.position, nearestDest.transform.position))
+							nearestDest = dest;
+					}
+
+					PatrolDestination = nearestDest.transform;
+					
 					ThisAgent.speed = patrolSpeed;
 					CurrentState = ENEMY_STATE.PATROL;
 				}
@@ -194,6 +229,7 @@ public class scr_AI_Enemy : MonoBehaviour
 	//------------------------------------------
 	public IEnumerator AIAttack()
 	{
+		animator.SetBool("Attacking", true);
 		//Loop while chasing and attacking
 		while(currentstate == ENEMY_STATE.ATTACK)
 		{
@@ -208,6 +244,7 @@ public class scr_AI_Enemy : MonoBehaviour
 			//Has player run away?
 			if(ThisAgent.remainingDistance > ThisAgent.stoppingDistance)
 			{
+				animator.SetBool("Attacking", false);
 				//Change back to chase
 				CurrentState = ENEMY_STATE.CHASE;
 				yield break;
@@ -225,15 +262,12 @@ public class scr_AI_Enemy : MonoBehaviour
 		yield break;
 	}
 
-	private void teleport(Transform destination)
+	public void teleport(Vector3 destination, Quaternion destinationRotation)
 	{
-		Vector3 minoDestination = new Vector3(destination.position.x, transform.position.y,
-			destination.position.z);
-		Debug.Log("Mino should land at: " + minoDestination);
-		NavMesh.SamplePosition(minoDestination, out NavMeshHit hitpos, 2, NavMesh.AllAreas);
-		Debug.Log("NavMesh hit: " + hitpos.position);
-		transform.position = minoDestination; //TODO: Check destination, minodestination and navmesh hit to see which work
-		Debug.Log("Mino landed at: " + transform.position);
+		ThisAgent.Warp(destination);
+		transform.rotation = destinationRotation;
+		
+		acquireDestinations();
 	}
 
 	//------------------------------------------

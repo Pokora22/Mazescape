@@ -160,6 +160,7 @@ MonoBehaviour:
   Sensitity: 0
   CanSeeTarget: 0
   FieldOfView: 80
+  sightRange: 100
   EyePoint: {fileID: 6809971050013219554}
   LastKnowSighting: {x: 0, y: 0, z: 0}
 --- !u!135 &2126223482
@@ -189,6 +190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentstate: 0
   MaxDamage: 10
+  patrolSpeed: 0
+  chaseSpeed: 0
 --- !u!1 &5763347530483147999
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6809971050013219554}
+  - component: {fileID: 3823564058788559418}
   m_Layer: 0
   m_Name: Eyes
   m_TagString: Untagged
@@ -219,6 +223,19 @@ Transform:
   m_Father: {fileID: 436670}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3823564058788559418
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763347530483147999}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6041907431993710659
 PrefabInstance:
   m_ObjectHideFlags: 0

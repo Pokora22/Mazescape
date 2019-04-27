@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,8 +8,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class scr_PortGate : MonoBehaviour
 {
     public bool active;
+    public Transform destination;
     
-    private Transform destination;
     private Transform spawn;
     private GameObject destinationGateObject;
     private Camera camera;
@@ -38,19 +39,19 @@ public class scr_PortGate : MonoBehaviour
                 collider.transform.position = new Vector3(destination.position.x, collider.transform.position.y, destination.position.z);
 
                 float angleBetweenPortals = spawn.rotation.eulerAngles.y - destination.rotation.eulerAngles.y;
-                float angleToRotate = angleBetweenPortals == 0 ? 180 : angleBetweenPortals % 180; 
+                float angleToRotate = (angleBetweenPortals < 1 && angleBetweenPortals > -1) ? 180 :
+                    (Math.Abs(angleBetweenPortals) > 179 && Math.Abs(angleBetweenPortals) < 181) ? 0 : angleBetweenPortals; 
                 pcContainer.Rotate(0, angleToRotate, 0);
+                Debug.Log("Portal rotated player by " + angleToRotate + " degrees.");
             }
-//            else if (collider.CompareTag("Minotaur"))
-//            {
-//                Vector3 minoDestination = new Vector3(destination.position.x, collider.transform.position.y,
-//                    destination.position.z);
-//                Debug.Log("Mino should land at: " + minoDestination);
-//                NavMesh.SamplePosition(minoDestination, out NavMeshHit hitpos, 2, NavMesh.AllAreas);
-//                Debug.Log("NavMesh hit: " + hitpos.position);
-//                collider.transform.position = hitpos.position;
-//                Debug.Log("Mino landed at: " + collider.transform.position);
-//            }
+            else if (collider.CompareTag("Minotaur"))
+            {
+                Vector3 minoDestination = new Vector3(destination.position.x, collider.transform.position.y,
+                    destination.position.z);
+                NavMesh.SamplePosition(minoDestination, out NavMeshHit hitpos, 2, NavMesh.AllAreas);
+
+                collider.transform.GetComponent<scr_AI_Enemy>().teleport(hitpos.position, destination.rotation);
+            }
         }
     }
 

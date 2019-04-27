@@ -50,8 +50,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// turn amount and forward amount required to head in the desired
 			// direction.
 			
-			//TODO: Update animator "Forward" by move.magnitude before normalizing ?
-			
 			UpdateAnimator(move);
 			
 			if (move.magnitude > 1f) move.Normalize();

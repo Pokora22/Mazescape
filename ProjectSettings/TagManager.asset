@@ -23,8 +23,8 @@ TagManager:
   - PlayerModel
   - Inventory
   - Dest
-  - 
-  - 
+  - PostProcess
+  - PortalPostProcess
   - 
   - 
   - 

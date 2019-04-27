@@ -276,13 +276,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         
         public void rotate(float angle)
         {
-//            targetAngles.y += angle;
-//            mouseLook.LookRotation (transform, cam.transform);
             Debug.Log("Rotated by " + angle);
             Quaternion curRot = transform.rotation;
             transform.GetChild(0).Rotate(0, angle, 0);
-//            mouseLook.LookRotation(Quaternion.Euler(0, 0, 0), Quaternion.Euler(0, 0, 0));
-//            mouseLook.LookRotation(transform, transform);
         }
     }
 }
