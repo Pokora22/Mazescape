@@ -11,6 +11,10 @@ TagManager:
   - Fire
   - Dest
   - Minotaur
+  - RedPortal
+  - BluePortal
+  - GreenPortal
+  - WhitePortal
   layers:
   - Default
   - TransparentFX

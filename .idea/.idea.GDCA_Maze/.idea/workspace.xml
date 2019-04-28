@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94f655fb-6727-4294-8ef6-202160427c33" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/mat_Torch.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/mat_Torch.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PortGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/PortGate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Torch.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Torch.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal01_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal01_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal02_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal02_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal05_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal05_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal06_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal06_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal07_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal07_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal09_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal09_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Environment/Water/Water/Materials/WaterProNighttime.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Environment/Water/Water/Materials/WaterProNighttime.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Environment/Water/Water4/Materials/Water4Advanced.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Environment/Water/Water4/Materials/Water4Simple.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/mat_default.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/mat_default.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/mat_light_emissive.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/mat_light_emissive.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Light_WaterZone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Light_WaterZone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Torch 1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Torch 1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProBuilder Data/Default Color Palette.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProBuilder Data/Default Color Palette.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/LightingData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-0_comp_dir.png" afterDir="false" />
@@ -13,10 +27,31 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-1_comp_light.exr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-2_comp_dir.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-2_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-2_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-2_comp_shadowmask.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-3_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-3_comp_dir.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-3_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-3_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-3_comp_shadowmask.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-4_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-4_comp_dir.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-4_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-4_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-4_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-4_comp_shadowmask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-5_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-5_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-5_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-5_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-6_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-6_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-6_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-6_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-6_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-6_comp_shadowmask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-7_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-7_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-7_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-7_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-7_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-7_comp_shadowmask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-8_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-8_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-8_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-8_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-8_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/Lightmap-8_comp_shadowmask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze/OcclusionCullingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze/OcclusionCullingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="193">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
               <folding>
                 <marker date="1556389373447" expanded="true" signature="6:164" ph="..." />
                 <marker date="1556389373447" expanded="true" signature="207:4502" ph="{...}" />
@@ -51,34 +86,42 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_ZoneData.cs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="29" column="11" selection-start-line="26" selection-start-column="43" selection-end-line="29" selection-end-column="11" />
+            <state relative-caret-position="646">
+              <caret line="39" column="103" selection-start-line="39" selection-start-column="103" selection-end-line="39" selection-end-column="103" />
+              <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding>
-                <marker date="1556306211470" expanded="false" signature="6:78" ph="..." />
-                <marker date="1556306211470" expanded="true" signature="121:800" ph="{...}" />
-                <marker date="1556306211470" expanded="true" signature="246:505" ph="{...}" />
-                <marker date="1556306211470" expanded="true" signature="253:499" ph="/* localDestinations = new List&lt;GameObject&gt;(); ... */" />
-                <marker date="1556306211470" expanded="true" signature="563:584" ph="{...}" />
-                <marker date="1556306211470" expanded="true" signature="633:798" ph="{...}" />
-                <marker date="1556306211470" expanded="true" signature="640:792" ph="/* if (other.CompareTag(&quot;Minotaur&quot;)) ... */" />
+                <marker date="1556472153075" expanded="true" signature="6:111" ph="..." />
+                <marker date="1556472153075" expanded="true" signature="157:1823" ph="{...}" />
+                <marker date="1556472153075" expanded="true" signature="367:1069" ph="{...}" />
+                <marker date="1556472153075" expanded="true" signature="1095:1742" ph="{...}" />
+                <marker date="1556472153075" expanded="true" signature="1146:1736" ph="{...}" />
+                <marker date="1556472153075" expanded="true" signature="1800:1821" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ReplaceSelection.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="750">
+              <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
               <folding>
-                <marker date="1556146714881" expanded="false" signature="6:97" ph="..." />
-                <marker date="1556146714881" expanded="true" signature="143:509" ph="{...}" />
-                <marker date="1556146714881" expanded="true" signature="291:428" ph="{...}" />
-                <marker date="1556146714881" expanded="true" signature="486:507" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="0:278" ph="/* This wizard will replace a selection with an object or prefab. ... */" />
+                <marker date="1556399806725" expanded="true" signature="285:342" ph="..." />
+                <marker date="1556399806725" expanded="true" signature="393:2200" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="640:763" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="795:878" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="906:989" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="1017:2198" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="1309:2015" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="1496:1602" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="1619:1712" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="2036:2192" ph="{...}" />
+                <marker date="1556399806725" expanded="true" signature="2106:2182" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -159,19 +202,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+            <state relative-caret-position="91">
+              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding>
-                <marker date="1556298089692" expanded="false" signature="6:175" ph="..." />
-                <marker date="1556298089692" expanded="true" signature="217:2818" ph="{...}" />
-                <marker date="1556298089692" expanded="true" signature="401:524" ph="{...}" />
-                <marker date="1556298089692" expanded="true" signature="565:2205" ph="{...}" />
-                <marker date="1556298089692" expanded="true" signature="735:1744" ph="{...}" />
-                <marker date="1556298089692" expanded="true" signature="1096:1569" ph="{...}" />
-                <marker date="1556298089692" expanded="true" signature="1807:2189" ph="/* keyPickUpPrefab.GetComponent&lt;scr_PortalKeyPickUp&gt;().setSymbolAndColor(this); ... */" />
-                <marker date="1556298089692" expanded="true" signature="2282:2726" ph="{...}" />
-                <marker date="1556298089692" expanded="true" signature="2552:2699" ph="{...}" />
-                <marker date="1556298089692" expanded="true" signature="2765:2816" ph="{...}" />
+                <marker date="1556472077727" expanded="false" signature="6:175" ph="..." />
+                <marker date="1556472077727" expanded="true" signature="217:2849" ph="{...}" />
+                <marker date="1556472077727" expanded="true" signature="401:526" ph="{...}" />
+                <marker date="1556472077727" expanded="true" signature="408:520" ph="/* transform = ((Component) this).transform.parent.gameObject; ... */" />
+                <marker date="1556472077727" expanded="true" signature="592:2236" ph="{...}" />
+                <marker date="1556472077727" expanded="true" signature="762:1775" ph="{...}" />
+                <marker date="1556472077727" expanded="true" signature="1063:1600" ph="{...}" />
+                <marker date="1556472077727" expanded="true" signature="1231:1534" ph="/* GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position, ... */" />
+                <marker date="1556472077727" expanded="true" signature="1838:2220" ph="/* keyPickUpPrefab.GetComponent&lt;scr_PortalKeyPickUp&gt;().setSymbolAndColor(this); ... */" />
+                <marker date="1556472077727" expanded="true" signature="2313:2757" ph="{...}" />
+                <marker date="1556472077727" expanded="true" signature="2583:2730" ph="{...}" />
+                <marker date="1556472077727" expanded="true" signature="2796:2847" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -334,6 +379,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ReplaceSelection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefab/PortGate.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.0.4/Runtime/Core/ProBuilderMeshFunction.cs" root0="SKIP_HIGHLIGHTING" />
@@ -379,12 +425,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_InventoryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_InventoryView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_InventoryItemView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyPickUp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/projections.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_ZoneData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SelectByTag.cs" />
@@ -393,6 +437,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_LineOfSight.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ReplaceSelection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" />
       </list>
     </option>
   </component>
@@ -480,7 +527,7 @@
       <workItem from="1555690715272" duration="18876000" />
       <workItem from="1555781842304" duration="36325000" />
       <workItem from="1555952232648" duration="172000" />
-      <workItem from="1555952486565" duration="107904000" />
+      <workItem from="1555952486565" duration="111813000" />
     </task>
     <task id="LOCAL-00001" summary="Instantiating with fields assigned in inspector is bullshit - results in null. Can't put the script on it's own as a field in other script either.&#10;&#10;Gonna try getting keyData from a child object of the portal.">
       <created>1555884103964</created>
@@ -514,7 +561,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179313000" />
+    <option name="totallyTimeSpent" value="183222000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -527,9 +574,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1927663" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1927663" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -541,7 +587,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3998441" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32969603" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32969603" />
       <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Performance Profiler" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
@@ -1197,25 +1243,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
-          <folding>
-            <marker date="1556298089692" expanded="false" signature="6:175" ph="..." />
-            <marker date="1556298089692" expanded="true" signature="217:2818" ph="{...}" />
-            <marker date="1556298089692" expanded="true" signature="401:524" ph="{...}" />
-            <marker date="1556298089692" expanded="true" signature="565:2205" ph="{...}" />
-            <marker date="1556298089692" expanded="true" signature="735:1744" ph="{...}" />
-            <marker date="1556298089692" expanded="true" signature="1096:1569" ph="{...}" />
-            <marker date="1556298089692" expanded="true" signature="1807:2189" ph="/* keyPickUpPrefab.GetComponent&lt;scr_PortalKeyPickUp&gt;().setSymbolAndColor(this); ... */" />
-            <marker date="1556298089692" expanded="true" signature="2282:2726" ph="{...}" />
-            <marker date="1556298089692" expanded="true" signature="2552:2699" ph="{...}" />
-            <marker date="1556298089692" expanded="true" signature="2765:2816" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1323,29 +1350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding>
-            <marker date="1556389373447" expanded="true" signature="6:164" ph="..." />
-            <marker date="1556389373447" expanded="true" signature="207:4502" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="468:888" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="940:2269" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="1014:2263" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="1071:1802" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="1856:2253" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="2306:2430" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="2468:2583" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="2636:3052" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="3107:3431" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="3488:3922" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="3985:4388" ph="{...}" />
-            <marker date="1556389373447" expanded="true" signature="4427:4500" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1405,15 +1409,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ReplaceSelection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="76" column="1" selection-start-line="76" selection-start-column="1" selection-end-line="76" selection-end-column="1" />
+          <folding>
+            <marker date="1556399806725" expanded="true" signature="0:278" ph="/* This wizard will replace a selection with an object or prefab. ... */" />
+            <marker date="1556399806725" expanded="true" signature="285:342" ph="..." />
+            <marker date="1556399806725" expanded="true" signature="393:2200" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="640:763" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="795:878" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="906:989" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="1017:2198" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="1309:2015" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="1496:1602" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="1619:1712" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="2036:2192" ph="{...}" />
+            <marker date="1556399806725" expanded="true" signature="2106:2182" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <marker date="1556389373447" expanded="true" signature="6:164" ph="..." />
+            <marker date="1556389373447" expanded="true" signature="207:4502" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="468:888" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="940:2269" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="1014:2263" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="1071:1802" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="1856:2253" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="2306:2430" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="2468:2583" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="2636:3052" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="3107:3431" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="3488:3922" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="3985:4388" ph="{...}" />
+            <marker date="1556389373447" expanded="true" signature="4427:4500" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding>
+            <marker date="1556472077727" expanded="false" signature="6:175" ph="..." />
+            <marker date="1556472077727" expanded="true" signature="217:2849" ph="{...}" />
+            <marker date="1556472077727" expanded="true" signature="401:526" ph="{...}" />
+            <marker date="1556472077727" expanded="true" signature="408:520" ph="/* transform = ((Component) this).transform.parent.gameObject; ... */" />
+            <marker date="1556472077727" expanded="true" signature="592:2236" ph="{...}" />
+            <marker date="1556472077727" expanded="true" signature="762:1775" ph="{...}" />
+            <marker date="1556472077727" expanded="true" signature="1063:1600" ph="{...}" />
+            <marker date="1556472077727" expanded="true" signature="1231:1534" ph="/* GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position, ... */" />
+            <marker date="1556472077727" expanded="true" signature="1838:2220" ph="/* keyPickUpPrefab.GetComponent&lt;scr_PortalKeyPickUp&gt;().setSymbolAndColor(this); ... */" />
+            <marker date="1556472077727" expanded="true" signature="2313:2757" ph="{...}" />
+            <marker date="1556472077727" expanded="true" signature="2583:2730" ph="{...}" />
+            <marker date="1556472077727" expanded="true" signature="2796:2847" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="646">
+          <caret line="39" column="103" selection-start-line="39" selection-start-column="103" selection-end-line="39" selection-end-column="103" />
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
           <folding>
-            <marker date="1556146714881" expanded="false" signature="6:97" ph="..." />
-            <marker date="1556146714881" expanded="true" signature="143:509" ph="{...}" />
-            <marker date="1556146714881" expanded="true" signature="291:428" ph="{...}" />
-            <marker date="1556146714881" expanded="true" signature="486:507" ph="{...}" />
+            <marker date="1556472153075" expanded="true" signature="6:111" ph="..." />
+            <marker date="1556472153075" expanded="true" signature="157:1823" ph="{...}" />
+            <marker date="1556472153075" expanded="true" signature="367:1069" ph="{...}" />
+            <marker date="1556472153075" expanded="true" signature="1095:1742" ph="{...}" />
+            <marker date="1556472153075" expanded="true" signature="1146:1736" ph="{...}" />
+            <marker date="1556472153075" expanded="true" signature="1800:1821" ph="{...}" />
           </folding>
         </state>
       </provider>

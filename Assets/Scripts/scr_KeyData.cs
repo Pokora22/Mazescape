@@ -18,16 +18,15 @@ public class scr_KeyData : MonoBehaviour
     {
 //        transform = ((Component) this).transform.parent.gameObject;
         
-        initializeKeyInWorld();
+//        initializeKeyInWorld();
     }
 
-    private void initializeKeyInWorld()
+    public void initializeKeyInWorld(List<GameObject> allSpawns)
     {
         scr_GameManager GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>();
 
-        if (GameManager.randomKeyPlacement)
-        {
-            List<GameObject> allSpawns = GameManager.keySpawns;
+        if (GameManager.randomKeyPlacement){
+            
             List<GameObject> validSpawns = new List<GameObject>();
 
             foreach (GameObject spawn in allSpawns)
@@ -37,9 +36,10 @@ public class scr_KeyData : MonoBehaviour
             if (validSpawns.Count > 0)
             {
                 GameObject keySpawnLocation = validSpawns[Random.Range(0, validSpawns.Count)];
-                GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position,
-                    keySpawnLocation.transform.rotation, keySpawnLocation.transform);
-                keyPickup.GetComponent<scr_PortalKeyPickUp>().setupKey(this); //set link back to this data
+                spawn(keySpawnLocation.transform, false);
+//                GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position,
+//                    keySpawnLocation.transform.rotation, keySpawnLocation.transform);
+//                keyPickup.GetComponent<scr_PortalKeyPickUp>().setupKey(this); //set link back to this data
                 allSpawns.Remove(keySpawnLocation);
             }
             
