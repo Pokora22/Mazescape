@@ -356,6 +356,7 @@
           <e p="scr_PortGate.cs" t="Include" />
           <e p="scr_RigidbodyFirstPersonController.cs" t="Include" />
           <e p="scr_Rotating_Cage.cs" t="Include" />
+          <e p="scr_SteamParticles.cs" t="Include" />
           <e p="scr_TorchLight.cs" t="Include" />
           <e p="scr_UI.cs" t="Include" />
           <e p="scr_ZoneData.cs" t="Include" />

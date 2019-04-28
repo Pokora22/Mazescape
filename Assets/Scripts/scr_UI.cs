@@ -7,16 +7,18 @@ public class scr_UI : MonoBehaviour
 {
     public float msgTimeout = 5;
     
-    private TextMeshPro splash;
+    private TextMeshProUGUI splash;
     
     private void Awake()
     {
-        splash = GameObject.FindGameObjectWithTag("SplashText").GetComponent<TextMeshPro>();
+        splash = GameObject.FindGameObjectWithTag("SplashText").GetComponent<TextMeshProUGUI>();
     }
 
     public void displayMsg(string msg)
     {
         splash.text = msg;
+
+        StartCoroutine(clearSplash());
     }
 
     private IEnumerator clearSplash()
@@ -27,12 +29,6 @@ public class scr_UI : MonoBehaviour
     
     // Start is called before the first frame update
     void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         
     }
