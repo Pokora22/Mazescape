@@ -21,11 +21,11 @@ public class scr_KeyData : MonoBehaviour
 //        initializeKeyInWorld();
     }
 
-    public void initializeKeyInWorld(List<GameObject> allSpawns)
+    public void initializeKeyInWorld(List<GameObject> allSpawns, bool randomPlacement)
     {
         scr_GameManager GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>();
 
-        if (GameManager.randomKeyPlacement){
+        if (randomPlacement){
             
             List<GameObject> validSpawns = new List<GameObject>();
 

@@ -8,6 +8,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class scr_PortGate : MonoBehaviour
 {
     public bool active;
+    public bool masterGate;
     public Transform destination;
     
     private Transform spawn;

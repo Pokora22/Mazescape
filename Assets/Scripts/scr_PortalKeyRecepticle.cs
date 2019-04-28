@@ -38,7 +38,7 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
                     {
                         if (keyUsed.transform.GetComponentInParent<scr_PortGate>().active)
                         {
-                            Debug.Log("Other gate is in use!"); //TODO: Maybe display some msg to player
+                            GameObject.FindGameObjectWithTag("UI").GetComponent<scr_UI>().displayMsg("Some force is pushing the key back...");
                             return;
                         }
 
