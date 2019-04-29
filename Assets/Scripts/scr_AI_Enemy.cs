@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
+using UnityEditor;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -11,6 +12,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 //------------------------------------------
 public class scr_AI_Enemy : MonoBehaviour
 {
+	public GUIStyle debugGUI;
+	
 	private List<GameObject> Destinations;
 	private Animator animator;
 	private bool isAngry, seeking; //sentinel for onTrigger calls
@@ -91,6 +94,10 @@ public class scr_AI_Enemy : MonoBehaviour
 	void Start()
 	{
 		acquireDestinations();
+
+		PatrolDestination = newDestination(transform);
+		
+		CurrentState = ENEMY_STATE.PATROL;
 	}
 
 	private void AttackPlayer(float dmg)
@@ -113,9 +120,6 @@ public class scr_AI_Enemy : MonoBehaviour
 		foreach (GameObject dest in GameObject.FindGameObjectsWithTag("Dest"))
 				if (dest.transform.IsChildOf(hit.transform))
 					Destinations.Add(dest);
-		
-		PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
-		CurrentState = ENEMY_STATE.PATROL;
 	}
 
 	private void OnCollisionEnter(Collision other)
@@ -163,7 +167,9 @@ public class scr_AI_Enemy : MonoBehaviour
             if (Vector3.Distance(transform.position, PatrolDestination.position) <= ThisAgent.stoppingDistance)
             {
 	            ThisAgent.isStopped = true;
-	            PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
+	            
+	            //check if current destination is an active gate and set new destination based on that
+	            PatrolDestination = newDestination(PatrolDestination);
 	            isAngry = false;
             }
 
@@ -209,7 +215,8 @@ public class scr_AI_Enemy : MonoBehaviour
 				//Reached destination but cannot see player
 				if (!m_ThisScrLineOfSight.CanSeeTarget)
 				{
-					PatrolDestination = nearestDestination();
+					//Check nearest gate if lost player
+					PatrolDestination = newDestination(nearestDestination());
 					CurrentState = ENEMY_STATE.PATROL;
 				}
 					
@@ -265,19 +272,47 @@ public class scr_AI_Enemy : MonoBehaviour
 				nearestDest = dest;
 		}
 		
-		//check if the nearest dest is an active gate
-		scr_PortGate destGate = nearestDest.transform.parent.GetComponent<scr_PortGate>();
+		//Return nearest destination 
+		return nearestDest.transform;
+	}
 
-		//Return nearest gates destination if active (off mesh linked) or nearest gate itself
-		return destGate.active ? destGate.destination : nearestDest.transform;
+	private Transform newDestination(Transform destinationAt)
+	{
+		//Temp listwithout current at to avoid repeating current gate
+		List<Transform> tempList = new List<Transform>();
+		foreach (GameObject dest in Destinations)
+			tempList.Add(dest.transform);
+		//In case there's only 1 gate, keep it in the list for return
+		if(tempList.Count > 1)
+			tempList.Remove(destinationAt);
+		
+		//prepare random destination
+		Transform random = tempList[Random.Range(0, tempList.Count)];
+		
+		//Check for cases destination is not a portal?
+		if (!destinationAt.GetComponent<OffMeshLink>()) return random;
+		
+		//check if the destination is an active gate
+		scr_PortGate destGate = destinationAt.transform.parent.GetComponent<scr_PortGate>();
+		
+		//Return current gates destination if active (off mesh linked) or random
+		return destGate.active ? destGate.destination : random;
 	}
 
 	public void teleport(Vector3 destination, Quaternion destinationRotation)
 	{
 		ThisAgent.Warp(destination);
 		transform.rotation = destinationRotation;
-		
+		//TODO: Teleport animation
 		acquireDestinations();
+	}
+	
+	void OnDrawGizmos()
+	{
+		if(Application.IsPlaying(gameObject))
+			Handles.Label(transform.position, "Destination: " + PatrolDestination.gameObject + ":" + PatrolDestination.parent.gameObject + "\n" +
+			                                  "Destination remaining distance: " + ThisAgent.remainingDistance + "\n" +
+			                                  "Arrived:  " + (ThisAgent.remainingDistance < ThisAgent.stoppingDistance), debugGUI);
 	}
 
 	//------------------------------------------
