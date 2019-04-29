@@ -13,30 +13,29 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class scr_AI_Enemy : MonoBehaviour
 {
 	public GUIStyle debugGUI;
-
-	[SerializeField] private float angerDropoff = 30f;
-	[SerializeField] private List<GameObject> Destinations;
+	
+	private List<GameObject> Destinations;
 	private Animator animator;
-	private bool isAngry, angerDecaying, isWarping; //sentinel for onTrigger calls
+	private bool isAngry, seeking; //sentinel for onTrigger calls
 	
 	//------------------------------------------
-	public enum ENEMY_STATE {PATROL, CHASE, ATTACK, WARP};
+	public enum ENEMY_STATE {PATROL, CHASE, ATTACK};
 	//------------------------------------------
 	public ENEMY_STATE CurrentState
 	{
-		get{return _currentstate;}
+		get{return currentstate;}
 
 		set
 		{
 			//Update current state
-			_currentstate = value;
+			currentstate = value;
 
 			//Stop all running coroutines
 			stopAIStateCoroutines();
 			//Temporary patch for stuck animations //TODO: Fix?
 			animator.SetBool("Attacking", false);
 
-			switch(_currentstate)
+			switch(currentstate)
 			{
 				case ENEMY_STATE.PATROL:
 					StartCoroutine(AIPatrol());
@@ -49,16 +48,12 @@ public class scr_AI_Enemy : MonoBehaviour
 				case ENEMY_STATE.ATTACK:
 					StartCoroutine(AIAttack());
 				break;
-				
-				case ENEMY_STATE.WARP:
-					StartCoroutine(AIWarp());
-					break;
 			}
 		}
 	}
 	//------------------------------------------
 	[SerializeField]
-	private ENEMY_STATE _currentstate = ENEMY_STATE.PATROL;
+	private ENEMY_STATE currentstate = ENEMY_STATE.PATROL;
 
 	//Reference to line of sight component
 	private scr_LineOfSight m_ThisScrLineOfSight = null;
@@ -75,10 +70,14 @@ public class scr_AI_Enemy : MonoBehaviour
 	//Reference to patrol destination
 	private Transform PatrolDestination = null;
 
+	//Damage amount per second
+	public float MaxDamage = 10f;
+
 	[SerializeField] private float patrolSpeed;
 	[SerializeField] private float chaseSpeed;
 	private scr_pHealth m_PlayerScrPHealth;
 	private scr_RigidbodyFirstPersonController playerRBCntrl;
+	[SerializeField] private float hearingStrength = 1;
 
 	//------------------------------------------
 	// used here to retrieve connected components for use in this script
@@ -101,36 +100,60 @@ public class scr_AI_Enemy : MonoBehaviour
 		CurrentState = ENEMY_STATE.PATROL;
 	}
 
+	private void AttackPlayer(float dmg)
+	{
+		if (Vector3.Distance(transform.position, PlayerTransform.position) < ThisAgent.stoppingDistance * 1.4f)
+			m_PlayerScrPHealth.HealthPoints -= dmg;
+	}
+	
+	private void acquireDestinations()
+	{
+		//Stop and reinitialize
+		ThisAgent.isStopped = true;
+		Destinations = new List<GameObject>();
+		
+		//Find where we are
+		Vector3 origin = new Vector3(transform.position.x, transform.position.y + .1f, transform.position.z);
+		Physics.Raycast(origin, Vector3.down, out RaycastHit hit);
+		
+		//Build up local destinations
+		foreach (GameObject dest in GameObject.FindGameObjectsWithTag("Dest"))
+				if (dest.transform.IsChildOf(hit.transform))
+					Destinations.Add(dest);
+	}
+
+	private void OnCollisionEnter(Collision other)
+	{
+		if (other.transform.CompareTag("Player"))
+		{
+			m_ThisScrLineOfSight.LastKnowSighting = other.transform.position;
+			CurrentState = ENEMY_STATE.CHASE;
+		}
+	}
+
 	//------------------------------------------
 	public IEnumerator AIPatrol()
 	{
-		while (CurrentState == ENEMY_STATE.WARP)
-			yield return null;
+		float timeToWait = isAngry ? .1f : 1f;
+		yield return new WaitForSeconds(timeToWait);
 		
-		Debug.Log("On patrol");
+		seeking = false;
 		ThisAgent.speed = patrolSpeed;
-		//Set strict search
-        m_ThisScrLineOfSight.Sensitivity = scr_LineOfSight.SightSensitivity.STRICT;
-
-        //Chase to patrol position
-        //check if current destination is an active gate and set new destination based on that
-        
-        ThisAgent.SetDestination(PatrolDestination.position);
-        Debug.Log("New patrol destination: " + PatrolDestination.parent.gameObject);
-        
-//        //Small delay before continuing on patrol
-//        float timeToWait = isAngry ? .1f : 1f;
-//        yield return new WaitForSeconds(timeToWait);
-        
-        ThisAgent.isStopped = false;
-        //Wait until path is computed -- this seems to be not working well/at all
-        //yield return new WaitForSeconds(.1f);
-        while (ThisAgent.pathPending)
-            yield return null;
-                    
+		
         //Loop while patrolling
-        while (_currentstate == ENEMY_STATE.PATROL)
+        while (currentstate == ENEMY_STATE.PATROL)
         {
+            //Set strict search
+            m_ThisScrLineOfSight.Sensitivity = scr_LineOfSight.SightSensitivity.STRICT;
+
+            //Chase to patrol position
+            ThisAgent.isStopped = false;
+            ThisAgent.SetDestination(PatrolDestination.position);
+
+            //Wait until path is computed
+            while (ThisAgent.pathPending)
+                yield return null;
+
             //If we can see the target then start chasing
             if (m_ThisScrLineOfSight.CanSeeTarget)
             {
@@ -145,11 +168,9 @@ public class scr_AI_Enemy : MonoBehaviour
             {
 	            ThisAgent.isStopped = true;
 	            
-	            Transform currentZone = PatrolDestination.root;
 	            //check if current destination is an active gate and set new destination based on that
 	            PatrolDestination = newDestination(PatrolDestination);
-
-	            CurrentState = PatrolDestination.root != currentZone ? ENEMY_STATE.WARP : ENEMY_STATE.PATROL;
+	            isAngry = false;
             }
 
             //Wait until next frame
@@ -159,12 +180,9 @@ public class scr_AI_Enemy : MonoBehaviour
 	//------------------------------------------
 	public IEnumerator AIChase()
 	{
-		//play roar anim if not angered recently
 		if (!isAngry && Vector3.Distance(transform.position, PlayerTransform.position) > ThisAgent.stoppingDistance * 2f)
 		{
 			isAngry = true;
-			if (!angerDecaying) StartCoroutine(resetAnger());
-			
 			ThisAgent.isStopped = true;
 			animator.SetTrigger("Shout");
 			yield return new WaitForSeconds(.5f); //Offset time for animation to start (isInTransition returns false somehow) 
@@ -175,7 +193,7 @@ public class scr_AI_Enemy : MonoBehaviour
 		ThisAgent.speed = chaseSpeed;
 		
 		//Loop while chasing
-		while(_currentstate == ENEMY_STATE.CHASE)
+		while(currentstate == ENEMY_STATE.CHASE)
 		{
 			//Set loose search
 			m_ThisScrLineOfSight.Sensitivity = scr_LineOfSight.SightSensitivity.LOOSE;
@@ -199,8 +217,6 @@ public class scr_AI_Enemy : MonoBehaviour
 				{
 					//Check nearest gate if lost player
 					PatrolDestination = newDestination(nearestDestination());
-					Debug.Log("New patrol destination: " + PatrolDestination.parent.gameObject);
-					
 					CurrentState = ENEMY_STATE.PATROL;
 				}
 					
@@ -220,11 +236,12 @@ public class scr_AI_Enemy : MonoBehaviour
 	{
 		animator.SetBool("Attacking", true);
 		//Loop while chasing and attacking
-		while(_currentstate == ENEMY_STATE.ATTACK)
+		while(currentstate == ENEMY_STATE.ATTACK)
 		{
             //Chase to player position
             ThisAgent.isStopped = false;
 			ThisAgent.SetDestination(PlayerTransform.position);
+			Debug.Log("New destination(attack): " + PatrolDestination.parent.gameObject);
 
 			//Wait until path is computed
 			while(ThisAgent.pathPending)
@@ -245,45 +262,6 @@ public class scr_AI_Enemy : MonoBehaviour
 			yield return null;
 		}
 	}
-
-	public IEnumerator AIWarp()
-	{
-		ThisAgent.isStopped = true;
-		
-		//Animate teleport start and wait for finish
-		do
-		{
-			float tp = animator.GetFloat("Teleport");
-			animator.SetFloat("Teleport", tp + .1f);
-			yield return null;
-		} while (animator.GetFloat("Teleport") < 2);
-		
-		//Warp agent to the destination (which is set as PatrolDestination when arriving at active gate)
-		ThisAgent.Warp(PatrolDestination.position);
-		transform.rotation = PatrolDestination.rotation;
-		
-		//Animate teleport finish and wait
-		do
-		{
-			float tp = animator.GetFloat("Teleport");
-			animator.SetFloat("Teleport", tp - .1f);
-			yield return null;
-		} while (animator.GetFloat("Teleport") > 0);
-		
-		//Acquire new destinations
-		acquireDestinations();
-
-		CurrentState = ENEMY_STATE.PATROL;
-	}
-	
-	private void OnCollisionEnter(Collision other)
-    {
-        if (other.transform.CompareTag("Player"))
-        {
-        	m_ThisScrLineOfSight.LastKnowSighting = other.transform.position;
-        	CurrentState = ENEMY_STATE.CHASE;
-        }
-    }
 	
 	private Transform nearestDestination()
 	{
@@ -301,20 +279,13 @@ public class scr_AI_Enemy : MonoBehaviour
 
 	private Transform newDestination(Transform destinationAt)
 	{
-		GameObject at = destinationAt.parent ? destinationAt.parent.gameObject : destinationAt.gameObject;
-		Debug.Log("Currently at: " + at);
-		//Temp list without current at to avoid repeating current gate
+		//Temp listwithout current at to avoid repeating current gate
 		List<Transform> tempList = new List<Transform>();
 		foreach (GameObject dest in Destinations)
 			tempList.Add(dest.transform);
 		//In case there's only 1 gate, keep it in the list for return
 		if(tempList.Count > 1)
 			tempList.Remove(destinationAt);
-
-		foreach (Transform t in tempList)
-		{
-			Debug.Log(" Considering for next: " + t.parent.gameObject);
-		}
 		
 		//prepare random destination
 		Transform random = tempList[Random.Range(0, tempList.Count)];
@@ -328,46 +299,13 @@ public class scr_AI_Enemy : MonoBehaviour
 		//Return current gates destination if active (off mesh linked) or random
 		return destGate.active ? destGate.destination : random;
 	}
-	
-	private void acquireDestinations()
-	{
-		Debug.Log("Reaquiring destinations");
-		//Stop and reinitialize
-		ThisAgent.isStopped = true;
-		Destinations = new List<GameObject>();
-		
-		//Find where we are
-		Vector3 origin = new Vector3(transform.position.x, transform.position.y + .1f, transform.position.z);
-		Physics.Raycast(origin, Vector3.down, out RaycastHit hit);
-		
-		//Build up local destinations
-		foreach (GameObject dest in GameObject.FindGameObjectsWithTag("Dest"))
-			if (dest.transform.IsChildOf(hit.transform))
-				Destinations.Add(dest);
 
-//		CurrentState = ENEMY_STATE.PATROL;
-	}
-
-	//Attack played by animation event
-	private void AttackPlayer(float dmg)
+	public void teleport(Vector3 destination, Quaternion destinationRotation)
 	{
-		if (Vector3.Distance(transform.position, PlayerTransform.position) < ThisAgent.stoppingDistance * 1.4f)
-			m_PlayerScrPHealth.HealthPoints -= dmg;
-	}
-
-	private IEnumerator resetAnger() //Simple on/off on a timer (Could be a number, but it's just a gimmick)
-	{
-		angerDecaying = true;
-		yield return new WaitForSeconds(angerDropoff);
-		isAngry = false;
-		angerDecaying = false;
-	}
-
-	private void stopAIStateCoroutines()
-	{
-		StopCoroutine(AIPatrol());
-		StopCoroutine(AIChase());
-		StopCoroutine(AIAttack());
+		ThisAgent.Warp(destination);
+		transform.rotation = destinationRotation;
+		//TODO: Teleport animation
+		acquireDestinations();
 	}
 	
 	void OnDrawGizmos()
@@ -377,6 +315,13 @@ public class scr_AI_Enemy : MonoBehaviour
 			                                  "Destination remaining distance: " + ThisAgent.remainingDistance + "\n" +
 			                                  "Arrived:  " + (ThisAgent.remainingDistance < ThisAgent.stoppingDistance), debugGUI);
 	}
+	
+    private void stopAIStateCoroutines()
+        {
+            StopCoroutine(AIPatrol());
+            StopCoroutine(AIChase());
+            StopCoroutine(AIAttack());
+        }
 	//------------------------------------------
 }
 //------------------------------------------

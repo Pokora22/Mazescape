@@ -36,7 +36,7 @@ public class scr_PortGate : MonoBehaviour
         camera.enabled = false;
     }
 
-    private void OnCollisionStay(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         GameObject collider = other.gameObject;
         if (active)
@@ -52,24 +52,18 @@ public class scr_PortGate : MonoBehaviour
                     (Math.Abs(angleBetweenPortals) > 179 && Math.Abs(angleBetweenPortals) < 181) ? 0 : angleBetweenPortals; 
                 pcContainer.Rotate(0, angleToRotate, 0);
             }
-//            else if (collider.CompareTag("Minotaur"))
-//            {
-//                Vector3 minoDestination = new Vector3(destination.position.x, collider.transform.position.y,
-//                    destination.position.z);
-//                NavMesh.SamplePosition(minoDestination, out NavMeshHit hitpos, 2, NavMesh.AllAreas);
-//
-//                collider.transform.GetComponent<scr_AI_Enemy>().teleport(hitpos.position, destination.rotation);
-//            }
+            else if (collider.CompareTag("Minotaur"))
+            {
+                Vector3 minoDestination = new Vector3(destination.position.x, collider.transform.position.y,
+                    destination.position.z);
+                NavMesh.SamplePosition(minoDestination, out NavMeshHit hitpos, 2, NavMesh.AllAreas);
+
+                collider.transform.GetComponent<scr_AI_Enemy>().teleport(hitpos.position, destination.rotation);
+            }
         }
-//        else if (collider.CompareTag("Minotaur"))
-//            collider.transform.GetComponent<scr_AI_Enemy>().CurrentState = scr_AI_Enemy.ENEMY_STATE.PATROL;
+        else if (collider.CompareTag("Minotaur"))
+            collider.transform.GetComponent<scr_AI_Enemy>().CurrentState = scr_AI_Enemy.ENEMY_STATE.PATROL;
     }
-//
-//    private void OnCollisionEnter(Collision other)
-//    {
-//        if (other.gameObject.CompareTag("Minotaur"))
-//            other.transform.GetComponent<scr_AI_Enemy>().CurrentState = active ? scr_AI_Enemy.ENEMY_STATE.WARP : scr_AI_Enemy.ENEMY_STATE.PATROL;
-//    }
 
 
     private void OnBecameVisible()
