@@ -37,24 +37,11 @@ public class scr_KeyData : MonoBehaviour
             {
                 GameObject keySpawnLocation = validSpawns[Random.Range(0, validSpawns.Count)];
                 spawn(keySpawnLocation.transform, false);
-//                GameObject keyPickup = Instantiate(keyPickUpPrefab, keySpawnLocation.transform.position,
-//                    keySpawnLocation.transform.rotation, keySpawnLocation.transform);
-//                keyPickup.GetComponent<scr_PortalKeyPickUp>().setupKey(this); //set link back to this data
                 allSpawns.Remove(keySpawnLocation);
             }
-            
-            if (debug) Debug.Log("All spawns count: " + allSpawns.Count);
-            if (debug) Debug.Log("Valid spawns count: " + validSpawns.Count);
         }
 
         else spawn(spawnLocation, false);
-        
-        {
-//            keyPickUpPrefab.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this);
-//            GameObject keyPickup = Instantiate(keyPickUpPrefab, spawnLocation.transform.position,
-//                spawnLocation.transform.rotation, spawnLocation.transform);
-//            keyPickup.GetComponent<scr_PortalKeyPickUp>().setSymbolAndColor(this); //set link back to this data
-        }
     }
 
     public GameObject spawn(Transform spawnLocation, bool receptacleStatic)

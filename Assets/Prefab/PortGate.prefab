@@ -100,8 +100,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4138640688932809764}
+  - component: {fileID: 6993593994801166854}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: NavDest
   m_TagString: Dest
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -115,13 +116,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2288207684776652389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: -2.5}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6917175322267925393}
   m_Father: {fileID: 5333958721027735044}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!191 &6993593994801166854
+OffMeshLink:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288207684776652389}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_AreaIndex: 0
+  m_AgentTypeID: 0
+  m_Start: {fileID: 0}
+  m_End: {fileID: 0}
+  m_CostOverride: -1
+  m_BiDirectional: 1
+  m_Activated: 1
+  m_AutoUpdatePositions: 1
 --- !u!1 &2841178858151438549
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2841178858151438549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: 2.5}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4138640688932809764}
@@ -1460,13 +1478,12 @@ GameObject:
   - component: {fileID: 3623433483275063220}
   - component: {fileID: 5333958721027735048}
   - component: {fileID: 6585223931515313497}
-  - component: {fileID: 3274671144277270083}
   m_Layer: 0
   m_Name: PortGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 123
+  m_StaticEditorFlags: 115
   m_IsActive: 1
 --- !u!4 &5333958721027735044
 Transform:
@@ -2310,6 +2327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  masterGate: 0
   destination: {fileID: 0}
 --- !u!64 &5333958721027735048
 MeshCollider:
@@ -2343,23 +2361,6 @@ MonoBehaviour:
   spawnLocation: {fileID: 0}
   keyPickUpPrefab: {fileID: 4899214784977584134, guid: 3f2ce28cbeb585a41ad9033b41e6f617,
     type: 3}
---- !u!191 &3274671144277270083
-OffMeshLink:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5333958721027735055}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_AreaIndex: 0
-  m_AgentTypeID: 0
-  m_Start: {fileID: 165399356964334589}
-  m_End: {fileID: 6917175322267925393}
-  m_CostOverride: -1
-  m_BiDirectional: 0
-  m_Activated: 1
-  m_AutoUpdatePositions: 1
 --- !u!1 &7646024978368356754
 GameObject:
   m_ObjectHideFlags: 0

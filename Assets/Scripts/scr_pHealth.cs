@@ -35,13 +35,12 @@ public class scr_pHealth : MonoBehaviour
 		{
 			healthPoints = value;
 			healthRegenGoal = value;
-			Debug.Log("Health is now: " + healthPoints);
 			
 			vignetteDmgUpdate();
 
 			//If health is < 0 then die
 			if(healthPoints <= 0)
-				Debug.Log("Already dead: " + healthPoints);
+				Debug.Log("Already dead: " + healthPoints); //TODO: Switch scene to death
 		}
 	}
 

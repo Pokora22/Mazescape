@@ -12,18 +12,26 @@ public class scr_PortGate : MonoBehaviour
     public Transform destination;
     
     private Transform spawn;
+    private OffMeshLink navLink;
     private GameObject destinationGateObject;
     private Camera camera;
     private RenderTexture gateOutlook;
     private Texture inactiveTexture;
 
-    void Start()
+    private void Awake()
     {
         inactiveTexture = GetComponent<Renderer>().material.mainTexture;
-        active = false;
         spawn = transform.GetChild(0); //this gates spawn pt (used for calculating rotation)
         camera = transform.GetChild(1).GetComponent<Camera>(); //this gates camera (?)
         gateOutlook = new RenderTexture(512, 512, 16);
+        navLink = GetComponentInChildren<OffMeshLink>();
+    }
+
+    void Start()
+    {
+        active = false;
+        navLink.activated = false;
+        navLink.startTransform = navLink.transform;
         camera.targetTexture = gateOutlook;
         camera.enabled = false;
     }
@@ -43,7 +51,6 @@ public class scr_PortGate : MonoBehaviour
                 float angleToRotate = (angleBetweenPortals < 1 && angleBetweenPortals > -1) ? 180 :
                     (Math.Abs(angleBetweenPortals) > 179 && Math.Abs(angleBetweenPortals) < 181) ? 0 : angleBetweenPortals; 
                 pcContainer.Rotate(0, angleToRotate, 0);
-                Debug.Log("Portal rotated player by " + angleToRotate + " degrees.");
             }
             else if (collider.CompareTag("Minotaur"))
             {
@@ -54,6 +61,8 @@ public class scr_PortGate : MonoBehaviour
                 collider.transform.GetComponent<scr_AI_Enemy>().teleport(hitpos.position, destination.rotation);
             }
         }
+        else if (collider.CompareTag("Minotaur"))
+            collider.transform.GetComponent<scr_AI_Enemy>().CurrentState = scr_AI_Enemy.ENEMY_STATE.PATROL;
     }
 
 
@@ -102,6 +111,8 @@ public class scr_PortGate : MonoBehaviour
         Material material = GetComponent<Renderer>().material;
         material.mainTexture = gateScript.gateOutlook;//set this gates texture
         material.SetTexture("_BumpMap", null);
+        navLink.endTransform = gateScript.navLink.transform;
+        navLink.activated = true;
         active = true;
         
         destinationGateObject = gateScript.transform.gameObject; //store dest gate for visible/invisible camera switching
@@ -112,6 +123,7 @@ public class scr_PortGate : MonoBehaviour
         destination = spawn;
         Material material = GetComponent<Renderer>().material;
         material.mainTexture = inactiveTexture;//set this gates texture
+        navLink.activated = false;
         active = false;
 
         destinationGateObject = null; //set dest gate for visible/invisible camera switching

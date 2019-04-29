@@ -12,11 +12,11 @@ public class scr_LineOfSight : MonoBehaviour
 	private float spotRange = 10;
 	public SightSensitivity Sensitivity
 	{
-		get { return Sensitivity; }
+		get { return sensitivity; }
 
 		set
 		{
-			Sensitivity = value;
+			sensitivity = value;
 
 			switch (Sensitivity)
 			{
@@ -31,7 +31,7 @@ public class scr_LineOfSight : MonoBehaviour
 	}
 
 	//Sight sensitivity
-//	public SightSensitivity Sensitivity = SightSensitivity.STRICT;
+	public SightSensitivity sensitivity = SightSensitivity.STRICT;
 
 	//Can we see target
 	public bool CanSeeTarget = false;
@@ -60,7 +60,6 @@ public class scr_LineOfSight : MonoBehaviour
 	void Awake()
 	// Awake is called only once during the lifetime of the script instance, before the start function
 	{
-		Sensitivity = SightSensitivity.STRICT;
 		ThisTransform = GetComponent<Transform>();
 		ThisCollider = GetComponentInChildren<SphereCollider>();
 		LastKnowSighting = ThisTransform.position;
@@ -76,9 +75,15 @@ public class scr_LineOfSight : MonoBehaviour
 		float Angle = Vector3.Angle(EyePoint.forward, DirToTarget);
  
 		//Are we within field of view? //TODO: Different horizontal and vertical angles? (Vector maths are hard)
-		if(Angle <= FieldOfView && DirToTarget.magnitude < sightRange)
+		if (Angle <= FieldOfView && DirToTarget.magnitude < sightRange)
+		{
+			//if Completely below or above, check for line of sight (ceiling, floor)
+			if (DirToTarget.x < 0 || DirToTarget.x > 4) return ClearLineofSight();
+			
+			//else
 			return true;
- 
+		}
+
 		//Not within view
 		return false;
 	}
@@ -106,8 +111,8 @@ public class scr_LineOfSight : MonoBehaviour
 				CanSeeTarget = InFOV() && ClearLineofSight();
 			break;
 
-			case SightSensitivity.LOOSE: //Changing to stricter with increased range
-				CanSeeTarget = InFOV() && ClearLineofSight();
+			case SightSensitivity.LOOSE: 
+				CanSeeTarget = InFOV() || ClearLineofSight();
 			break;
 		}
 	}

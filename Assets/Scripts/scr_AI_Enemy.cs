@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine.AI;
+using UnityStandardAssets.Characters.FirstPerson;
 
+
+//TODO: This seems to be infinitely recursive causing stack overflow - could redo if time allows
 //------------------------------------------
 public class scr_AI_Enemy : MonoBehaviour
 {
 	private List<GameObject> Destinations;
 	private Animator animator;
-	private bool isAngry; //sentinel for onTrigger calls
+	private bool isAngry, seeking; //sentinel for onTrigger calls
 	
 	//------------------------------------------
 	public enum ENEMY_STATE {PATROL, CHASE, ATTACK};
@@ -25,6 +29,8 @@ public class scr_AI_Enemy : MonoBehaviour
 
 			//Stop all running coroutines
 			StopAllCoroutines();
+			//Temporary patch for stuck animations //TODO: Fix?
+			animator.SetBool("Attacking", false);
 
 			switch(currentstate)
 			{
@@ -67,6 +73,8 @@ public class scr_AI_Enemy : MonoBehaviour
 	[SerializeField] private float patrolSpeed;
 	[SerializeField] private float chaseSpeed;
 	private scr_pHealth m_PlayerScrPHealth;
+	private scr_RigidbodyFirstPersonController playerRBCntrl;
+	[SerializeField] private float hearingStrength = 1;
 
 	//------------------------------------------
 	// used here to retrieve connected components for use in this script
@@ -75,19 +83,13 @@ public class scr_AI_Enemy : MonoBehaviour
 		m_ThisScrLineOfSight = GetComponent<scr_LineOfSight>();
 		ThisAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		m_PlayerScrPHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_pHealth>();
+		playerRBCntrl = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_RigidbodyFirstPersonController>();
 		PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		animator = GetComponent<Animator>();
 	}
 	//------------------------------------------
 	void Start()
 	{
-		//Get random destination
-//		GameObject[] Destinations = GameObject.FindGameObjectsWithTag("Dest");
-//		PatrolDestination = Destinations[Random.Range(0, Destinations.Length)].GetComponent<Transform>();
-
-		//Configure starting state
-//		CurrentState = ENEMY_STATE.PATROL;
-
 		acquireDestinations();
 	}
 
@@ -99,7 +101,6 @@ public class scr_AI_Enemy : MonoBehaviour
 	
 	private void acquireDestinations()
 	{
-		Debug.Log("Mino etting new destinations...");
 		//Stop and reinitialize
 		ThisAgent.isStopped = true;
 		Destinations = new List<GameObject>();
@@ -114,7 +115,6 @@ public class scr_AI_Enemy : MonoBehaviour
 					Destinations.Add(dest);
 		
 		PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
-		Debug.Log("New destination is: " + PatrolDestination.position);
 		CurrentState = ENEMY_STATE.PATROL;
 	}
 
@@ -122,8 +122,8 @@ public class scr_AI_Enemy : MonoBehaviour
 	{
 		if (other.transform.CompareTag("Player"))
 		{
-			CurrentState = ENEMY_STATE.CHASE;
 			m_ThisScrLineOfSight.LastKnowSighting = other.transform.position;
+			CurrentState = ENEMY_STATE.CHASE;
 		}
 	}
 
@@ -132,6 +132,9 @@ public class scr_AI_Enemy : MonoBehaviour
 	{
 		float timeToWait = isAngry ? .1f : 1f;
 		yield return new WaitForSeconds(timeToWait);
+		
+		seeking = false;
+		ThisAgent.speed = patrolSpeed;
 		
         //Loop while patrolling
         while (currentstate == ENEMY_STATE.PATROL)
@@ -157,7 +160,7 @@ public class scr_AI_Enemy : MonoBehaviour
 
             //Have we arrived at dest, get new dest
         	//  debug ->  if (Vector3.Distance(transform.position, PatrolDestination.position) <= ThisAgent.stoppingDistance*1.2f)
-            if (Vector3.Distance(transform.position, PatrolDestination.position) <= 3.5f)
+            if (Vector3.Distance(transform.position, PatrolDestination.position) <= ThisAgent.stoppingDistance)
             {
 	            ThisAgent.isStopped = true;
 	            PatrolDestination = Destinations[Random.Range(0, Destinations.Count)].GetComponent<Transform>();
@@ -171,13 +174,12 @@ public class scr_AI_Enemy : MonoBehaviour
 	//------------------------------------------
 	public IEnumerator AIChase()
 	{
-		if (!isAngry)
+		if (!isAngry && Vector3.Distance(transform.position, PlayerTransform.position) > ThisAgent.stoppingDistance * 2f)
 		{
 			isAngry = true;
-			animator.SetTrigger("Shout");
 			ThisAgent.isStopped = true;
-			yield return
-				new WaitForSeconds(.5f); //Offset time for animation to start (isInTransition returns false somehow) 
+			animator.SetTrigger("Shout");
+			yield return new WaitForSeconds(.5f); //Offset time for animation to start (isInTransition returns false somehow) 
 			while (animator.GetCurrentAnimatorStateInfo(0).IsTag("Angry"))
 				yield return null;
 		}
@@ -207,17 +209,7 @@ public class scr_AI_Enemy : MonoBehaviour
 				//Reached destination but cannot see player
 				if (!m_ThisScrLineOfSight.CanSeeTarget)
 				{
-					GameObject nearestDest = Destinations[0];
-					foreach (GameObject dest in Destinations)
-					{
-						if (Vector3.Distance(transform.position, dest.transform.position) <
-						    Vector3.Distance(transform.position, nearestDest.transform.position))
-							nearestDest = dest;
-					}
-
-					PatrolDestination = nearestDest.transform;
-					
-					ThisAgent.speed = patrolSpeed;
+					PatrolDestination = nearestDestination();
 					CurrentState = ENEMY_STATE.PATROL;
 				}
 					
@@ -231,6 +223,7 @@ public class scr_AI_Enemy : MonoBehaviour
 			yield return null;
 		}
 	}
+
 	//------------------------------------------
 	public IEnumerator AIAttack()
 	{
@@ -256,17 +249,27 @@ public class scr_AI_Enemy : MonoBehaviour
 				CurrentState = ENEMY_STATE.CHASE;
 				yield break;
 			}
-			else
-			{
-				//Attack
-//				m_PlayerScrPHealth.HealthPoints -= MaxDamage * Time.deltaTime; //TODO: Put attack in
-			}
 
 			//Wait until next frame
 			yield return null;
 		}
+	}
+	
+	private Transform nearestDestination()
+	{
+		GameObject nearestDest = Destinations[0];
+		foreach (GameObject dest in Destinations)
+		{
+			if (Vector3.Distance(transform.position, dest.transform.position) <
+			    Vector3.Distance(transform.position, nearestDest.transform.position))
+				nearestDest = dest;
+		}
+		
+		//check if the nearest dest is an active gate
+		scr_PortGate destGate = nearestDest.transform.parent.GetComponent<scr_PortGate>();
 
-		yield break;
+		//Return nearest gates destination if active (off mesh linked) or nearest gate itself
+		return destGate.active ? destGate.destination : nearestDest.transform;
 	}
 
 	public void teleport(Vector3 destination, Quaternion destinationRotation)

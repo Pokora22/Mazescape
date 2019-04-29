@@ -273,12 +273,5 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
             animator.SetBool("Grounded", m_IsGrounded);
         }
-        
-        public void rotate(float angle)
-        {
-            Debug.Log("Rotated by " + angle);
-            Quaternion curRot = transform.rotation;
-            transform.GetChild(0).Rotate(0, angle, 0);
-        }
     }
 }

@@ -45,10 +45,4 @@ public class scr_GameManager : MonoBehaviour
                 masterPortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, false);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
