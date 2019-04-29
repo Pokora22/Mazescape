@@ -9,7 +9,7 @@ public class scr_AI_Enemy : MonoBehaviour
 {
 	private List<GameObject> Destinations;
 	private Animator animator;
-	private bool zoneDestinationReset, isAngry; //sentinel for onTrigger calls
+	private bool isAngry; //sentinel for onTrigger calls
 	
 	//------------------------------------------
 	public enum ENEMY_STATE {PATROL, CHASE, ATTACK};
@@ -25,8 +25,6 @@ public class scr_AI_Enemy : MonoBehaviour
 
 			//Stop all running coroutines
 			StopAllCoroutines();
-
-			zoneDestinationReset = false;
 
 			switch(currentstate)
 			{
@@ -68,6 +66,7 @@ public class scr_AI_Enemy : MonoBehaviour
 
 	[SerializeField] private float patrolSpeed;
 	[SerializeField] private float chaseSpeed;
+	private scr_pHealth m_PlayerScrPHealth;
 
 	//------------------------------------------
 	// used here to retrieve connected components for use in this script
@@ -75,7 +74,7 @@ public class scr_AI_Enemy : MonoBehaviour
 	{
 		m_ThisScrLineOfSight = GetComponent<scr_LineOfSight>();
 		ThisAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-//		m_PlayerScrPHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_pHealth>();
+		m_PlayerScrPHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_pHealth>();
 		PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		animator = GetComponent<Animator>();
 	}
@@ -92,6 +91,12 @@ public class scr_AI_Enemy : MonoBehaviour
 		acquireDestinations();
 	}
 
+	private void AttackPlayer(float dmg)
+	{
+		if (Vector3.Distance(transform.position, PlayerTransform.position) < ThisAgent.stoppingDistance * 1.4f)
+			m_PlayerScrPHealth.HealthPoints -= dmg;
+	}
+	
 	private void acquireDestinations()
 	{
 		Debug.Log("Mino etting new destinations...");
@@ -132,7 +137,7 @@ public class scr_AI_Enemy : MonoBehaviour
         while (currentstate == ENEMY_STATE.PATROL)
         {
             //Set strict search
-            m_ThisScrLineOfSight.Sensitity = scr_LineOfSight.SightSensitivity.STRICT;
+            m_ThisScrLineOfSight.Sensitivity = scr_LineOfSight.SightSensitivity.STRICT;
 
             //Chase to patrol position
             ThisAgent.isStopped = false;
@@ -183,7 +188,7 @@ public class scr_AI_Enemy : MonoBehaviour
 		while(currentstate == ENEMY_STATE.CHASE)
 		{
 			//Set loose search
-			m_ThisScrLineOfSight.Sensitity = scr_LineOfSight.SightSensitivity.LOOSE;
+			m_ThisScrLineOfSight.Sensitivity = scr_LineOfSight.SightSensitivity.LOOSE;
 
             //Chase to last known position
             ThisAgent.isStopped = false;
@@ -245,6 +250,8 @@ public class scr_AI_Enemy : MonoBehaviour
 			if(ThisAgent.remainingDistance > ThisAgent.stoppingDistance)
 			{
 				animator.SetBool("Attacking", false);
+				while (animator.GetCurrentAnimatorStateInfo(0).IsTag("Attacking"))
+					yield return null;
 				//Change back to chase
 				CurrentState = ENEMY_STATE.CHASE;
 				yield break;

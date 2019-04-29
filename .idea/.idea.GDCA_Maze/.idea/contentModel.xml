@@ -345,6 +345,7 @@
             <e p="ReplaceSelection.cs" t="Include" />
           </e>
           <e p="scr_AI_Enemy.cs" t="Include" />
+          <e p="scr_AI_SoundSystem.cs" t="Include" />
           <e p="scr_GameManager.cs" t="Include" />
           <e p="scr_Inventory.cs" t="Include" />
           <e p="scr_KeyData.cs" t="Include" />

@@ -7,8 +7,31 @@ public class scr_LineOfSight : MonoBehaviour
 	//How sensitive should we be to sight
 	public enum SightSensitivity {STRICT, LOOSE};
 
+	public float normalRange = 10;
+	public float chaseRange = 40;
+	private float spotRange = 10;
+	public SightSensitivity Sensitivity
+	{
+		get { return Sensitivity; }
+
+		set
+		{
+			Sensitivity = value;
+
+			switch (Sensitivity)
+			{
+				case SightSensitivity.STRICT:
+					spotRange = normalRange;
+					break;
+				case SightSensitivity.LOOSE:
+					spotRange = chaseRange;
+					break;
+			}
+		}
+	}
+
 	//Sight sensitivity
-	public SightSensitivity Sensitity = SightSensitivity.STRICT;
+//	public SightSensitivity Sensitivity = SightSensitivity.STRICT;
 
 	//Can we see target
 	public bool CanSeeTarget = false;
@@ -37,6 +60,7 @@ public class scr_LineOfSight : MonoBehaviour
 	void Awake()
 	// Awake is called only once during the lifetime of the script instance, before the start function
 	{
+		Sensitivity = SightSensitivity.STRICT;
 		ThisTransform = GetComponent<Transform>();
 		ThisCollider = GetComponentInChildren<SphereCollider>();
 		LastKnowSighting = ThisTransform.position;
@@ -64,7 +88,7 @@ public class scr_LineOfSight : MonoBehaviour
 	{
 		RaycastHit Info;
 	
-		if(Physics.Raycast(EyePoint.position, (Target.position - EyePoint.position).normalized, out Info, ThisCollider.radius))
+		if(Physics.Raycast(EyePoint.position, (Target.position - EyePoint.position).normalized, out Info, spotRange))
 		{
 			//If player, then can see player
 			if(Info.transform.CompareTag("Player"))
@@ -76,14 +100,14 @@ public class scr_LineOfSight : MonoBehaviour
 	//------------------------------------------
 	void UpdateSight()
 	{
-		switch(Sensitity)
+		switch(Sensitivity)
 		{
 			case SightSensitivity.STRICT:
 				CanSeeTarget = InFOV() && ClearLineofSight();
 			break;
 
-			case SightSensitivity.LOOSE:
-				CanSeeTarget = InFOV() || ClearLineofSight();
+			case SightSensitivity.LOOSE: //Changing to stricter with increased range
+				CanSeeTarget = InFOV() && ClearLineofSight();
 			break;
 		}
 	}

@@ -35,6 +35,7 @@ public class scr_pHealth : MonoBehaviour
 		{
 			healthPoints = value;
 			healthRegenGoal = value;
+			Debug.Log("Health is now: " + healthPoints);
 			
 			vignetteDmgUpdate();
 
