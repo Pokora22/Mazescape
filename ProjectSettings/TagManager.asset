@@ -18,6 +18,9 @@ TagManager:
   - MasterPortal
   - SplashText
   - UI
+  - LifeSourceTorch
+  - Zone4
+  - Killplane
   layers:
   - Default
   - TransparentFX

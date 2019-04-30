@@ -26,10 +26,7 @@ public class scr_GameManager : MonoBehaviour
         if (masterPortals.Length > maxPortals) maxPortals = masterPortals.Length;
         
         keySpawns = GameObject.FindGameObjectsWithTag("KeySpawnPoint").ToList();
-    }
-
-    private void Start()
-    {
+        
         for (int i = 0; i < maxPortals; i++)
         {
             if(i < redPortals.Length)
@@ -44,5 +41,10 @@ public class scr_GameManager : MonoBehaviour
             if(i < masterPortals.Length)
                 masterPortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, false);
         }
+    }
+
+    private void Start()
+    {
+        
     }
 }

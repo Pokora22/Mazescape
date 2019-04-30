@@ -8,6 +8,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class scr_RigidbodyFirstPersonController : MonoBehaviour
     {
+        [SerializeField] private float normalMass = 10f;
+        [SerializeField] private float lightGravMass = 7;
+        
         [Serializable]
         public class MovementSettings
         {
@@ -272,6 +275,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             
             animator.SetBool("Grounded", m_IsGrounded);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.transform.CompareTag("Zone4"))
+            {
+                m_RigidBody.mass = lightGravMass;
+            }
+            else if (other.CompareTag("Killplane"))
+            {
+                transform.position = other.transform.GetChild(0).position;
+                m_RigidBody.velocity = Vector3.zero;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.transform.CompareTag("Zone4"))
+                m_RigidBody.mass = normalMass;
         }
     }
 }
