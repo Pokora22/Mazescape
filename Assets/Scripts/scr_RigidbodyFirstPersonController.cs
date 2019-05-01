@@ -10,6 +10,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         [SerializeField] private float normalMass = 10f;
         [SerializeField] private float lightGravMass = 7;
+        [SerializeField] private float floatCheckDistance;
+        [SerializeField] private float floatForce;
+        private bool reverseGravity;
         
         [Serializable]
         public class MovementSettings
@@ -91,6 +94,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 m_GroundContactNormal;
         private bool m_Jump, m_PreviouslyGrounded, m_Jumping, m_IsGrounded;
         private Animator animator;
+        
 
 
         public Vector3 Velocity
@@ -144,6 +148,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
+            gravityCheck();
+
             GroundCheck();
             Vector2 input = GetInput();
 
@@ -169,7 +175,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (m_Jump)
                 {
-                    m_RigidBody.drag = 0f;
+                    m_RigidBody.drag = 5f;
                     m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
                     m_RigidBody.AddForce(new Vector3(0f, movementSettings.JumpForce, 0f), ForceMode.Impulse);
                     m_Jumping = true;
@@ -197,6 +203,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             animator.SetFloat("Forward", velocity * inputSign);
             animator.SetFloat("Vertical", m_RigidBody.velocity.y);
+        }
+
+        private void gravityCheck()
+        {
+//turn back on next frame
+            m_RigidBody.useGravity = true;
+
+            Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 50f, 1 << LayerMask.NameToLayer("Default"),
+                QueryTriggerInteraction.Ignore);
+            reverseGravity = (!hit.transform || hit.distance > floatCheckDistance);
+            if (reverseGravity)
+            {
+                //float
+                m_RigidBody.useGravity = false;
+                m_RigidBody.AddForce(Physics.gravity * floatForce, ForceMode.Acceleration);
+            }
         }
 
 
@@ -279,11 +301,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.transform.CompareTag("Zone4"))
-            {
-                m_RigidBody.mass = lightGravMass;
-            }
-            else if (other.CompareTag("Killplane"))
+            if (other.CompareTag("Killplane"))
             {
                 transform.position = other.transform.GetChild(0).position;
                 m_RigidBody.velocity = Vector3.zero;

@@ -21,6 +21,7 @@ TagManager:
   - LifeSourceTorch
   - Zone4
   - Killplane
+  - Doppleganger
   layers:
   - Default
   - TransparentFX

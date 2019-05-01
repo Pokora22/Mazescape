@@ -49,15 +49,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
-			
-			UpdateAnimator(move);
-			
 			if (move.magnitude > 1f) move.Normalize();
 			move = transform.InverseTransformDirection(move);
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
 			m_TurnAmount = Mathf.Atan2(move.x, move.z);
-//			m_ForwardAmount = move.z;
+			m_ForwardAmount = move.z;
 
 			ApplyExtraTurnRotation();
 
@@ -74,8 +71,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
 
-			// send input and other state parameters to the animator - original
-//			UpdateAnimator(move);
+			// send input and other state parameters to the animator
+			UpdateAnimator(move);
 		}
 
 
@@ -121,15 +118,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		void UpdateAnimator(Vector3 move)
 		{
 			// update the animator parameters
-			move = transform.InverseTransformDirection(move);
-			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
-			m_ForwardAmount = move.z;
-			
 			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
-			
-//			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
-//			m_Animator.SetBool("Crouch", m_Crouching);
-//			m_Animator.SetBool("OnGround", m_IsGrounded);
+			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
+			m_Animator.SetBool("Crouch", m_Crouching);
+			m_Animator.SetBool("OnGround", m_IsGrounded);
 			if (!m_IsGrounded)
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
@@ -147,17 +139,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Animator.SetFloat("JumpLeg", jumpLeg);
 			}
 
-//			// the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector,
-//			// which affects the movement speed because of the root motion.
-//			if (m_IsGrounded && move.magnitude > 0)
-//			{
-//				m_Animator.speed = m_AnimSpeedMultiplier;
-//			}
-//			else
-//			{
-//				// don't use that while airborne
-//				m_Animator.speed = 1;
-//			}
+			// the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector,
+			// which affects the movement speed because of the root motion.
+			if (m_IsGrounded && move.magnitude > 0)
+			{
+				m_Animator.speed = m_AnimSpeedMultiplier;
+			}
+			else
+			{
+				// don't use that while airborne
+				m_Animator.speed = 1;
+			}
 		}
 
 

@@ -54,12 +54,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             UpdateCursorLock();
         }
-        
-        public void LookRotation(Quaternion character, Quaternion camera)
-        {
-            m_CharacterTargetRot = character;
-            m_CameraTargetRot =  camera;
-        }
 
         public void SetCursorLock(bool value)
         {

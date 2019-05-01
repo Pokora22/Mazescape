@@ -353,9 +353,11 @@
             <e p="MeshCombineWizard.cs" t="Include" />
             <e p="ReplaceSelection.cs" t="Include" />
           </e>
+          <e p="MirrorFlipCamera.cs" t="Include" />
           <e p="scr_AI_Enemy.cs" t="Include" />
           <e p="scr_AI_SoundSystem.cs" t="Include" />
           <e p="scr_BouncyPlatform.cs" t="Include" />
+          <e p="scr_DopplegangerController.cs" t="Include" />
           <e p="scr_GameManager.cs" t="Include" />
           <e p="scr_Inventory.cs" t="Include" />
           <e p="scr_KeyData.cs" t="Include" />
