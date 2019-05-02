@@ -13,8 +13,10 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player") && !transform.parent.GetComponent<scr_PortGate>().active)
-            gameObject.GetComponentInChildren<TextMeshPro>().SetText(putKeyText);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            showUseText();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -47,6 +49,8 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
                         keyPlaced.transform.GetChild(0).localPosition = new Vector3(.1f, 0, 0); //Change symbol position
 
                         playerInventory.removeKey(keyUsed);
+                        
+                        showUseText();
                     }
                 }
                 else if (keyPlaced) //take key from portal recepticle 
@@ -55,10 +59,18 @@ public class scr_PortalKeyRecepticle : MonoBehaviour
                     playerInventory.addKey(keyData); //Add the data from the pickup back to player inventory
                     transform.parent.GetComponent<scr_PortGate>().deactivatePortal(keyData);
                     Destroy(keyPlaced);
-                    Debug.Log(keyPlaced);
+                    showUseText();
                 }
             }
         }
+    }
+    
+    private void showUseText()
+    {
+        if (!keyPlaced)
+            gameObject.GetComponentInChildren<TextMeshPro>().SetText(putKeyText);
+        else
+            gameObject.GetComponentInChildren<TextMeshPro>().SetText(takeKeyText);
     }
 
     private bool playerClick()

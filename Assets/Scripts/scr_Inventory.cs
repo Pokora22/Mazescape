@@ -19,11 +19,11 @@ public class scr_Inventory : MonoBehaviour
     private void Update()
     {
         float scrollWheel = Input.GetAxis("Mouse ScrollWheel");
-        if (scrollWheel != 0) changeSelection((int)(scrollWheel * 10));
-        
+        if (scrollWheel != 0) 
+            changeSelection(scrollWheel);
     }
 
-    private void changeSelection(int direction)
+    private void changeSelection(float direction)
     {
         if (keys.Count == 0)
         {
@@ -31,11 +31,19 @@ public class scr_Inventory : MonoBehaviour
             changeItemDisplayed();
             return;
         }
-        
-        int newIndex = (keys.FindIndex(data => data.Equals(activeKey)) - 1) % keys.Count;
-        if (newIndex < 0) newIndex = keys.Count - 1;
+
+        int newIndex;
+        if (direction < 0)
+        {
+            newIndex = (keys.FindIndex(data => data.Equals(activeKey)) - 1) % keys.Count;
+            if (newIndex < 0) newIndex = keys.Count - 1;
+        }
+        else
+        {
+            newIndex = (keys.FindIndex(data => data.Equals(activeKey)) + 1) % keys.Count;
+        }
+         
         activeKey = keys[newIndex];
-        
         changeItemDisplayed();
     }
 

@@ -75,7 +75,7 @@ public class scr_AI_Enemy : MonoBehaviour
 
 	[SerializeField] private float patrolSpeed;
 	[SerializeField] private float chaseSpeed;
-	[SerializeField] private float chaseMusicTimeout = 5f;
+	[SerializeField] private float chaseMusicTimeout = 1f;
 	private scr_pHealth m_PlayerScrPHealth;
 	private scr_Player_AudioControl PlayerAudioControl;
 	private scr_RigidbodyFirstPersonController playerRBCntrl;
@@ -139,7 +139,7 @@ public class scr_AI_Enemy : MonoBehaviour
 	public IEnumerator AIPatrol()
 	{
 		if (PlayerAudioControl.chaseMusicOn)
-			StartCoroutine(fadeChaseMusic(chaseMusicTimeout));
+			StartCoroutine(stopChaseMusic(chaseMusicTimeout));
 		
 		float timeToWait = isAngry ? .1f : 1f;
 		yield return new WaitForSeconds(timeToWait);
@@ -187,6 +187,9 @@ public class scr_AI_Enemy : MonoBehaviour
 	//------------------------------------------
 	public IEnumerator AIChase()
 	{
+		if(!PlayerAudioControl.chaseMusicOn)
+			PlayerAudioControl.switchToChase(true);
+		
 		if (!isAngry && Vector3.Distance(transform.position, PlayerTransform.position) > ThisAgent.stoppingDistance * 2f)
 		{
 			isAngry = true;
@@ -196,9 +199,6 @@ public class scr_AI_Enemy : MonoBehaviour
 			while (animator.GetCurrentAnimatorStateInfo(0).IsTag("Angry"))
 				yield return null;
 		}
-		
-		if(!PlayerAudioControl.chaseMusicOn)
-			PlayerAudioControl.switchToChase(true);
 
 		ThisAgent.speed = chaseSpeed;
 		
@@ -332,7 +332,7 @@ public class scr_AI_Enemy : MonoBehaviour
             StopCoroutine(AIAttack());
         }
 
-    private IEnumerator fadeChaseMusic(float chaseMusicTimeout)
+    private IEnumerator stopChaseMusic(float chaseMusicTimeout)
     {
 	    yield return new WaitForSeconds(chaseMusicTimeout);
 	    if (currentstate == ENEMY_STATE.PATROL)

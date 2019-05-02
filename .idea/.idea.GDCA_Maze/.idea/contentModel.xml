@@ -347,7 +347,6 @@
           </e>
         </e>
         <e p="projections.cs" t="Include" />
-        <e p="scr_PlatformActivate.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Editor" t="Include">
             <e p="MeshCombineWizard.cs" t="Include" />
@@ -358,6 +357,8 @@
           <e p="scr_AI_SoundSystem.cs" t="Include" />
           <e p="scr_BouncyPlatform.cs" t="Include" />
           <e p="scr_DopplegangerController.cs" t="Include" />
+          <e p="scr_ExitLift.cs" t="Include" />
+          <e p="scr_ExitPuzzle.cs" t="Include" />
           <e p="scr_GameManager.cs" t="Include" />
           <e p="scr_Inventory.cs" t="Include" />
           <e p="scr_KeyData.cs" t="Include" />

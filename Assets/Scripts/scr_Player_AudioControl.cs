@@ -42,8 +42,6 @@ public class scr_Player_AudioControl : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         int zoneFrom = currentZone;
-        Debug.Log("Zone coming from: " + zoneFrom);
-        Debug.Log("Cther tag: " + other.tag);
         switch (other.tag)
         {
             case "Zone1":
@@ -62,23 +60,16 @@ public class scr_Player_AudioControl : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Current zone " + currentZone);
+        
         if (currentZone != zoneFrom)
         {
-            Debug.Log("Transitioning to quiet");
             quietSnapshot.TransitionTo(zoneTransitionTime);
             AmbientAudioSource.clip = zoneMusic[currentZone];
 
             if (chaseMusicOn)
-            {
-                Debug.Log("Transitioning to chase");
                 chaseSnapshot.TransitionTo(zoneTransitionTime);
-            }
             else
-            {
-                Debug.Log("Transitioning to ambient");
                 ambienceSnapshot.TransitionTo(zoneTransitionTime);
-            }
             
             AmbientAudioSource.Play();
         }

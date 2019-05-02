@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   putKeyText: Press LMB to place a key
-  takeKeyText: Press LMB to remove the key
+  takeKeyText: Press LMB to retrieve the key
 --- !u!1 &3737650746160363695
 GameObject:
   m_ObjectHideFlags: 0

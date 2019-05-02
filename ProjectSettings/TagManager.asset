@@ -23,6 +23,8 @@ TagManager:
   - Killplane
   - Doppleganger
   - MasterKeyDebug
+  - Podium
+  - ExitLift
   layers:
   - Default
   - TransparentFX

@@ -111,6 +111,11 @@ public class scr_PortGate : MonoBehaviour
 
     public void setDestination(scr_PortGate gateScript)
     {
+        if (tag == "MasterPortal")
+        {
+            updateExitLift();
+        }
+
         destination = gateScript.spawn; //set this gates destination transform
         Material material = GetComponent<Renderer>().material;
         material.mainTexture = gateScript.gateOutlook;//set this gates texture
@@ -126,6 +131,11 @@ public class scr_PortGate : MonoBehaviour
     
     public void unsetDestination(scr_PortGate gateScript)
     {
+        if (tag == "MasterPortal")
+        {
+            updateExitLift();
+        }
+        
         destination = spawn;
         Material material = GetComponent<Renderer>().material;
         material.mainTexture = inactiveTexture;//set this gates texture
@@ -136,6 +146,12 @@ public class scr_PortGate : MonoBehaviour
 
         destinationGateObject = null; //set dest gate for visible/invisible camera switching
         camera.enabled = false; //just for safety in case there are two gates visible at once when disabling
+    }
+
+    private void updateExitLift()
+    {
+        scr_ExitLift lift = GameObject.FindGameObjectWithTag("ExitLift").GetComponent<scr_ExitLift>();
+        lift.targetHeight = lift.targetHeight + lift.maxHeight / 4 * (active ? 1 : -1);
     }
 
     public override string ToString()
