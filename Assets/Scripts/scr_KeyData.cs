@@ -25,7 +25,10 @@ public class scr_KeyData : MonoBehaviour
     {
         scr_GameManager GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>();
 
-        if (randomPlacement){
+        if (GameManager.debug)
+            spawn(GameObject.FindGameObjectWithTag("MasterKeyDebug").transform, false);
+        
+        else if (randomPlacement){
             
             List<GameObject> validSpawns = new List<GameObject>();
 

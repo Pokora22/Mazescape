@@ -22,6 +22,7 @@ TagManager:
   - Zone4
   - Killplane
   - Doppleganger
+  - MasterKeyDebug
   layers:
   - Default
   - TransparentFX

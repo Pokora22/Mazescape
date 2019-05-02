@@ -7,7 +7,7 @@ using UnityEngine;
 public class scr_GameManager : MonoBehaviour
 {
     public List<GameObject> keySpawns;
-    public bool randomKeyPlacement;
+    public bool randomKeyPlacement, debug;
 
     private GameObject[] redPortals, bluePortals, greenPortals, whitePortals, masterPortals;
     private int maxPortals = 0;
@@ -35,9 +35,13 @@ public class scr_GameManager : MonoBehaviour
                 bluePortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, randomKeyPlacement);
             if(i < greenPortals.Length)
                 greenPortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, randomKeyPlacement);
-            if(i < whitePortals.Length)
-                whitePortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, randomKeyPlacement);
-            
+            if (i < whitePortals.Length)
+            {
+                whitePortals[i].gameObject.GetComponent<scr_KeyData>()
+                    .initializeKeyInWorld(keySpawns, randomKeyPlacement);
+                Debug.Log("Wind key in");
+            }
+
             if(i < masterPortals.Length)
                 masterPortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, false);
         }
