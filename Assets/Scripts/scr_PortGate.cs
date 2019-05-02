@@ -14,6 +14,7 @@ public class scr_PortGate : MonoBehaviour
     private Transform spawn;
     private OffMeshLink navLink;
     private GameObject destinationGateObject;
+    private scr_Portal_AudioControl audioController;
     private Camera camera;
     private RenderTexture gateOutlook;
     private Texture inactiveTexture;
@@ -25,6 +26,7 @@ public class scr_PortGate : MonoBehaviour
         camera = transform.GetChild(1).GetComponent<Camera>(); //this gates camera (?)
         gateOutlook = new RenderTexture(512, 512, 16);
         navLink = GetComponentInChildren<OffMeshLink>();
+        audioController = GetComponent<scr_Portal_AudioControl>();
     }
 
     void Start()
@@ -60,11 +62,13 @@ public class scr_PortGate : MonoBehaviour
 
                 collider.transform.GetComponent<scr_AI_Enemy>().teleport(hitpos.position, destination.rotation);
             }
+
+            audioController.teleportSFX();
+            destinationGateObject.GetComponent<scr_Portal_AudioControl>().teleportSFX();
         }
         else if (collider.CompareTag("Minotaur"))
             collider.transform.GetComponent<scr_AI_Enemy>().CurrentState = scr_AI_Enemy.ENEMY_STATE.PATROL;
     }
-
 
     private void OnBecameVisible()
     {
@@ -115,6 +119,8 @@ public class scr_PortGate : MonoBehaviour
         navLink.activated = true;
         active = true;
         
+        audioController.idleSFX(active);
+        
         destinationGateObject = gateScript.transform.gameObject; //store dest gate for visible/invisible camera switching
     }
     
@@ -125,6 +131,8 @@ public class scr_PortGate : MonoBehaviour
         material.mainTexture = inactiveTexture;//set this gates texture
         navLink.activated = false;
         active = false;
+        
+        audioController.idleSFX(active);
 
         destinationGateObject = null; //set dest gate for visible/invisible camera switching
         camera.enabled = false; //just for safety in case there are two gates visible at once when disabling

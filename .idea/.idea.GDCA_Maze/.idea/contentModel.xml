@@ -8,17 +8,17 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="ColorSkies" t="Include">
-          <e p="Demo" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="LookCamera.cs" t="Include" />
-              <e p="SkyboxChanger.cs" t="Include" />
-            </e>
-          </e>
-        </e>
         <e p="Imports" t="Include">
           <e p="Basic Metal Texture Pack" t="Include">
             <e p="README.txt" t="Include" />
+          </e>
+          <e p="ColorSkies" t="Include">
+            <e p="Demo" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="LookCamera.cs" t="Include" />
+                <e p="SkyboxChanger.cs" t="Include" />
+              </e>
+            </e>
           </e>
           <e p="FPS All-In-One" t="Include">
             <e p="DemoScene" t="Include">
@@ -347,18 +347,6 @@
           </e>
         </e>
         <e p="projections.cs" t="Include" />
-        <e p="Real Materials" t="Include">
-          <e p="Showcase" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="Camera_WASD_movement.cs" t="Include" />
-              <e p="LPPV_lighting_update_only_once.cs" t="Include" />
-            </e>
-            <e p="Sounds" t="Include">
-              <e p="Seisemic - license.txt" t="Include" />
-              <e p="Waves background - license.txt" t="Include" />
-            </e>
-          </e>
-        </e>
         <e p="scr_PlatformActivate.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Editor" t="Include">
@@ -375,6 +363,8 @@
           <e p="scr_KeyData.cs" t="Include" />
           <e p="scr_LineOfSight.cs" t="Include" />
           <e p="scr_pHealth.cs" t="Include" />
+          <e p="scr_Player_AudioControl.cs" t="Include" />
+          <e p="scr_Portal_AudioControl.cs" t="Include" />
           <e p="scr_PortalCamera.cs" t="Include" />
           <e p="scr_PortalKeyPickUp.cs" t="Include" />
           <e p="scr_PortalKeyRecepticle.cs" t="Include" />

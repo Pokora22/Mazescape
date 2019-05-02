@@ -23,6 +23,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		const float k_Half = 0.5f;
 		float m_TurnAmount;
 		float m_ForwardAmount;
+		float m_ForwardAmountWithSpeed;
 		Vector3 m_GroundNormal;
 		float m_CapsuleHeight;
 		Vector3 m_CapsuleCenter;
@@ -45,12 +46,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
-
 			// convert the world relative moveInput vector into a local-relative
 			// turn amount and forward amount required to head in the desired
 			// direction.
-			if (move.magnitude > 1f) move.Normalize();
+			
 			move = transform.InverseTransformDirection(move);
+			// Get magnitude before normalization to account for navagent speeds TODO: dirty
+			m_ForwardAmountWithSpeed = move.z;
+			
+			if (move.magnitude > 1f) move.Normalize();
+			
 			CheckGroundStatus();
 			move = Vector3.ProjectOnPlane(move, m_GroundNormal);
 			m_TurnAmount = Mathf.Atan2(move.x, move.z);
@@ -70,7 +75,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			ScaleCapsuleForCrouching(crouch);
 			PreventStandingInLowHeadroom();
-
+			
 			// send input and other state parameters to the animator
 			UpdateAnimator(move);
 		}
@@ -118,7 +123,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		void UpdateAnimator(Vector3 move)
 		{
 			// update the animator parameters
-			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
+			
+			m_Animator.SetFloat("Forward", m_ForwardAmountWithSpeed);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetBool("Crouch", m_Crouching);
 			m_Animator.SetBool("OnGround", m_IsGrounded);

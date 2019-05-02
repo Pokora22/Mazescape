@@ -2,20 +2,636 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94f655fb-6727-4294-8ef6-202160427c33" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GDCA_Maze/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal01_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal01_diffuse.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal02_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal02_diffuse.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Environment/Water/Water/Materials/WaterProNighttime.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Environment/Water/Water/Materials/WaterProNighttime.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imports/Standard Assets/ParticleSystems/Materials/ParticleGlow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Standard Assets/ParticleSystems/Materials/ParticleGlow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imports/Standard Assets/ParticleSystems/Materials/ParticleSmokeWhite.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Standard Assets/ParticleSystems/Materials/ParticleSmokeWhite.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Imports/Standard Assets/ParticleSystems/Prefabs/FireMobile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Standard Assets/ParticleSystems/Prefabs/FireMobile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Light_WaterZone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Light_WaterZone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Torch.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Torch.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Water ocean.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Water ocean.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Demo/DemoScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Demo/DemoScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Demo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Demo/Scripts/LookCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Demo/Scripts/LookCamera.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Demo/Scripts/SkyboxChanger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Demo/Scripts/SkyboxChanger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_7.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_7.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_8.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Skies/Sky_8.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Back_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Back_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Down_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Down_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Front_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Front_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Left_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Left_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Right_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Right_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Up_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_1/Up_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Back_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Back_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Down_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Down_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Front_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Front_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Left_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Left_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Right_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Right_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Up_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_2/Up_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Back_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Back_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Down_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Down_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Front_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Front_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Left_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Left_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Right_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Right_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Up_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_3/Up_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Back_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Back_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Down_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Down_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Front_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Front_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Left_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Left_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Right_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Right_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Up_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_4/Up_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Back_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Back_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Down_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Down_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Front_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Front_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Left_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Left_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Right_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Right_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Up_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_5/Up_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Back_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Back_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Down_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Down_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Front_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Front_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Left_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Left_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Right_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Right_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Up_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_6/Up_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Back_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Back_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Down_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Down_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Front_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Front_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Left_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Left_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Right_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Right_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Up_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_7/Up_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Back_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Back_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Down_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Down_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Front_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Front_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Left_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Left_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Right_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Right_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Up_Tex.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ColorSkies/Textures/Skybox_8/Up_Tex.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal06_diffuse.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Basic Metal Texture Pack/Materials/metal06_diffuse.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Barrel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Barrel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Chara.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Chara.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PortGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/PortGate.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProBuilder Data/Default Color Palette.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProBuilder Data/Default Color Palette.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/!UV density checker material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/!UV density checker material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations/Hide GIPROXY group.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations/Hide GIPROXY group.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations/Ocean material animation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations/Ocean material animation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations/[Global Illumination PROXY objects].controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations/[Global Illumination PROXY objects].controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations/[arch] Ocean.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Animations/[arch] Ocean.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Abstract shapes.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Abstract shapes.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Block rectangular thin 10m.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Block rectangular thin 10m.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Body armor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Body armor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Bomb classic.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Bomb classic.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Branches.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Branches.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Bush branches.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Bush branches.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Bush foliage.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Bush foliage.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Chain body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Chain body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Dummy rectangular body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Dummy rectangular body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Dummy rectangular frame.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Dummy rectangular frame.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Dummy sphere body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Dummy sphere body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Entrance arch body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Entrance arch body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Entrance threshold.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Entrance threshold.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Flowerbed ground.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Flowerbed ground.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Flowerbeds body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Flowerbeds body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Foliage green_GIPROXY.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Foliage green_GIPROXY.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Fuse cord inner.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Fuse cord inner.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Fuse cord.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Fuse cord.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Gear large body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Gear large body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Gear small body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Gear small body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Grass generic cut.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Grass generic cut.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel - about GIPROXIES.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel - about GIPROXIES.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel - about UV.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel - about UV.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel - post-processing.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel - post-processing.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel - promo.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel - promo.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel backside.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel backside.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel base.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel base.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel glass rims.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel glass rims.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel glass.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Information panel glass.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Leaves.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Leaves.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Marble podium border.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Marble podium border.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Material dummy bended.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Material dummy bended.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Material dummy monolith.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Material dummy monolith.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Metal bar.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Metal bar.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Mini-platform core.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Mini-platform core.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Mini-platform sides.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Mini-platform sides.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Ocean bed.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Ocean bed.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Physbox.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Physbox.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Physbox_.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Physbox_.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform flowerbed body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform flowerbed body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform flowerbed seams.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform flowerbed seams.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform plates A.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform plates A.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform plates B.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform plates B.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform seams.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform seams.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform.001.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Platform.001.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Podium marble A.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Podium marble A.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Podium marble B.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Podium marble B.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Podium metal seams.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Podium metal seams.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Podium steps.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Podium steps.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Sheet of metal.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Sheet of metal.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Skybox semi overcast for volume zero.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Skybox semi overcast for volume zero.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Sledgehammer.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Sledgehammer.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Stand body side line.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Stand body side line.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Stand body top.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Stand body top.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Stand body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Stand body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Stand sign.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Stand sign.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark A.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark A.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark B.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark B.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark C.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark C.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark D.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark D.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic bark.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic leafs.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic leafs.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic leaves GI outer.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree generic leaves GI outer.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree tiny decorative bark.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree tiny decorative bark.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree tiny decorative foliage.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Tree tiny decorative foliage.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Water ocean.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Water ocean.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Welcome sign.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Materials/Welcome sign.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Abstract shapes.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Abstract shapes.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Entrance arch.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Entrance arch.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Entrance threshold.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Entrance threshold.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Mini-platform.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Mini-platform.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Ocean.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Ocean.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Platform flowerbed.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Platform flowerbed.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Platform.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[arch] Platform.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Block rectangular 10m thin.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Block rectangular 10m thin.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Body armor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Body armor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Chain.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Chain.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Column stem flat style.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Column stem flat style.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Column top flat style.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Column top flat style.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Gear large.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Gear large.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Gear small.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Gear small.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Information panel block.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Information panel block.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Material dummy bended.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Material dummy bended.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Material dummy monolith.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Material dummy monolith.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Material dummy rectangular.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Material dummy rectangular.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Metal bars.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Metal bars.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Sheet of metal.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Sheet of metal.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Sledgehammer.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Sledgehammer.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Sphere decorative optimized.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Sphere decorative optimized.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Stand cylindrical.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Stand cylindrical.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Text - Real Materials.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Text - Real Materials.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Text - Welcome to the.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Text - Welcome to the.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Text - series.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Text - series.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Text - volume zero.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Text - volume zero.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Tubes set.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[decor] Tubes set.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Bush decorative.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Bush decorative.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Grass quater circle shape.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Grass quater circle shape.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Square grass 2x2m.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Square grass 2x2m.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic A.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic A.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic B.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic B.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic C.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic C.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic D.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic D.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic_GIPROXY.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree generic_GIPROXY.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree tiny decorative.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[foliage] Tree tiny decorative.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[weapon] Bomb classic.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Models/[weapon] Bomb classic.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Post-processing profiles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Post-processing profiles/Post-processing settings.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Block rectangular 10m thin.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Block rectangular 10m thin.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Body armor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Body armor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Bomb classic.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Bomb classic.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Bush decorative.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Bush decorative.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Chain.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Chain.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Column stem flat style.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Column stem flat style.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Column top flat style.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Column top flat style.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Entrance arch.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Entrance arch.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Entrance threshold.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Entrance threshold.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Gear large.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Gear large.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Gear small.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Gear small.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Grass quater circle shape.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Grass quater circle shape.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Information panel block.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Information panel block.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Material dummy bended.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Material dummy bended.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Material dummy monolith.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Material dummy monolith.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Material dummy rectangular.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Material dummy rectangular.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Metal bars.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Metal bars.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Mini-platform.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Mini-platform.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Platform flowerbed.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Platform flowerbed.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Platform.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Platform.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Sheet of metal.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Sheet of metal.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Sledgehammer.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Sledgehammer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Sphere decorative optimized.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Sphere decorative optimized.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Square grass 2x2m.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Square grass 2x2m.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Stand cylindrical.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Stand cylindrical.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree generic A.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree generic A.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree generic B.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree generic B.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree generic C.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree generic C.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree generic D.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree generic D.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree tiny decorative.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tree tiny decorative.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tubes set.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Prefabs/[prefab] Tubes set.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe center-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe center-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for Welcome sign-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for Welcome sign-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for bended material dummy-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for bended material dummy-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for info panel on backside-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for info panel on backside-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for info panel on entry (1)-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for info panel on entry (1)-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for info panel on entry-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for info panel on entry-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for metal sheet-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for metal sheet-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 1-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 1-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 2-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 2-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 3-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 3-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 4-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 4-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 5-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for sphere mat dummy 5-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for tree crown.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe for tree crown.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe plinth-reflectionHDR.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/Reflection Probe plinth-reflectionHDR.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scripts/Camera_WASD_movement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scripts/Camera_WASD_movement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scripts/LPPV_lighting_update_only_once.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Scripts/LPPV_lighting_update_only_once.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds/Seisemic - license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds/Seisemic - license.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds/Seisemic.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds/Seisemic.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds/Waves background - license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds/Waves background - license.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds/Waves background.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Sounds/Waves background.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Information panel - Asset store promo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Information panel - Asset store promo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Information panel - GI PROXIES ON and OFF.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Information panel - GI PROXIES ON and OFF.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Information panel - Post-Processing on and off.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Information panel - Post-Processing on and off.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Information panel - optimal UV density.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Information panel - optimal UV density.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Tree generic A bark occlusion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Tree generic A bark occlusion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Tree generic B bark occlusion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Tree generic B bark occlusion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Tree generic C bark occlusion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Tree generic C bark occlusion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Tree generic D bark occlusion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/Tree generic D bark occlusion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/bush leafs diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/bush leafs diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/bush leafs normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/bush leafs normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/grass cut diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/grass cut diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/skybox semi-overcast.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/skybox semi-overcast.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/tree bark diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/tree bark diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/tree bark normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/tree bark normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/tree leafs diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/tree leafs diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/tree leafs normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Showcase/Textures/tree leafs normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/!UV density checker diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/!UV density checker diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass color variations diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass color variations diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass common diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass common diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass generic spotty diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass generic spotty diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass generic spotty metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/brass generic spotty metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 10 percent mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 10 percent mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent cloud mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent cloud mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 15 percent mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 2 percent mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 2 percent mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 40 percent cloud mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 40 percent cloud mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 5 percent mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 5 percent mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 55 percent mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common 55 percent mask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common bumpy metal normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common bumpy metal normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse 3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse 3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common grunge diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common large bumps 16bpp normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common large bumps 16bpp normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common leaking diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common leaking diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common medium cloud noise diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common medium cloud noise diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness 2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common non-metal smooth metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common overheat colors diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common overheat colors diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common rusted color variations diffuse 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common rusted color variations diffuse 2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common sand noise normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common sand noise normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/common white cloud noise normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common occlusion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper common occlusion.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/copper with patina metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/floor marble scattered normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/glass generic slightly dusty diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/glass generic slightly dusty diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/granite rough normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble rough metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble rough metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble white diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/marble white diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/plaster common normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/steel galvanized iridescent colorful metalness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/Textures/steel galvanized iridescent colorful metalness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Aluminum common.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Aluminum common.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Brass common.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Brass common.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper common.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper common.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper very old.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Copper very old.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Floor marble scattered.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Floor marble scattered.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Glass generic slightly dusty.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Glass generic slightly dusty.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite polished.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite polished.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite rough.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Granite rough.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble polished white.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble polished white.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble rough white.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Marble rough white.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Plaster common.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Plaster common.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Steel common.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Real Materials/[free] Steel common.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Maze.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Maze.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,27 +655,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="47" column="111" selection-start-line="47" selection-start-column="111" selection-end-line="47" selection-end-column="111" />
+            <state relative-caret-position="1037">
+              <caret line="66" column="88" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
               <folding>
-                <marker date="1556762165738" expanded="false" signature="6:164" ph="..." />
-                <marker date="1556762165738" expanded="true" signature="207:4947" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="537:914" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="932:1131" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="1183:2584" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="1257:2420" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="1314:1959" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="2013:2410" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="2621:2745" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="2783:2898" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="2951:3367" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="3422:3746" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="3803:4332" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="4395:4833" ph="{...}" />
-                <marker date="1556762165738" expanded="true" signature="4872:4945" ph="{...}" />
+                <marker date="1556801708207" expanded="false" signature="6:164" ph="..." />
+                <marker date="1556801708207" expanded="true" signature="207:5299" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="590:1034" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="1052:1251" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="1303:2837" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="1377:2673" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="1434:2079" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="2133:2530" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="2873:2997" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="3035:3150" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="3203:3619" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="3674:3998" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="4055:4634" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="4697:5185" ph="{...}" />
+                <marker date="1556801708207" expanded="true" signature="5224:5297" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_Player_AudioControl.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+              <folding>
+                <marker date="1556804263883" expanded="false" signature="6:78" ph="..." />
+                <marker date="1556804263883" expanded="true" signature="157:731" ph="{...}" />
+                <marker date="1556804263883" expanded="true" signature="520:724" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -68,42 +698,103 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="116" column="66" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
+            <state relative-caret-position="376">
+              <caret line="338" column="52" selection-start-line="338" selection-start-column="52" selection-end-line="338" selection-end-column="52" />
               <folding>
-                <marker date="1556572169976" expanded="false" signature="6:235" ph="..." />
-                <marker date="1556572169976" expanded="true" signature="238:379" ph="/* TODO: This seems to be infinitely recursive causing stack overflow - could redo if time allows ... */" />
-                <marker date="1556572169976" expanded="true" signature="421:9986" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="760:1272" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="798:1269" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="1036:1265" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="1577:1689" ph="/* Reference to player health ... */" />
-                <marker date="1556572169976" expanded="true" signature="2119:2233" ph="/* ------------------------------------------ ... */" />
-                <marker date="1556572169976" expanded="true" signature="2247:2691" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="2751:2872" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="2911:3066" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="3104:3583" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="3632:3796" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="3679:3793" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="3874:5404" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="4106:5401" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="4613:4764" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="4778:4945" ph="/* Have we arrived at dest, get new dest ... */" />
-                <marker date="1556572169976" expanded="true" signature="5057:5338" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="5480:6967" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="5599:5897" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="5999:6964" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="6448:6910" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="6607:6763" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="7045:7854" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="7168:7851" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="7568:7797" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="7896:8237" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="7987:8167" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="8297:9108" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="9184:9319" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="9342:9759" ph="{...}" />
-                <marker date="1556572169976" expanded="true" signature="9802:9938" ph="{...}" />
+                <marker date="1556805924395" expanded="false" signature="6:235" ph="..." />
+                <marker date="1556805924395" expanded="true" signature="238:379" ph="/* TODO: This seems to be infinitely recursive causing stack overflow - could redo if time allows ... */" />
+                <marker date="1556805924395" expanded="true" signature="421:10450" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="760:1272" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="798:1269" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="1036:1265" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="1577:1689" ph="/* Reference to player health ... */" />
+                <marker date="1556805924395" expanded="true" signature="2228:2342" ph="/* ------------------------------------------ ... */" />
+                <marker date="1556805924395" expanded="true" signature="2356:2829" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="2889:3010" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="3049:3204" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="3242:3721" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="3770:3934" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="3817:3931" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="4012:5638" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="4340:5635" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="4847:4998" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="5012:5179" ph="/* Have we arrived at dest, get new dest ... */" />
+                <marker date="1556805924395" expanded="true" signature="5291:5572" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="5714:7286" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="5833:6131" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="6318:7283" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="6767:7229" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="6926:7082" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="7364:8092" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="7487:8089" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="7806:8035" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="8134:8475" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="8225:8405" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="8535:9346" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="9422:9557" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="9580:9997" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="10040:10176" ph="{...}" />
+                <marker date="1556805924395" expanded="true" signature="10241:10402" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+              <folding>
+                <marker date="1556807094861" expanded="true" signature="72:7355" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="247:7353" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="1128:1548" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="1607:2553" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="1615:1769" ph="/* convert the world relative moveInput vector into a local-relative ... */" />
+                <marker date="1556807094861" expanded="true" signature="2287:2339" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="2347:2387" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="2600:3278" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="2635:2790" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="2798:3274" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="3114:3164" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="3317:3751" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="3389:3747" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="3705:3742" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="3789:5038" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="4080:4147" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="4152:4408" ph="/* calculate which leg is behind, so as to leave that leg trailing in the jump animation ... */" />
+                <marker date="1556807094861" expanded="true" signature="4623:4678" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="4683:4854" ph="/* the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector, ... */" />
+                <marker date="1556807094861" expanded="true" signature="4897:4953" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="4961:5034" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="5072:5349" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="5405:5783" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="5555:5779" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="5816:6079" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="6112:6530" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="6120:6259" ph="/* we implement this function to override the default root motion. ... */" />
+                <marker date="1556807094861" expanded="true" signature="6302:6526" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="6559:7350" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="6823:7002" ph="/* 0.1f is a small offset to start the ray from inside the character ... */" />
+                <marker date="1556807094861" expanded="true" signature="7118:7229" ph="{...}" />
+                <marker date="1556807094861" expanded="true" signature="7237:7346" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/AICharacterControl.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+              <folding>
+                <marker date="1554740843044" expanded="false" signature="6:32" ph="..." />
+                <marker date="1554740843044" expanded="true" signature="86:1442" ph="{...}" />
+                <marker date="1554740843044" expanded="true" signature="255:1440" ph="{...}" />
+                <marker date="1554740843044" expanded="true" signature="619:978" ph="{...}" />
+                <marker date="1554740843044" expanded="true" signature="1010:1330" ph="{...}" />
+                <marker date="1554740843044" expanded="true" signature="1380:1434" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -163,88 +854,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_pHealth.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <marker date="1556520551890" expanded="false" signature="6:88" ph="..." />
-                <marker date="1556520551890" expanded="true" signature="130:1459" ph="{...}" />
-                <marker date="1556520551890" expanded="true" signature="433:548" ph="{...}" />
-                <marker date="1556520551890" expanded="true" signature="571:680" ph="{...}" />
-                <marker date="1556520551890" expanded="true" signature="708:972" ph="{...}" />
-                <marker date="1556520551890" expanded="true" signature="745:969" ph="{...}" />
-                <marker date="1556520551890" expanded="true" signature="1001:1151" ph="{...}" />
-                <marker date="1556520551890" expanded="true" signature="1175:1325" ph="{...}" />
-                <marker date="1556520551890" expanded="true" signature="1216:1322" ph="{...}" />
-                <marker date="1556520551890" expanded="true" signature="1361:1457" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_RigidbodyFirstPersonController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="212" column="139" selection-start-line="212" selection-start-column="139" selection-end-line="212" selection-end-column="139" />
-              <folding>
-                <marker date="1556749924866" expanded="false" signature="6:78" ph="..." />
-                <marker date="1556749924866" expanded="true" signature="132:11129" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="294:11127" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="632:2259" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="1397:2121" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="1495:1560" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="1581:1651" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="1672:1849" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="1684:1803" ph="/* forwards ... */" />
-                <marker date="1556749924866" expanded="true" signature="1906:2019" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="2037:2100" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="2172:2242" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="2322:2995" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="3555:3624" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="3654:3715" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="3744:3802" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="3831:3991" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="3857:3981" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="4022:4257" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="4289:4471" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="4402:4461" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="4508:6954" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="4756:5615" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="5473:5601" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="5646:6302" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="5728:6063" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="6211:6288" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="6319:6521" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="6428:6507" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="6991:7618" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="7416:7608" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="7660:7828" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="7873:8527" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="8268:8517" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="8362:8503" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="8564:8896" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="8644:8806" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="8932:9651" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="9319:9641" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="9806:10673" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="10207:10328" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="10345:10463" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="10531:10594" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="10726:10949" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="10783:10939" ph="{...}" />
-                <marker date="1556749924866" expanded="true" signature="11001:11121" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="119">
+              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding>
                 <marker date="1556761679838" expanded="false" signature="6:175" ph="..." />
                 <marker date="1556761679838" expanded="true" signature="217:2108" ph="{...}" />
@@ -262,72 +875,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_DopplegangerController.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_Portal_AudioControl.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="258" column="42" selection-start-line="258" selection-start-column="42" selection-end-line="258" selection-end-column="42" />
+            <state relative-caret-position="187">
+              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
               <folding>
-                <marker date="1556729264752" expanded="false" signature="6:78" ph="..." />
-                <marker date="1556729264752" expanded="true" signature="132:10408" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="286:10406" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="477:2104" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="1242:1966" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="1340:1405" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="1426:1496" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="1517:1694" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="1529:1648" ph="/* forwards ... */" />
-                <marker date="1556729264752" expanded="true" signature="1751:1864" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="1882:1945" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="2017:2087" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="2167:2840" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="3391:3460" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="3490:3551" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="3580:3638" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="3667:3827" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="3693:3817" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="3858:4093" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="4125:4307" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="4238:4297" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="4344:6761" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="4563:5422" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="5280:5408" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="5453:6109" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="5535:5870" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="6018:6095" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="6126:6328" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="6235:6314" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="6803:6971" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="7016:7670" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="7411:7660" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="7505:7646" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="7707:8039" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="7787:7949" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="8075:8794" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="8462:8784" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="8949:9816" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="9350:9471" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="9488:9606" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="9674:9737" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="9869:10228" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="9932:10010" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="10062:10218" ph="{...}" />
-                <marker date="1556729264752" expanded="true" signature="10280:10400" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MirrorFlipCamera.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-              <folding>
-                <marker date="1556734426753" expanded="true" signature="120:651" ph="{...}" />
-                <marker date="1556734426753" expanded="true" signature="193:241" ph="{...}" />
-                <marker date="1556734426753" expanded="true" signature="263:503" ph="{...}" />
-                <marker date="1556734426753" expanded="true" signature="528:576" ph="{...}" />
-                <marker date="1556734426753" expanded="true" signature="608:649" ph="{...}" />
+                <marker date="1556801116521" expanded="false" signature="6:78" ph="..." />
+                <marker date="1556801116521" expanded="true" signature="132:542" ph="{...}" />
+                <marker date="1556801116521" expanded="true" signature="248:311" ph="{...}" />
+                <marker date="1556801116521" expanded="true" signature="347:453" ph="{...}" />
+                <marker date="1556801116521" expanded="true" signature="484:540" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -336,15 +893,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+            <state relative-caret-position="578">
+              <caret line="38" column="123" selection-start-line="38" selection-start-column="123" selection-end-line="38" selection-end-column="123" />
               <folding>
-                <marker date="1556761871580" expanded="false" signature="6:111" ph="..." />
-                <marker date="1556761871580" expanded="true" signature="157:2267" ph="{...}" />
-                <marker date="1556761871580" expanded="true" signature="389:2218" ph="{...}" />
-                <marker date="1556761871580" expanded="true" signature="1296:2212" ph="{...}" />
-                <marker date="1556761871580" expanded="true" signature="1833:2048" ph="{...}" />
-                <marker date="1556761871580" expanded="true" signature="2244:2265" ph="{...}" />
+                <marker date="1556805374271" expanded="false" signature="6:111" ph="..." />
+                <marker date="1556805374271" expanded="true" signature="157:2189" ph="{...}" />
+                <marker date="1556805374271" expanded="true" signature="389:2140" ph="{...}" />
+                <marker date="1556805374271" expanded="true" signature="1309:2134" ph="{...}" />
+                <marker date="1556805374271" expanded="true" signature="2166:2187" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -354,9 +910,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>materia</find>
-      <find>keyda</find>
-      <find>instanti</find>
       <find>inven</find>
       <find>health</find>
       <find>agent</find>
@@ -371,9 +924,7 @@
       <find>veloci</find>
       <find>lastkn</find>
       <find>last</find>
-      <find>animator</find>
       <find>Debug.</find>
-      <find>Debug</find>
       <find>triggerE</find>
       <find>triggerent</find>
       <find>cam</find>
@@ -383,7 +934,12 @@
       <find>contr</find>
       <find>gravitych</find>
       <find>gravity</find>
+      <find>scr_p</find>
       <find>fade</find>
+      <find>forwar</find>
+      <find>animator</find>
+      <find>animator.</find>
+      <find>Debug</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -391,6 +947,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/ReplaceSelection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/scr_Portal_AudioControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/scr_Player_AudioControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefab/PortGate.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.0.4/Runtime/Core/ProBuilderMeshFunction.cs" root0="SKIP_HIGHLIGHTING" />
@@ -449,7 +1007,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_ZoneData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SelectByTag.cs" />
-        <option value="$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/ReplaceSelection.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_Rotating_Cage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortalKeyRecepticle.cs" />
@@ -458,7 +1015,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_AI_SoundSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_LineOfSight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_pHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/src_TorchControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_BouncyPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/scr_PlatformActivate.cs" />
@@ -469,8 +1025,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_WaitingPuzzle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_TorchLight.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scr_Portal_AudioControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scr_Player_AudioControl.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs" />
       </list>
     </option>
   </component>
@@ -595,7 +1155,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254220000" />
+    <option name="totallyTimeSpent" value="261961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -608,7 +1168,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19594595" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -690,8 +1249,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_CharMove.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/RigidbodyFirstPersonController.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/LowPolyNature/Scripts/PlayerController.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/FPS All-In-One/FirstPersonAIO/FirstPersonAIO.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/MouseLook.cs" />
@@ -884,21 +1441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/AICharacterControl.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-          <folding>
-            <marker date="1554740843044" expanded="false" signature="6:32" ph="..." />
-            <marker date="1554740843044" expanded="true" signature="86:1442" ph="{...}" />
-            <marker date="1554740843044" expanded="true" signature="255:1440" ph="{...}" />
-            <marker date="1554740843044" expanded="true" signature="619:978" ph="{...}" />
-            <marker date="1554740843044" expanded="true" signature="1010:1330" ph="{...}" />
-            <marker date="1554740843044" expanded="true" signature="1380:1434" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.probuilder@4.0.4/Runtime/Core/ProBuilderMeshFunction.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -943,47 +1485,6 @@
             <marker date="1556307772591" expanded="false" signature="6:63" ph="..." />
             <marker date="1556307772591" expanded="true" signature="107:374" ph="{...}" />
             <marker date="1556307772591" expanded="true" signature="244:372" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <marker date="1556383494293" expanded="true" signature="72:7416" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="247:7414" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="1094:1514" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="1573:2431" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="1582:1736" ph="/* convert the world relative moveInput vector into a local-relative ... */" />
-            <marker date="1556383494293" expanded="true" signature="2155:2207" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="2215:2255" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="2333:2427" ph="/* send input and other state parameters to the animator - original ... */" />
-            <marker date="1556383494293" expanded="true" signature="2478:3156" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="2513:2668" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="2676:3152" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="2992:3042" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="3195:3629" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="3267:3625" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="3583:3620" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="3667:5099" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="3929:4097" ph="/* m_Animator.SetFloat(&quot;Turn&quot;, m_TurnAmount, 0.1f, Time.deltaTime); ... */" />
-            <marker date="1556383494293" expanded="true" signature="4119:4186" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="4191:4447" ph="/* calculate which leg is behind, so as to leave that leg trailing in the jump animation ... */" />
-            <marker date="1556383494293" expanded="true" signature="4662:4717" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="4719:5095" ph="/* the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector, ... */" />
-            <marker date="1556383494293" expanded="true" signature="5133:5410" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="5466:5844" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="5616:5840" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="5877:6140" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="6173:6591" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="6181:6320" ph="/* we implement this function to override the default root motion. ... */" />
-            <marker date="1556383494293" expanded="true" signature="6363:6587" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="6620:7411" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="6884:7063" ph="/* 0.1f is a small offset to start the ray from inside the character ... */" />
-            <marker date="1556383494293" expanded="true" signature="7179:7290" ph="{...}" />
-            <marker date="1556383494293" expanded="true" signature="7298:7407" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1277,48 +1778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="116" column="66" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
-          <folding>
-            <marker date="1556572169976" expanded="false" signature="6:235" ph="..." />
-            <marker date="1556572169976" expanded="true" signature="238:379" ph="/* TODO: This seems to be infinitely recursive causing stack overflow - could redo if time allows ... */" />
-            <marker date="1556572169976" expanded="true" signature="421:9986" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="760:1272" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="798:1269" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="1036:1265" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="1577:1689" ph="/* Reference to player health ... */" />
-            <marker date="1556572169976" expanded="true" signature="2119:2233" ph="/* ------------------------------------------ ... */" />
-            <marker date="1556572169976" expanded="true" signature="2247:2691" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="2751:2872" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="2911:3066" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="3104:3583" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="3632:3796" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="3679:3793" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="3874:5404" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="4106:5401" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="4613:4764" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="4778:4945" ph="/* Have we arrived at dest, get new dest ... */" />
-            <marker date="1556572169976" expanded="true" signature="5057:5338" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="5480:6967" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="5599:5897" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="5999:6964" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="6448:6910" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="6607:6763" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="7045:7854" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="7168:7851" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="7568:7797" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="7896:8237" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="7987:8167" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="8297:9108" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="9184:9319" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="9342:9759" ph="{...}" />
-            <marker date="1556572169976" expanded="true" signature="9802:9938" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_RigidbodyFirstPersonController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -1432,8 +1891,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_KeyData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="119">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
           <folding>
             <marker date="1556761679838" expanded="false" signature="6:175" ph="..." />
             <marker date="1556761679838" expanded="true" signature="217:2108" ph="{...}" />
@@ -1449,41 +1908,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_Portal_AudioControl.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        <state relative-caret-position="187">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding>
-            <marker date="1556761871580" expanded="false" signature="6:111" ph="..." />
-            <marker date="1556761871580" expanded="true" signature="157:2267" ph="{...}" />
-            <marker date="1556761871580" expanded="true" signature="389:2218" ph="{...}" />
-            <marker date="1556761871580" expanded="true" signature="1296:2212" ph="{...}" />
-            <marker date="1556761871580" expanded="true" signature="1833:2048" ph="{...}" />
-            <marker date="1556761871580" expanded="true" signature="2244:2265" ph="{...}" />
+            <marker date="1556801116521" expanded="false" signature="6:78" ph="..." />
+            <marker date="1556801116521" expanded="true" signature="132:542" ph="{...}" />
+            <marker date="1556801116521" expanded="true" signature="248:311" ph="{...}" />
+            <marker date="1556801116521" expanded="true" signature="347:453" ph="{...}" />
+            <marker date="1556801116521" expanded="true" signature="484:540" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_PortGate.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="47" column="111" selection-start-line="47" selection-start-column="111" selection-end-line="47" selection-end-column="111" />
+        <state relative-caret-position="1037">
+          <caret line="66" column="88" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
           <folding>
-            <marker date="1556762165738" expanded="false" signature="6:164" ph="..." />
-            <marker date="1556762165738" expanded="true" signature="207:4947" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="537:914" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="932:1131" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="1183:2584" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="1257:2420" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="1314:1959" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="2013:2410" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="2621:2745" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="2783:2898" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="2951:3367" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="3422:3746" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="3803:4332" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="4395:4833" ph="{...}" />
-            <marker date="1556762165738" expanded="true" signature="4872:4945" ph="{...}" />
+            <marker date="1556801708207" expanded="false" signature="6:164" ph="..." />
+            <marker date="1556801708207" expanded="true" signature="207:5299" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="590:1034" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="1052:1251" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="1303:2837" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="1377:2673" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="1434:2079" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="2133:2530" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="2873:2997" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="3035:3150" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="3203:3619" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="3674:3998" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="4055:4634" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="4697:5185" ph="{...}" />
+            <marker date="1556801708207" expanded="true" signature="5224:5297" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="38" column="123" selection-start-line="38" selection-start-column="123" selection-end-line="38" selection-end-column="123" />
+          <folding>
+            <marker date="1556805374271" expanded="false" signature="6:111" ph="..." />
+            <marker date="1556805374271" expanded="true" signature="157:2189" ph="{...}" />
+            <marker date="1556805374271" expanded="true" signature="389:2140" ph="{...}" />
+            <marker date="1556805374271" expanded="true" signature="1309:2134" ph="{...}" />
+            <marker date="1556805374271" expanded="true" signature="2166:2187" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_AI_Enemy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="338" column="52" selection-start-line="338" selection-start-column="52" selection-end-line="338" selection-end-column="52" />
+          <folding>
+            <marker date="1556805924395" expanded="false" signature="6:235" ph="..." />
+            <marker date="1556805924395" expanded="true" signature="238:379" ph="/* TODO: This seems to be infinitely recursive causing stack overflow - could redo if time allows ... */" />
+            <marker date="1556805924395" expanded="true" signature="421:10450" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="760:1272" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="798:1269" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="1036:1265" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="1577:1689" ph="/* Reference to player health ... */" />
+            <marker date="1556805924395" expanded="true" signature="2228:2342" ph="/* ------------------------------------------ ... */" />
+            <marker date="1556805924395" expanded="true" signature="2356:2829" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="2889:3010" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="3049:3204" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="3242:3721" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="3770:3934" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="3817:3931" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="4012:5638" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="4340:5635" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="4847:4998" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="5012:5179" ph="/* Have we arrived at dest, get new dest ... */" />
+            <marker date="1556805924395" expanded="true" signature="5291:5572" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="5714:7286" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="5833:6131" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="6318:7283" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="6767:7229" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="6926:7082" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="7364:8092" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="7487:8089" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="7806:8035" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="8134:8475" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="8225:8405" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="8535:9346" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="9422:9557" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="9580:9997" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="10040:10176" ph="{...}" />
+            <marker date="1556805924395" expanded="true" signature="10241:10402" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/scr_Player_AudioControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding>
+            <marker date="1556804263883" expanded="false" signature="6:78" ph="..." />
+            <marker date="1556804263883" expanded="true" signature="157:731" ph="{...}" />
+            <marker date="1556804263883" expanded="true" signature="520:724" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/AICharacterControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <marker date="1554740843044" expanded="false" signature="6:32" ph="..." />
+            <marker date="1554740843044" expanded="true" signature="86:1442" ph="{...}" />
+            <marker date="1554740843044" expanded="true" signature="255:1440" ph="{...}" />
+            <marker date="1554740843044" expanded="true" signature="619:978" ph="{...}" />
+            <marker date="1554740843044" expanded="true" signature="1010:1330" ph="{...}" />
+            <marker date="1554740843044" expanded="true" signature="1380:1434" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Imports/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonCharacter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+          <folding>
+            <marker date="1556807094861" expanded="true" signature="72:7355" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="247:7353" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="1128:1548" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="1607:2553" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="1615:1769" ph="/* convert the world relative moveInput vector into a local-relative ... */" />
+            <marker date="1556807094861" expanded="true" signature="2287:2339" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="2347:2387" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="2600:3278" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="2635:2790" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="2798:3274" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="3114:3164" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="3317:3751" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="3389:3747" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="3705:3742" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="3789:5038" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="4080:4147" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="4152:4408" ph="/* calculate which leg is behind, so as to leave that leg trailing in the jump animation ... */" />
+            <marker date="1556807094861" expanded="true" signature="4623:4678" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="4683:4854" ph="/* the anim speed multiplier allows the overall speed of walking/running to be tweaked in the inspector, ... */" />
+            <marker date="1556807094861" expanded="true" signature="4897:4953" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="4961:5034" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="5072:5349" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="5405:5783" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="5555:5779" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="5816:6079" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="6112:6530" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="6120:6259" ph="/* we implement this function to override the default root motion. ... */" />
+            <marker date="1556807094861" expanded="true" signature="6302:6526" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="6559:7350" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="6823:7002" ph="/* 0.1f is a small offset to start the ray from inside the character ... */" />
+            <marker date="1556807094861" expanded="true" signature="7118:7229" ph="{...}" />
+            <marker date="1556807094861" expanded="true" signature="7237:7346" ph="{...}" />
           </folding>
         </state>
       </provider>

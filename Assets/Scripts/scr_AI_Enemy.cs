@@ -75,7 +75,9 @@ public class scr_AI_Enemy : MonoBehaviour
 
 	[SerializeField] private float patrolSpeed;
 	[SerializeField] private float chaseSpeed;
+	[SerializeField] private float chaseMusicTimeout = 5f;
 	private scr_pHealth m_PlayerScrPHealth;
+	private scr_Player_AudioControl PlayerAudioControl;
 	private scr_RigidbodyFirstPersonController playerRBCntrl;
 	[SerializeField] private float hearingStrength = 1;
 
@@ -83,11 +85,13 @@ public class scr_AI_Enemy : MonoBehaviour
 	// used here to retrieve connected components for use in this script
 	void Awake()
 	{
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		m_ThisScrLineOfSight = GetComponent<scr_LineOfSight>();
 		ThisAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-		m_PlayerScrPHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_pHealth>();
-		playerRBCntrl = GameObject.FindGameObjectWithTag("Player").GetComponent<scr_RigidbodyFirstPersonController>();
-		PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+		m_PlayerScrPHealth = player.GetComponent<scr_pHealth>();
+		playerRBCntrl = player.GetComponent<scr_RigidbodyFirstPersonController>();
+		PlayerAudioControl = player.GetComponent<scr_Player_AudioControl>();
+		PlayerTransform = player.transform;
 		animator = GetComponent<Animator>();
 	}
 	//------------------------------------------
@@ -134,6 +138,9 @@ public class scr_AI_Enemy : MonoBehaviour
 	//------------------------------------------
 	public IEnumerator AIPatrol()
 	{
+		if (PlayerAudioControl.chaseMusicOn)
+			StartCoroutine(fadeChaseMusic(chaseMusicTimeout));
+		
 		float timeToWait = isAngry ? .1f : 1f;
 		yield return new WaitForSeconds(timeToWait);
 		
@@ -189,6 +196,9 @@ public class scr_AI_Enemy : MonoBehaviour
 			while (animator.GetCurrentAnimatorStateInfo(0).IsTag("Angry"))
 				yield return null;
 		}
+		
+		if(!PlayerAudioControl.chaseMusicOn)
+			PlayerAudioControl.switchToChase(true);
 
 		ThisAgent.speed = chaseSpeed;
 		
@@ -241,7 +251,6 @@ public class scr_AI_Enemy : MonoBehaviour
             //Chase to player position
             ThisAgent.isStopped = false;
 			ThisAgent.SetDestination(PlayerTransform.position);
-			Debug.Log("New destination(attack): " + PatrolDestination.parent.gameObject);
 
 			//Wait until path is computed
 			while(ThisAgent.pathPending)
@@ -322,6 +331,13 @@ public class scr_AI_Enemy : MonoBehaviour
             StopCoroutine(AIChase());
             StopCoroutine(AIAttack());
         }
+
+    private IEnumerator fadeChaseMusic(float chaseMusicTimeout)
+    {
+	    yield return new WaitForSeconds(chaseMusicTimeout);
+	    if (currentstate == ENEMY_STATE.PATROL)
+		    PlayerAudioControl.switchToChase(false);
+    }
 	//------------------------------------------
 }
 //------------------------------------------

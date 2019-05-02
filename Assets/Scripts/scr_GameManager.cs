@@ -20,7 +20,7 @@ public class scr_GameManager : MonoBehaviour
         if (bluePortals.Length > maxPortals) maxPortals = bluePortals.Length;
         greenPortals = GameObject.FindGameObjectsWithTag("GreenPortal");
         if (greenPortals.Length > maxPortals) maxPortals = greenPortals.Length;
-        whitePortals = GameObject.FindGameObjectsWithTag("WhitePortal");
+        whitePortals = GameObject.FindGameObjectsWithTag("WhitePortal"); //Sky - Teal
         if (whitePortals.Length > maxPortals) maxPortals = whitePortals.Length;
         masterPortals = GameObject.FindGameObjectsWithTag("MasterPortal");
         if (masterPortals.Length > maxPortals) maxPortals = masterPortals.Length;
@@ -36,11 +36,7 @@ public class scr_GameManager : MonoBehaviour
             if(i < greenPortals.Length)
                 greenPortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, randomKeyPlacement);
             if (i < whitePortals.Length)
-            {
-                whitePortals[i].gameObject.GetComponent<scr_KeyData>()
-                    .initializeKeyInWorld(keySpawns, randomKeyPlacement);
-                Debug.Log("Wind key in");
-            }
+                whitePortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, randomKeyPlacement);
 
             if(i < masterPortals.Length)
                 masterPortals[i].gameObject.GetComponent<scr_KeyData>().initializeKeyInWorld(keySpawns, false);
