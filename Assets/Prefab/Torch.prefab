@@ -3092,7 +3092,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2567684671102311916}
   - component: {fileID: 654921260640797893}
-  - component: {fileID: 7112895661586201992}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -3174,26 +3173,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &7112895661586201992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4211974571500574040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c70d5a546f6a9c54e9e2c494ce5b064d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxReduction: 1
-  maxIncrease: 1
-  flickerDelay: 0.1
-  strength: 10
-  perlin: 0
-  minIntensity: 1
-  maxIntensity: 3
-  frequency: 2
 --- !u!1 &5586371360762478905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3235,6 +3214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2741798971861536122}
+  - component: {fileID: 1915695164668894412}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -3258,6 +3238,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915695164668894412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043650274625524399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70d5a546f6a9c54e9e2c494ce5b064d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proximity: 0
+  toggleSpeed: 0
+  targetIntensity: 0
+  maxReduction: 0
+  maxIncrease: 0
+  flickerDelay: 0
+  strength: 0
+  perlin: 0
+  minIntensity: 0.25
+  maxIntensity: 0.5
+  frequency: 1
 --- !u!1001 &5448852264828499185
 PrefabInstance:
   m_ObjectHideFlags: 0

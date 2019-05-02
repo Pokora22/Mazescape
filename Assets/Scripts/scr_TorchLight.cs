@@ -1,8 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
- 
+using UnityEngine.UI;
+
 public class scr_TorchLight : MonoBehaviour
 {
+    #region Proximity
+
+    public bool proximity;
+    public float toggleSpeed;
+    public float targetIntensity;
+
+    #endregion
+    
+    
     #region Old ver
     [Header("Old version")]
 
@@ -27,6 +37,7 @@ public class scr_TorchLight : MonoBehaviour
     #endregion
     
     private Light lightSource;
+    private GameObject fireParticle;
     private float baseIntensity, random;
  
     public void Start()
@@ -35,15 +46,21 @@ public class scr_TorchLight : MonoBehaviour
         random = Random.Range(0.0f, 65535.0f);
         //
         
-        lightSource = GetComponent<Light>();
+        lightSource = GetComponentInChildren<Light>();
+        fireParticle = lightSource.transform.parent.gameObject;
         baseIntensity = lightSource.intensity;
-        
-        if(!perlin) StartCoroutine(doFlicker());
+
+        if (proximity)
+        {
+            lightSource.intensity = 0;
+            fireParticle.SetActive(false);
+        }
+
+        if(!perlin && maxIntensity != 0) StartCoroutine(doFlicker());
     }
 
     private void Update()
     {
-
         if (perlin)
         {
             float noise = Mathf.PerlinNoise(random, Time.time * frequency);
@@ -71,6 +88,47 @@ public class scr_TorchLight : MonoBehaviour
                 strength * Time.deltaTime);
             
             yield return new WaitForSeconds(flickerDelay);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (proximity && other.transform.CompareTag("Player"))
+        {
+            StopAllCoroutines();
+            StartCoroutine(toggle(toggleSpeed, targetIntensity));
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (proximity && other.transform.CompareTag("Player"))
+        {
+            StopAllCoroutines();
+            StartCoroutine(toggle(-toggleSpeed, 0f));
+            
+        }
+    }
+
+    private IEnumerator toggle(float speed, float target)
+    {
+        if (speed < 0)
+        {
+            while (lightSource.intensity > target)
+            {
+                lightSource.intensity += speed * Time.deltaTime;
+                yield return new WaitForSeconds(.1f);
+            }
+            fireParticle.gameObject.SetActive(!fireParticle.gameObject.activeSelf);
+        }
+        else
+        {
+            fireParticle.gameObject.SetActive(!fireParticle.gameObject.activeSelf);
+            while (lightSource.intensity < target)
+            {
+                lightSource.intensity += speed * Time.deltaTime;
+                yield return new WaitForSeconds(.1f);
+            }
         }
     }
 }

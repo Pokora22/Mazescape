@@ -210,7 +210,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 //turn back on next frame
             m_RigidBody.useGravity = true;
 
-            Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 50f, 1 << LayerMask.NameToLayer("Default"),
+            Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, 50f, (1 << LayerMask.NameToLayer("DirectionalLighting") | 1 << LayerMask.NameToLayer("Default")),
                 QueryTriggerInteraction.Ignore);
             reverseGravity = (!hit.transform || hit.distance > floatCheckDistance);
             if (reverseGravity)
