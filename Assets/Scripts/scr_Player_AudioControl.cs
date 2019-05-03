@@ -44,16 +44,16 @@ public class scr_Player_AudioControl : MonoBehaviour
         int zoneFrom = currentZone;
         switch (other.tag)
         {
-            case "Zone1":
+            case "RedZone":
                 currentZone = 0;
                 break;
-            case "Zone2":
+            case "GreenZone":
                 currentZone = 1;
                 break;
-            case "Zone3":
+            case "BlueZone":
                 currentZone = 2;
                 break;
-            case "Zone4":
+            case "WhiteZone":
                 currentZone = 3;
                 break;
             default:

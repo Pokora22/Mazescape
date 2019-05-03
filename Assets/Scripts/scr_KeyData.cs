@@ -8,6 +8,10 @@ using Random = UnityEngine.Random;
 
 public class scr_KeyData : MonoBehaviour
 {
+    public static bool[] keyZonesLinked;
+    public static int zoneCounter;
+    private string[] zoneTags = {"WhiteZone", "RedZone", "BlueZone", "GreenZone"};
+    
     public bool debug = false;
     public String symbol;
     public Color color;
@@ -19,6 +23,9 @@ public class scr_KeyData : MonoBehaviour
 //        transform = ((Component) this).transform.parent.gameObject;
         
 //        initializeKeyInWorld();
+
+        keyZonesLinked = new bool[4];
+        zoneCounter = 0;
     }
 
     public void initializeKeyInWorld(List<GameObject> allSpawns, bool randomPlacement)
@@ -29,18 +36,28 @@ public class scr_KeyData : MonoBehaviour
             spawn(GameObject.FindGameObjectWithTag("MasterKeyDebug").transform, false);
         
         else if (randomPlacement){
-            
             List<GameObject> validSpawns = new List<GameObject>();
 
-            foreach (GameObject spawn in allSpawns)
-                if (!spawn.transform.IsChildOf(((Component) this).transform.root))
-                    validSpawns.Add(spawn);
+            if (keyZonesLinked[zoneCounter])
+            {
+                foreach (GameObject spawn in allSpawns)
+                    if (spawn.transform.root.CompareTag(zoneTags[zoneCounter]))
+                        validSpawns.Add(spawn);
+
+                keyZonesLinked[zoneCounter++] = true;
+            }
+            else
+                foreach (GameObject spawn in allSpawns)
+                    if (!spawn.transform.IsChildOf(((Component) this).transform.root))
+                        validSpawns.Add(spawn);
 
             if (validSpawns.Count > 0)
             {
                 GameObject keySpawnLocation = validSpawns[Random.Range(0, validSpawns.Count)];
                 spawn(keySpawnLocation.transform, false);
                 allSpawns.Remove(keySpawnLocation);
+                
+                
             }
         }
 

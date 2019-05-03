@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Imports/LowPolyNature/Scenes/Demo.unity
-    guid: 098a34d9c68692342943067d2876f441
+    path: Assets/Scenes/Splash.unity
+    guid: a930958e0c98ab84d92a3c031ecc0256
   - enabled: 1
-    path: Assets/Imports/LowPolyNature/Scenes/Simple.unity
-    guid: 55a0b71e85d58e34ea55f5f65a929097
+    path: Assets/Scenes/MainMenu.unity
+    guid: dfc225a17ab0b3246bae85fd8cad98e3
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: 4ae71310418464906917ad86a481050e
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: cfd2d6dace3c9174db75dc6cce8ac9e3
+  - enabled: 1
+    path: Assets/Scenes/You Died.unity
+    guid: 5b7a051e82f225c48b719ee3a75f65b7
   m_configObjects: {}

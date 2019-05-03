@@ -306,12 +306,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 transform.position = other.transform.GetChild(0).position;
                 m_RigidBody.velocity = Vector3.zero;
             }
-        }
 
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.transform.CompareTag("Zone4"))
-                m_RigidBody.mass = normalMass;
+            if (other.CompareTag("Finish"))
+            {
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>().loadScene(scr_GameManager.SCENE.GAME_OVER);
+            }
         }
     }
 }

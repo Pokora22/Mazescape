@@ -346,7 +346,6 @@
             </e>
           </e>
         </e>
-        <e p="projections.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Editor" t="Include">
             <e p="MeshCombineWizard.cs" t="Include" />
@@ -355,8 +354,7 @@
           <e p="MirrorFlipCamera.cs" t="Include" />
           <e p="scr_AI_Enemy.cs" t="Include" />
           <e p="scr_AI_SoundSystem.cs" t="Include" />
-          <e p="scr_BouncyPlatform.cs" t="Include" />
-          <e p="scr_DopplegangerController.cs" t="Include" />
+          <e p="scr_ButtonHandler.cs" t="Include" />
           <e p="scr_ExitLift.cs" t="Include" />
           <e p="scr_ExitPuzzle.cs" t="Include" />
           <e p="scr_GameManager.cs" t="Include" />
@@ -376,7 +374,6 @@
           <e p="scr_TorchLight.cs" t="Include" />
           <e p="scr_UI.cs" t="Include" />
           <e p="scr_WaitingPuzzle.cs" t="Include" />
-          <e p="scr_ZoneData.cs" t="Include" />
           <e p="SelectByTag.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
         </e>

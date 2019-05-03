@@ -40,7 +40,7 @@ public class scr_pHealth : MonoBehaviour
 
 			//If health is < 0 then die
 			if(healthPoints <= 0)
-				Debug.Log("Already dead: " + healthPoints); //TODO: Switch scene to death
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<scr_GameManager>().loadScene(scr_GameManager.SCENE.DEATH);
 		}
 	}
 

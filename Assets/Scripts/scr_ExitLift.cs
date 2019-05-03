@@ -17,8 +17,7 @@ public class scr_ExitLift : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetHeight = 0f;
-        
+        targetHeight = maxHeight;
     }
 
     // Update is called once per frame
