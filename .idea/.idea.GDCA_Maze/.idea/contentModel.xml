@@ -29,9 +29,6 @@
                 <e p="GlassBumpedDistort.shader" t="Include" />
               </e>
             </e>
-            <e p="FirstPersonAIO" t="Include">
-              <e p="FirstPersonAIO.cs" t="Include" />
-            </e>
             <e p="README.txt" t="Include" />
           </e>
           <e p="LowPolyNature" t="Include">
@@ -351,7 +348,6 @@
             <e p="MeshCombineWizard.cs" t="Include" />
             <e p="ReplaceSelection.cs" t="Include" />
           </e>
-          <e p="MirrorFlipCamera.cs" t="Include" />
           <e p="scr_AI_Enemy.cs" t="Include" />
           <e p="scr_AI_SoundSystem.cs" t="Include" />
           <e p="scr_ButtonHandler.cs" t="Include" />
@@ -374,7 +370,6 @@
           <e p="scr_TorchLight.cs" t="Include" />
           <e p="scr_UI.cs" t="Include" />
           <e p="scr_WaitingPuzzle.cs" t="Include" />
-          <e p="SelectByTag.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
